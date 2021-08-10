@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--background-main);
+    scroll-behavior: smooth;
+}
+
+/* 
+    Declaración de variables.
+*/
+
+:root {
+    --shadow: 0px 10px 10px var(--background-aux);
+    --radius: 10px;
+
+    --color-red: #DE4132;
+    --color-yellow: #EDB303;
+    --color-green: #319E4F;
+    --color-blue: #2D9FFC;
+    
+    --color-red-hover: #a03026;
+    --color-yellow-hover: #b38703;
+    --color-green-hover: #24723a;
+    --color-blue-hover: #2178be;
+
+    --color-red-03: rgba(222, 65, 50,0.3);
+    --color-yellow-03: rgba(237, 179, 3,0.3);
+    --color-green-03: rgba(49, 158, 79,0.3);
+    --color-blue-03: rgba(45, 159, 252,0.3);
+
+    --background-main: #FFFFFF;
+    --background-aux: #F7F7F7;
+    --background-aux-03: rgba(247, 247, 247, 0.3);
+
+    --color-text: rgba(0, 0, 0, 0.85);
+    
+    --border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* 
+    Estilos del scrollbar.
+*/
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-blue) 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-blue) 
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background-aux-03); 
+}
+
+*::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-track:active {
+  background: var(--background-aux-03);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-blue-03);  
+  border-radius: var(--radius);
+}
+
+/* 
+    Estilos fondos.
+*/
+
+.bg-main {
+    background-color: var(--background-main);
+}
+
+.bg-aux {
+    background-color: var(--background-aux);
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+/* 
+    Contenedores (layouts).
+*/
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-con {
+    margin: auto;
+    width: 70%;
+    max-width: 70%;
+}
+
+.row-scroll {
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.row-scroll .con:not(:last-child) {
+    margin: 0px 15px 15px 0px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-right {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-top {
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.align-center {
+    align-content: center;
+    align-items: center;
+}
+
+.align-bottom {
+    align-content: flex-end;
+    align-items: flex-end;
+}
+
+.align-between {
+    align-content: space-between;
+    align-items: space-between;
+}
+
+.con {
+    padding: 15px;
+}
+
+.border {
+    border: var(--border);
+}
+
+.fluid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.round {
+    border-radius: var(--radius);
+    overflow: hidden;
+    line-height: 0;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
+
+table {
+    width: 100%;
+    transition: all .2s;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--background-aux);
+}
+
+tbody tr:hover {
+    background-color: var(--color-blue-03);
+}
+
+th, td {
+    padding: 15px;
+}
+
+.con-w12 {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.con-w11 {
+    width: 91.6%;
+    min-width: 91.6%;
+    max-width: 91.6%;
+}
+
+.con-w10 {
+    width: 83.3%;
+    min-width: 83.3%;
+    max-width: 83.3%;
+}
+
+.con-w9 {
+    width: 75%;
+    min-width: 75%;
+    max-width: 75%;
+}
+
+.con-w8 {
+    width: 66.6%;
+    min-width: 66.6%;
+    max-width: 66.6%;
+}
+
+.con-w7 {
+    width: 58.3%;
+    min-width: 58.3%;
+    max-width: 58.3%;
+}
+
+.con-w6 {
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+}
+
+.con-w5 {
+    width: 41.6%;
+    min-width: 41.6%;
+    max-width: 41.6%;
+}
+
+.con-w4 {
+    width: 25%;
+    min-width: 25%;
+    max-width: 25%;
+}
+
+.con-w3 {
+    width: 16.6%;
+    min-width: 16.6%;
+    max-width: 16.6%;
+}
+
+.con-w2 {
+    width: 8.3%;
+    min-width: 8.3%;
+    max-width: 8.3%;
+}
+
+.con-w1 {
+    width: 0%;
+    max-width: 0%;
+    min-width: 0%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: 10px;
+}
+
+.g-w12 {
+    grid-column: 1 / span 12;   
+}
+
+.g-w11 {
+    grid-column: 1 / span 11;   
+}
+
+.g-w10 {
+    grid-column: 1 / span 10;   
+}
+
+.g-w9 {
+    grid-column: 1 / span 9;   
+}
+
+.g-w8 {
+    grid-column: 1 / span 8;   
+}
+
+.g-w7 {
+    grid-column: 4 / span 7;   
+}
+
+.g-w6 {
+    grid-column: 1 / span 6;   
+}
+
+.g-w5 {
+    grid-column: 1 / span 5;   
+}
+
+.g-w4 {
+    grid-column: 1 / span 4;   
+}
+
+.g-w3 {
+    grid-column: 1 / span 3;   
+}
+
+.g-w2 {
+    grid-column: 1 / span 2;   
+}
+
+.g-w1 {
+    grid-column: 1 / span 1;   
+}
+
+.nav {
+    margin: 0;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.nav .nav-item {
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav .nav-item:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    min-height: 400px;
+    height: 400px;
+    max-height: 400px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel .carousel-btn {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.carousel .carousel-btn:hover {
+    background-color: var(--background-aux-03);
+}
+
+.carousel #carousel-previus {
+    left: 0;
+}
+
+.carousel #carousel-next {
+    right: 0%;
+}
+
+.carousel #container-images {
+    height: 400px;
+    overflow: hidden;
+}
+
+.carousel #container-images img {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    position: absolute;
+    left: 100%;
+    transition: all .5s;
+}
+
+.con-chart {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    display: grid;
+    grid-template: 1fr 200px / 1fr;
+}
+
+.result-chart {
+    min-height: 40vh;
+    max-height: 40vh;
+    border-bottom: var(--border);
+    padding: 50px 10px 0px 10px;
+    display: grid;
+    grid-gap: 10px;
+}
+
+.options {
+    display: grid;
+    grid-gap: 10px;
+    padding: 0px 10px;
+}
+
+.options .option {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    padding: 10px;
+    transform: rotate(180deg);
+    line-clamp: 3;
+}
+
+.options .option p {
+    max-width: 100%;
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+}
+
+.b-chart {
+    padding: 0px 10px;
+    border-radius: var(--radius) var(--radius) 0px 0px;
+    border-top: var(--border);
+    border-left: var(--border);
+    border-right: var(--border);
+    cursor: pointer;
+    position: relative;
+    transition: all .3s;
+    background-color: var(--color-blue-03);
+}
+
+.b-chart p {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.b-chart:hover {
+    background-color: var(--color-blue);
+}
+
+/* 
+    Estilos del texto.
+*/
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: var(--color-text);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    width: 100%;
+    font-weight: 500;
+    padding: 15px 0px;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2.5em;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-justify {
+    text-align: justify;
+}
+
+/* 
+    Estilos de botones
+*/
+
+.btn {
+    padding: 10px 20px;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 15px 15px 15px 0px;
+}
+
+.btn-icon {
+    padding: 10px 15px 10px 10px;
+}
+
+.btn-icon i {
+    padding: 0px 10px 0px 0px;
+}
+
+.btn-icon-self {
+    padding: 10px;
+}
+
+.btn-sm {
+    padding: 5px 8px;
+}
+
+.btn-round {
+    border-radius: 150px;
+}
+
+.btn-blue {
+    color: white;
+    background-color: var(--color-blue);    
+}
+
+.btn-blue:hover {
+    background-color: var(--color-blue-hover);
+}
+
+.btn-blue-hover {
+    
+    border: 2px solid var(--color-blue);
+}
+
+.btn-blue-hover,
+.btn-blue-hover i {
+    color: var(--color-blue);
+}
+
+.btn-blue-hover:hover i {
+    color: white;
+}
+
+.btn-blue-hover:hover {
+    color: white;
+    background-color: var(--color-blue);
+}
+
+.btn-blue:focus,
+.btn-blue-hover:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 5px var(--color-blue-03);
+}
+
+.btn-red {
+    color: white;
+    background-color: var(--color-red);    
+}
+
+.btn-red:hover {
+    background-color: var(--color-red-hover);
+}
+
+.btn-red-hover {
+    border: 2px solid var(--color-red);
+}
+
+.btn-red-hover,
+.btn-red-hover i {
+    color: var(--color-red);
+}
+
+.btn-red-hover:hover i {
+    color: white;
+}
+
+.btn-red-hover:hover {
+    color: white;
+    background-color: var(--color-red);
+}
+
+.btn-red:focus,
+.btn-red-hover:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 5px var(--color-red-03);
+}
+
+.btn-yellow {
+    color: white;
+    background-color: var(--color-yellow);    
+}
+
+.btn-yellow:hover {
+    background-color: var(--color-yellow-hover);
+}
+
+.btn-yellow-hover {
+    
+    border: 2px solid var(--color-yellow);
+}
+
+.btn-yellow-hover,
+.btn-yellow-hover i {
+    color: var(--color-yellow);
+}
+
+.btn-yellow-hover:hover i {
+    color: white;
+}
+
+.btn-yellow-hover:hover {
+    color: white;
+    background-color: var(--color-yellow);
+}
+
+.btn-yellow:focus,
+.btn-yellow-hover:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 5px var(--color-yellow-03);
+}
+
+.btn-green {
+    color: white;
+    background-color: var(--color-green);    
+}
+
+.btn-green:hover {
+    background-color: var(--color-green-hover);
+}
+
+.btn-green-hover {
+    
+    border: 2px solid var(--color-green);
+}
+
+.btn-green-hover,
+.btn-green-hover i {
+    color: var(--color-green);
+}
+
+.btn-green-hover:hover i {
+    color: white;
+}
+
+.btn-green-hover:hover {
+    color: white;
+    background-color: var(--color-green);
+}
+
+.btn-green:focus,
+.btn-green-hover:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 5px var(--color-green-03);
+}
+
+/* 
+    Estilos de formularios
+*/
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    font-size: 1em;
+}
+
+.form-control {
+    width: 100%;
+    margin: 15px 0px;
+    padding: 10px;
+    font-size: 1em;
+    background-color: transparent;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0px 0px 0px 0px var(--focus);
+    transition: all .2s;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: var(--fondo-auxiliar);
+    box-shadow: 0px 0px 0px 3px var(--focus);
+}
+
+/* 
+    Estilos de imagenes
+*/
+
+img, svg {
+    width: 100%;
+}
+
+/* 
+    Estilos de notificaciones
+*/
+
+.notification {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-aux-03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.not-top-center {
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.not-top-left {
+    justify-content: flex-start;
+}
+
+.not-top-right {
+    justify-content: flex-end;
+}
+
+.not-bottom-center {
+    align-content: flex-end;
+    align-items: flex-end;
+}
+
+.not-bottom-left {
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.not-bottom-right {
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.not .con {
+    margin: 20px 20px;
+}
+
+.not-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 
+    Responsive design 1366px
+*/
+
+@media screen and (max-width: 1366px) {
+    .row-con {
+        width: 80%;
+        max-width: 90%;
+    }
+}
+
+/* 
+    Responsive design 768px
+*/
+
+@media screen and (max-width: 768px) {
+    .row-con {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .con-w12, .con-w11, .con-w10, .con-w9, .con-w8, .con-w7, .con-w6, .con-w5, .con-w4, .con-w3, .con-w2 {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .nav .nav-item {
+        width: 100%;
+    }
+
+    .notification .con-w4,
+    .notification .con-w5,
+    .notification .con-w6 {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+    }
+}
