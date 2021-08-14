@@ -106,7 +106,8 @@ button:focus {
     outline: none;
 }
 
-.welcome {
+.welcome,
+.main {
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -131,10 +132,17 @@ button:focus {
 .row-con {
     width: 70%;
     min-height: 100vh;
-    margin: auto;
     display: grid;
+    margin: auto;
+}
+
+.welcome .row-con {
     grid-template-columns: 1fr 0.7fr 0fr;
-    transition: grid-template-columns .6s;
+}
+
+.main .row-con {
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr;
 }
 
 .hidden {
@@ -418,7 +426,7 @@ button:focus {
 }
 
 @media screen and (max-width: 768px) {
-    .row-con {
+    .welcome .row-con {
         width: 90%;
         padding: 10px;
         grid-template-columns: 1fr;
