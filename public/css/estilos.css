@@ -16,15 +16,22 @@
 
     --color-text: #383838;
     --color-blue-button: #205076;
+    
     --color-gray: #7D7D7D;
     --color-blue: #2D9FFC;
     --color-green: #319E4F;
     --color-red: #D95548;
     --color-yellow: #EDB303;
+    
+    --color-gray-3: rgba(125, 125, 125, 0.1);
     --color-blue-3: rgba(45, 159, 252, 0.3);
     --color-green-3: rgba(49, 158, 79, 0.3);
     --color-red-3: rgba(217, 85, 72, 0.3);
     --color-yellow-3: rgba(237, 179, 3, 0.3);
+
+    --color-tag-menu: #E2E2E2;
+    --color-tag-menu-focus: #1A8993;
+    --color-tag-menu-hover: #C0EAF0;
 }
 
 * {
@@ -53,7 +60,7 @@ h2 {
     font-size: 3em;
 }
 
-p, span, a, i, li, button, label, input {
+p, span, a, i, li, button, label, input, th, td {
     font-size: 1em;
     font-family: 'Inter', sans-serif; 
     color: var(--color-text);
@@ -114,8 +121,12 @@ button:focus {
     overflow: hidden;
 }
 
+.main {
+    overflow: auto;
+}
+
 .source {
-    position: absolute;
+    position: fixed;
     width: 110px;
 }
 
@@ -130,7 +141,7 @@ button:focus {
 }
 
 .row-con {
-    width: 70%;
+    max-width: 70%;
     min-height: 100vh;
     display: grid;
     margin: auto;
@@ -141,11 +152,11 @@ button:focus {
 }
 
 .main .row-con {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 150px 1fr;
 }
 
-.hidden {
+.welcome .hidden {
     grid-template-columns: 0fr 1fr 1fr;
 }
 
@@ -325,7 +336,184 @@ button:focus {
     padding: 10px 0px 0px 0px;
 }
 
+header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr 60px;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.info {
+    padding: 0px 30px 0px 0px;
+    text-align: right;
+}
+
+.info h3 {
+    font-size: 2em;
+    padding: 0;
+}
+
+header .options {
+    justify-content: flex-end;
+}
+
+header .options button {
+    padding: 12px;
+}
+
+main {
+    max-width: 100%;
+}
+
+main nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0px 0px 0px;
+}
+
+main nav .tag {
+    background-color: var(--color-tag-menu);
+    width: 250px;
+    height: 350px;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px 0px rgba(32, 80, 118, 0.3);
+    transition: all .3s;
+}
+
+main nav .tag:hover {
+    background-color: var(--color-tag-menu-hover);
+    color: var(--color-tag-menu-focus);
+}
+
+main nav .tag:focus {
+    background-color: var(--color-tag-menu-focus);
+    box-shadow: 0px 0px 0px 10px var(--color-blue-3);
+    color: white;
+}
+
+main .options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .left .regresar {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+main .left .regresar:hover {
+    text-decoration: underline;
+}
+
+main .left .regresar i {
+    font-size: 1em;
+    padding: 0px 15px 0px 0px;
+}
+
+main .right {
+    display: flex;
+    align-items: center;
+}
+
+main .right button {
+    margin: 0px 0px 0px 15px;
+}
+
+main .right .btn-icon {
+    padding: 15px;
+}
+
+main .tabla {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 50px 0px;
+    overflow: auto;
+}
+
+main .tabla table {
+    min-width: 100%;
+    border-collapse: collapse;
+}
+
+main .tabla table th {
+    min-width: 120px;
+}
+
+main .tabla table th,
+main .tabla table td {
+    padding: 10px;
+}
+
+main .tabla table tbody tr:nth-child(even) {
+    background-color: var(--color-gray-3);
+}
+
+main .tabla table tbody tr:hover {
+    background-color: var(--color-blue-3);
+}
+
+main .tabla table tbody tr:active {
+    background-color: var(--color-tag-menu-focus);
+}
+
+main .tabla table tbody tr:active td {
+    color: white;
+}
+
+main .filtrar {
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    left: -400px;
+    top: 0;
+    background-color: white;
+    box-shadow: 50px 0px 0px solid rgba(125, 125, 125, 0.1);
+    padding: 15px 30px 30px 30px;
+    transition: all .3s;
+}
+
+main .open {
+    left: 0;
+    box-shadow: 50px 0px 60px solid rgba(125, 125, 125, 0.1);
+}
+
 @media screen and (max-width: 1366px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    .main .row-con {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+    }
+
+    .source-1 {
+        top: calc(100% - 250px);
+    }
+
+    .source-2 {
+        bottom: calc(100% - 250px);
+    }
+
     .card-sm {
         width: 150px;
         height: 200px;
@@ -423,6 +611,11 @@ button:focus {
     .hidden .form-login {
         width: 100%;
     }
+
+    main nav .tag {
+        width: 210px;
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -443,7 +636,6 @@ button:focus {
     }
 
     .source {
-        position: absolute;
         width: 90px;
         opacity: 0.5;
     }
