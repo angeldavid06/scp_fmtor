@@ -532,10 +532,21 @@ main .tabla table {
     border-collapse: collapse;
 }
 
+
 main .tabla table th,
 main .tabla table td {
     padding: 10px;
     min-width: 120px;
+}
+
+main .tabla table .th-btn {
+    min-width: 40px;
+    width: 40px;
+    max-width: 40px;
+}
+
+main .tabla table .td-btn  {
+    text-align: center;
 }
 
 main .tabla table tbody tr:nth-child(even) {
@@ -615,7 +626,7 @@ main .informacion table tr td {
 }
 
 main .contenedor_tablas {
-    height: 400px; 
+    max-height: 400px; 
     width: 100%;
     max-width: 100%;
     background-color: white;
@@ -629,7 +640,12 @@ main .contenedor_tablas .tabla_estado {
     overflow: hidden;
     transition: all .3s;
     padding: 15px 0px;
+    margin: 0;
     opacity: 0;
+}
+
+main .contenedor_tablas .tabla_estado .tabla {
+    margin: 0;
 }
 
 main .contenedor_tablas .tabla_estado table {
@@ -652,9 +668,11 @@ main .estados {
     display: flex;
     justify-content: space-between;
     padding: 15px 0px;
+    flex-wrap: wrap;
 }
 
 main .estados button {
+    margin: 0px 0px 15px 0px;
     background-color: var(--color-tag-menu);
     color: var(--color-text);
 }
