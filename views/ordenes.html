@@ -32,9 +32,21 @@
                         <a href="principal.html" class="regresar"><i class="material-icons">arrow_back_ios</i>Regresar al menú principal</a>
                     </div>
                     <div class="right">
-                        <button>Ordenes Producción</button>
-                        <button>Reporte Diario</button>
-                        <button>Reporte Diario (Máquinas)</button>
+                        <button class="btn-tooltip">
+                            <p>O.P.</p>
+                            <span class="arrow material-icons">arrow_drop_up</span>
+                            <span class="tooltip">Ordenes de Producción</span>
+                        </button>
+                        <button class="btn-tooltip">
+                            <p>R.D.</p>
+                            <span class="arrow material-icons">arrow_drop_up</span>
+                            <span class="tooltip">Reporte Diario</span>
+                        </button>
+                        <button class="btn-tooltip">
+                            <p>R.D. (Máquinas)</p>
+                            <span class="arrow material-icons">arrow_drop_up</span>
+                            <span class="tooltip">Reporte Diario por Máquina</span>
+                        </button>
                         <button class="btn-icon btn_filtrar_open material-icons">filter_alt</button>
                         <button class="btn-icon material-icons">print</button>
                     </div>
@@ -77,18 +89,45 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="filtrar open">
-                    <div class="contenedor_filtros">
-                        <h2>Filtrar</h2>
-                        <div class="filtro fecha">
-                            <h3>Filtrar por fecha especifica:</h3>
-                            <input type="date" name="" id="">
-                            <h3>Filtrar por mes: </h3>
-                            <input type="month" name="" id="">
-                            <h3>Filtrar por año: </h3>
-                            <input type="text" name="" id="">
+                <div class="filtrar">
+                    <form>
+
+                        <div class="contenedor_filtros">
+                            <h2>Filtrar Ordenes de Producción</h2>
+                            <h3>Filtrar por O.P.:</h3>
+                            <div class="filtro fecha">
+                                <p>Buscar O.P.:</p>
+                                <input type="number" name="" id="">
+                                <p>Filtrar por rango de O.P.: </p>
+                                <div class="rango">
+                                    <input type="number" name="" id="">
+                                    <p>-</p>
+                                    <input type="number" name="" id="">
+                                </div>
+                            </div>
+                            <h3>Filtrar por fecha:</h3>
+                            <div class="filtro fecha">
+                                <p>Filtrar por fecha especifica:</p>
+                                <input type="date" name="" id="">
+                                <p>Filtrar por mes: </p>
+                                <input type="month" name="" id="">
+                                <p>Filtrar por año: </p>
+                                <input type="number" name="" id="">
+                                <p>Filtrar por rango de fecha: </p>
+                                <div class="rango">
+                                    <input type="date" name="" id="">
+                                    <p>-</p>
+                                    <input type="date" name="" id="">
+                                </div>
+                            </div>
+                            <h3>Filtrar por cliente:</h3>
+                            <div class="filtro fecha">
+                                <p>Buscar cliente:</p>
+                                <input type="text" name="" id="">
+                            </div>
+                            <button>Buscar</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </main>
         </div>
