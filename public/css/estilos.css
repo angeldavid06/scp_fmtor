@@ -68,6 +68,7 @@ p, span, a, i, li, button, label, input, th, td {
 
 input[type="text"],
 input[type="date"],
+input[type="month"],
 input[type="number"],
 input[type="password"],
 textarea {
@@ -483,6 +484,8 @@ main .filtrar {
     position: fixed;
     width: 400px;
     height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
     left: -400px;
     top: 0;
     background-color: white;
