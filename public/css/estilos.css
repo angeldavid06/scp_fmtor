@@ -82,6 +82,7 @@ textarea {
 
 input[type="text"]:focus,
 input[type="date"]:focus,
+input[type="month"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
 textarea:focus {
@@ -92,6 +93,7 @@ textarea:focus {
 
 input[type="text"].input-error,
 input[type="date"].input-error,
+input[type="month"].input-error,
 input[type="number"].input-error,
 input[type="password"].input-error,
 textarea.input-error {
@@ -129,6 +131,8 @@ button:focus {
 .source {
     position: fixed;
     width: 110px;
+    z-index: -1;
+    transition: all .3s;
 }
 
 .source-1 {
@@ -436,10 +440,78 @@ main .right {
 }
 
 main .right button {
+    background-color: white;
+    color: var(--color-text);
     margin: 0px 0px 0px 15px;
+    font-weight: 500;
+    position: relative;
+}
+
+main .right button:hover {
+    background-color: var(--color-tag-menu-hover);
+    color: var(--color-tag-menu-focus);
+}
+
+main .right button:focus {
+    background-color: var(--color-blue-button);
+    color: white;
+}
+
+main .right button:focus p {
+    color: white;
+}
+
+main .right .btn-tooltip:focus p {
+    color: white;
+}
+
+main .right .btn-tooltip .arrow {
+    position: absolute;
+    top: 90%; 
+    left: calc(50% - 15px);
+    height: 30px;
+    width: 30px;
+    color: var(--color-blue-button);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+
+main .right .btn-tooltip .tooltip {
+    position: absolute;
+    top: 90%;
+    right: 0;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--color-blue-button);
+    border-radius: 10px;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    font-weight: normal;
+}
+
+main .right .btn-tooltip:hover p {
+    color: var(--color-tag-menu-focus);
+}
+
+main .right .btn-tooltip:hover .tooltip {
+    top: calc(100% + 13px);
+    opacity: 1;
+    visibility: visible;
+}
+
+main .right .btn-tooltip:hover .arrow {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
 }
 
 main .right .btn-icon {
+    background-color: var(--color-blue-button);
+    color: white;
     padding: 15px;
 }
 
@@ -452,6 +524,7 @@ main .tabla {
 
 main .tabla table {
     min-width: 100%;
+    background-color: white;
     border-collapse: collapse;
 }
 
@@ -482,11 +555,11 @@ main .tabla table tbody tr:active td {
 
 main .filtrar {
     position: fixed;
-    width: 400px;
+    width: 450px;
     height: 100vh;
     max-height: 100vh;
     overflow-y: auto;
-    left: -400px;
+    left: -450px;
     top: 0;
     background-color: white;
     box-shadow: 50px 0px 0px solid rgba(125, 125, 125, 0.1);
@@ -499,12 +572,110 @@ main .open {
     box-shadow: 50px 0px 60px solid rgba(125, 125, 125, 0.1);
 }
 
+main .filtrar h2 {
+    font-size: 2em;
+}
+
+main .filtrar h3 {
+    font-size: 1.5em;
+}
+
+main .filtrar p {
+    padding: 10px 0px;
+}
+
+main .filtrar .rango {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+}
+
+main .filtrar .rango p {
+    text-align: center;
+}
+
+main .filtrar button {
+    margin: 15px 0px;
+}
+
+main .informacion {
+    width: 100%;
+    padding: 30px 0px 0px 0px;
+}
+
+main .informacion table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main .informacion table tr td {
+    padding: 10px 0px;
+}
+
+main .contenedor_tablas {
+    height: 400px; 
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+main .contenedor_tablas .tabla_estado {
+    width: 0px;
+    overflow: hidden;
+    transition: all .3s;
+    padding: 15px 0px;
+    opacity: 0;
+}
+
+main .contenedor_tablas .tabla_estado table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main .contenedor_tablas .tabla_estado table th,
+main .contenedor_tablas .tabla_estado table td {
+    padding: 10px;
+}
+
+main .contenedor_tablas .active {
+    width: 100%;
+    padding: 15px;
+    opacity: 1;
+}
+
+main .estados {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+main .estados button {
+    background-color: var(--color-tag-menu);
+    color: var(--color-text);
+}
+
+main .estados button:hover {
+    background-color: var(--color-tag-menu-hover);
+    color: var(--color-tag-menu-focus);
+}
+
+main .estados .active {
+    background-color: var(--color-blue-button);
+    color: white;
+}
+
 @media screen and (max-width: 1366px) {
     h1 {
         font-size: 3em;
     }
 
     .main .row-con {
+        width: 80%;
+        max-width: 80%;
         grid-template-columns: 1fr;
         grid-template-rows: 100px 1fr;
     }
@@ -622,14 +793,27 @@ main .open {
 }
 
 @media screen and (max-width: 768px) {
+    .main {
+        max-width: 100%;
+    }
+
+    .row-con {
+        max-width: 90%;
+    }
+    
     .welcome .row-con {
         width: 90%;
+        max-width: 90%;
         padding: 10px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0fr;
     }
 
-    .hidden {
+    .main .row-con {
+        grid-template-rows: 250px 1fr;
+    }
+
+    .welcome .hidden {
         grid-template-columns: 1fr;
         grid-template-rows: 0fr 1fr;
     }
@@ -653,15 +837,93 @@ main .open {
         bottom: calc(100% - 150px);
     }
 
-    .left {
+    .welcome .left {
         grid-column: 1 / 2;
     }
 
-    .right {
+    .welcome .right {
         grid-column: 1 / 2;
     }
 
     .card-sm {
         display: none;
+    }
+
+    main nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 0px 30px 0px;
+    }
+    
+    main nav .tag {
+        width: 100%;
+        height: 150px;
+        margin-top: 30px;
+        padding: 30px;
+    }
+
+    .row-con header {
+        max-width: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+    }
+    
+    .row-con .logo {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        padding: 20px 0px;
+    }
+    
+    .row-con .logo img {
+        width: 40%;
+    }
+    
+    .row-con .info {
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .row-con .info h3 {
+        font-size: 2em;
+        padding: 0;
+    }
+    
+    header .options {
+        position: fixed;
+        right: 5%;
+        top: 15px;
+    }
+    
+    header .options button {
+        padding: 12px;
+    }
+
+    main .options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    main .right {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    main .tabla {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 50px 0px;
+        overflow: auto;
     }
 }
