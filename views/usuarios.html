@@ -61,16 +61,17 @@
                 </div>
                 <div class="ingresar">
                     <div class="contenedor_ingresar">
-                        <form id="form-control">
+                        <form id="form-usuarios">
                             <h2>Nuevo Usuario</h2>
                             <p>Ingresa el nombre de usuario:</p>
-                            <input type="number" name="" id="">
+                            <input class="input" type="text" name="nombre_usuario" id="nombre_usuario">
                             <p>Ingresa la contraseña:</p>
-                            <input type="number" name="" id="">
+                            <input class="input" type="text" name="password" id="password">
                             <p>Selecciona el rol:</p>
-                            <select name="" id="">
-                                <option value="">Administrador</option>
-                                <option value="">General</option>
+                            <select class="input" name="rol" id="rol">
+                                <option value=""></option>
+                                <option value="1">Administrador</option>
+                                <option value="2">General</option>
                             </select>
                             <button data-btn="insertar" id="btn-form-control-registrar">Registrar</button>
                             <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
@@ -81,6 +82,7 @@
         </div>
         <img class="source source-2" src="../public/img/aux-1.png" alt="" srcset="">
     </div>
+    <script src="../public/js/alert.js"></script>
     <script src="../public/js/usuario.js"></script>
 </body>
 </html>

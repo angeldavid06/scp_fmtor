@@ -1,3 +1,5 @@
+let contador = 0;
+
 const render_titulo = (titulo) => {
     const h3 = document.createElement('h3');
     h3.classList.add('titulo');
@@ -26,26 +28,30 @@ const render_alert_con = (color) => {
 }
 
 const render_alert = (titulo, descripcion, color) => {
-    const t = render_titulo(titulo);
-    const d = render_descripcion(descripcion);
-    const c = render_contenedor();
-    const a = render_alert_con(color);
-    c.appendChild(t)
-    c.appendChild(d)
-    a.appendChild(c)
-    document.body.appendChild(a)
+    if (contador == 0) {
+        contador = 1;
+        const t = render_titulo(titulo);
+        const d = render_descripcion(descripcion);
+        const c = render_contenedor();
+        const a = render_alert_con(color);
+        c.appendChild(t)
+        c.appendChild(d)
+        a.appendChild(c)
+        document.body.appendChild(a)
+        
+        window.setTimeout(() => {
+            a.classList.add('show-alert')
+        },300);
     
-    window.setTimeout(() => {
-        a.classList.add('show-alert')
-    },300);
-
-    window.setTimeout(() => {
-        a.classList.remove('show-alert')
-    },4000);
-    
-    window.setTimeout(() => {  
-        document.body.removeChild(a)
-    },4300);
+        window.setTimeout(() => {
+            a.classList.remove('show-alert')
+        },4000);
+        
+        window.setTimeout(() => {  
+            contador = 0;
+            document.body.removeChild(a)
+        },4300);
+    }
 }
 
 {/* <div class="alert alert-rojo">

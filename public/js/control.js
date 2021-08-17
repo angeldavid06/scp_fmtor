@@ -1,14 +1,35 @@
 const form_control = document.getElementById('form-control');
 
+const quitar_clase = () => {
+    const inputs = document.getElementsByClassName('input');
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].classList.remove('input-error');
+    }
+}
+
 form_control.addEventListener('submit', (evt)=> {
     evt.preventDefault();
+    let aux = true;
+    quitar_clase();
+    const inputs = document.getElementsByClassName('input');
     try {
-        const  estado = document.getElementsByClassName('active');
+        const estado = document.getElementsByClassName('active');
         if (estado[0].dataset.estado) {
-            console.log(estado[0].dataset.estado);
+            // console.log(estado[0].dataset.estado);
+        }
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].value == '') {
+                inputs[i].classList.add('input-error');
+                aux = false;
+            }
+        }
+        if (aux) {
+            // Función Fetch
+        } else {
+            render_alert('Error al registrar:', 'Debes llenar los campos correctamente','rojo')
         }
     } catch (error) {
-        console.log('error');
+        render_alert('Error al registrar:', 'Debes seleccionar alguna etapa antes de enviar el formulario','rojo')
     }
 });
 
