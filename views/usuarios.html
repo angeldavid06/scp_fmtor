@@ -32,11 +32,7 @@
                         <a href="principal.html" class="regresar"><i class="material-icons">arrow_back_ios</i>Regresar al menú principal</a>
                     </div>
                     <div class="right">
-                        <button class="btn-tooltip">
-                            <p class="material-icons">add</p>
-                            <span class="arrow material-icons">arrow_drop_up</span>
-                            <span class="tooltip btn-icon">Agregar un nuevo usuario</span>
-                        </button>
+                        <button class="btn-tooltip btn-icon btn-form-add">Agregar un nuevo usuario</button>
                     </div>
                 </div>
                 <div class="tabla">
@@ -63,10 +59,28 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="ingresar">
+                    <div class="contenedor_ingresar">
+                        <form id="form-control">
+                            <h2>Nuevo Usuario</h2>
+                            <p>Ingresa el nombre de usuario:</p>
+                            <input type="number" name="" id="">
+                            <p>Ingresa la contraseña:</p>
+                            <input type="number" name="" id="">
+                            <p>Selecciona el rol:</p>
+                            <select name="" id="">
+                                <option value="">Administrador</option>
+                                <option value="">General</option>
+                            </select>
+                            <button data-btn="insertar" id="btn-form-control-registrar">Registrar</button>
+                            <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
+                        </form>
+                    </div>
+                </div>
             </main>
         </div>
         <img class="source source-2" src="../public/img/aux-1.png" alt="" srcset="">
     </div>
-    <script src="../public/js/filtros.js"></script>
+    <script src="../public/js/usuario.js"></script>
 </body>
 </html>

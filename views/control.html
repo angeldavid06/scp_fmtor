@@ -18,7 +18,7 @@
                 </div>
                 <div class="info">
                     <h3>Sistema Central de Producción</h3>
-                    <p>Menú Principal</p>
+                    <p>Control de Producción</p>
                 </div>
                 <div class="options">
                     <button class="material-icons">logout</button>
@@ -30,9 +30,8 @@
                         <a href="principal.html" class="regresar"><i class="material-icons">arrow_back_ios</i>Menú principal</a>
                     </div>
                     <div class="right">
-                        <form>
-                            <input type="number" name="" id="" placeholder="Buscar O.P.">
-                        </form>
+                        <input type="number" name="" id="" placeholder="Buscar O.P.">
+                        <button id="btn-form-control" class="material-icons btn-icon">add</button>
                     </div>
                 </div>
                 <div class="informacion">
@@ -210,10 +209,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="ingresar">
+                    <div class="contenedor_ingresar">
+                        <form id="form-control">
+                            <h2>Nuevo Registro</h2>
+                            <p>Ingresa el número de máquina:</p>
+                            <input type="number" name="" id="">
+                            <p>Ingresa el número de botes:</p>
+                            <input type="number" name="" id="">
+                            <p>Ingresa la fecha de entrega:</p>
+                            <input type="date" name="" id="">
+                            <p>Ingresa las pzas. entregadas:</p>
+                            <input type="number" name="" id="">
+                            <p>Ingresa los kg. entregados:</p>
+                            <input type="number" name="" id="">
+                            <button data-btn="insertar" id="btn-form-control-registrar">Registrar</button>
+                            <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
+                        </form>
+                    </div>
+                </div>
             </main>
         </div>
         <img class="source source-2" src="../public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="../public/js/estados.js"></script>
+    <script src="../public/js/control.js"></script>
 </body>
 </html>

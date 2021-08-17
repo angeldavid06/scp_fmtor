@@ -103,7 +103,8 @@ textarea.input-error {
     border: 3px solid var(--color-red);
 }
 
-button {
+button,
+.btn-cancel {
     color: white;
     background-color: var(--color-blue-button);
     box-shadow: 0px 0px 0px 0px rgba(32, 80, 118, 0.3);
@@ -116,6 +117,16 @@ button {
 
 button:focus {
     box-shadow: 0px 0px 0px 5px var(--color-blue-3);
+    outline: none;
+}
+
+.btn-cancel {
+    background-color: var(--color-red);
+    box-shadow: 0px 0px 0px 0px var(--color-red-3);
+}
+
+.btn-cancel:focus {
+    box-shadow: 0px 0px 0px 5px var(--color-red-3);
     outline: none;
 }
 
@@ -522,6 +533,7 @@ main .tabla td .btn-icon {
 main .tabla {
     min-width: 100%;
     max-width: 100%;
+    height: 200px;
     max-height: 600px;
     padding: 10px 0px;
     margin: 40px 0px;
@@ -568,7 +580,8 @@ main .tabla table tbody tr:active td {
     color: white;
 }
 
-main .filtrar {
+main .filtrar,
+main .ingresar {
     position: fixed;
     width: 450px;
     height: 100vh;
@@ -587,15 +600,18 @@ main .open {
     box-shadow: 50px 0px 60px solid rgba(125, 125, 125, 0.1);
 }
 
-main .filtrar h2 {
+main .filtrar h2,
+main .ingresar h2 {
     font-size: 2em;
 }
 
-main .filtrar h3 {
+main .filtrar h3,
+main .ingresar h3 {
     font-size: 1.5em;
 }
 
-main .filtrar p {
+main .filtrar p,
+main .ingresar p {
     padding: 10px 0px;
 }
 
@@ -610,8 +626,11 @@ main .filtrar .rango p {
     text-align: center;
 }
 
-main .filtrar button {
-    margin: 15px 0px;
+main .filtrar button,
+main .filtrar .btn-cancel,
+main .ingresar button,
+main .ingresar .contenedor_ingresar .btn-cancel {
+    margin: 15px 0px 30px 0px;
 }
 
 main .informacion {
@@ -900,7 +919,7 @@ main .estados .active {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 90px 1fr;
     }
     
     .row-con .logo {
@@ -940,6 +959,20 @@ main .estados .active {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-top: 15px;
+    }
+
+    main .options .left {
+        width: 100%;
+        padding: 15px 0px;
+    }
+
+    main .options .right button {
+        margin: auto;
+    }
+
+    main .options .right input {
+        margin-bottom: 15px;
     }
 
     main .right {
@@ -960,12 +993,18 @@ main .estados .active {
         min-width: 100%;
     }
 
-    main .filtrar {
+    main .filtrar,
+    main .ingresar {
         width: 100%;
         left: -100%;
     }
 
     main .open {
         left: 0;
+    }
+
+    main .estados {
+        width: 40%;
+        max-width: 40%;
     }
 }
