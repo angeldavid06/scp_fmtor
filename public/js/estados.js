@@ -4,7 +4,7 @@ document.addEventListener('click', (evt) => {
         evt.target.classList.add('active')
         const estado = document.getElementsByClassName('estado_'+evt.target.dataset.estado);
         estado[0].classList.add('active')
-    }
+    } 
 });
 
 const quit_class = () => {

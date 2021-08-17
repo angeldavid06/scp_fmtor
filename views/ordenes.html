@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="../public/css/estilos.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
 <body>
     <div class="main">
         <img class="source source-1" src="../public/img/aux-2.png" alt="" srcset="">
@@ -32,28 +30,13 @@
                         <a href="principal.html" class="regresar"><i class="material-icons">arrow_back_ios</i>Menú principal</a>
                     </div>
                     <div class="right">
-                        <button class="btn-tooltip">
-                            <p>O.P.</p>
-                            <span class="arrow material-icons">arrow_drop_up</span>
-                            <span class="tooltip">Ordenes de Producción</span>
-                        </button>
-                        <button class="btn-tooltip">
-                            <p>R.D.</p>
-                            <span class="arrow material-icons">arrow_drop_up</span>
-                            <span class="tooltip">Reporte Diario</span>
-                        </button>
-                        <button class="btn-tooltip">
-                            <p>R.D. (Máquinas)</p>
-                            <span class="arrow material-icons">arrow_drop_up</span>
-                            <span class="tooltip">Reporte Diario por Máquina</span>
-                        </button>
                         <button class="btn-icon btn_filtrar_open material-icons">filter_alt</button>
                         <button class="btn-icon material-icons">print</button>
                     </div>
                 </div>
                 <div class="tabla">
                     <table>
-                        <thead>
+                        <thead class="cabecera">
                             <th>CAL.</th>
                             <th>Kg.</th>
                             <th>Factor</th>
@@ -70,92 +53,22 @@
                             <th>Estado</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1 -- item</td>
-                                <td>2 -- item</td>
-                                <td>3 -- item</td>
-                                <td>4 -- item</td>
-                                <td>5 -- item</td>
-                                <td>6 -- item</td>
-                                <td>7 -- item</td>
-                                <td>8 -- item</td>
-                                <td>9 -- item</td>
-                                <td>10 -- item</td>
-                                <td>11 -- item</td>
-                                <td>12 -- item</td>
-                                <td>13 -- item</td>
-                                <td>13 -- item</td>
-                            </tr>
-                            <tr>
-                                <td>1 -- item</td>
-                                <td>2 -- item</td>
-                                <td>3 -- item</td>
-                                <td>4 -- item</td>
-                                <td>5 -- item</td>
-                                <td>6 -- item</td>
-                                <td>7 -- item</td>
-                                <td>8 -- item</td>
-                                <td>9 -- item</td>
-                                <td>10 -- item</td>
-                                <td>11 -- item</td>
-                                <td>12 -- item</td>
-                                <td>13 -- item</td>
-                                <td>13 -- item</td>
-                            </tr>
-                            <tr>
-                                <td>1 -- item</td>
-                                <td>2 -- item</td>
-                                <td>3 -- item</td>
-                                <td>4 -- item</td>
-                                <td>5 -- item</td>
-                                <td>6 -- item</td>
-                                <td>7 -- item</td>
-                                <td>8 -- item</td>
-                                <td>9 -- item</td>
-                                <td>10 -- item</td>
-                                <td>11 -- item</td>
-                                <td>12 -- item</td>
-                                <td>13 -- item</td>
-                                <td>13 -- item</td>
-                            </tr>
-                            <tr>
-                                <td>1 -- item</td>
-                                <td>2 -- item</td>
-                                <td>3 -- item</td>
-                                <td>4 -- item</td>
-                                <td>5 -- item</td>
-                                <td>6 -- item</td>
-                                <td>7 -- item</td>
-                                <td>8 -- item</td>
-                                <td>9 -- item</td>
-                                <td>10 -- item</td>
-                                <td>11 -- item</td>
-                                <td>12 -- item</td>
-                                <td>13 -- item</td>
-                                <td>13 -- item</td>
-                            </tr>
-                            <tr>
-                                <td>1 -- item</td>
-                                <td>2 -- item</td>
-                                <td>3 -- item</td>
-                                <td>4 -- item</td>
-                                <td>5 -- item</td>
-                                <td>6 -- item</td>
-                                <td>7 -- item</td>
-                                <td>8 -- item</td>
-                                <td>9 -- item</td>
-                                <td>10 -- item</td>
-                                <td>11 -- item</td>
-                                <td>12 -- item</td>
-                                <td>13 -- item</td>
-                                <td>13 -- item</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="filtrar">
-                    <form>
-
+                    <form id="form-formatos">
+                        <div class="contenedor_filtros">
+                            <h2>Formatos pre establecidos</h2>
+                            <select name="seleccion_formato" id="seleccion_formato">
+                                <option value="0">Ordenes de Producción</option>
+                                <option value="1">Reporte Diario</option>
+                                <option value="2">Reporte Diario por Máquina</option>
+                            </select>
+                            <button>Consultar</button>
+                        </div>
+                    </form>
+                    <form id="form-filtros">
                         <div class="contenedor_filtros">
                             <h2>Filtrar Ordenes de Producción</h2>
                             <h3>Filtrar por O.P.:</h3>
