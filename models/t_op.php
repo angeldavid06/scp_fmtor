@@ -1,7 +1,7 @@
 <?php
-  require_once "model.php";
+  require_once "Model.php";
     
-     class t_op extends Model{
+     class Top extends Model{
          public $op;
          public $n_pedido;
          public $fecha;
@@ -59,32 +59,6 @@
              $this->op=$op;
          }
 
-         public function setNPedido($n_pedido):void{
-             $this->n_pedido=$n_pedido;
-         }
-
-         public function setFecha($fecha):void{
-             $this->fecha=$fecha;
-         }
-
-         public function setCantidad($cantidad):void{
-             $this->cantidad=$cantidad;
-         }
-
-         public function setCodigoDibujo($codigo_dibujo):void{
-             $this->codigo_dibujo=$codigo_dibujo;
-         }
-
-         public function setAutorizacion($autorizacion):void{
-             $this->autorizacion=$autorizacion;
-         }
-
-         public function setAgente($agente): void{
-             $this->agente=$agente;
-         }
-
-         public function setIdTornillo($id_tornillo):void{
-             $this->id_tornillo=$id_tornillo;
-         }
+         
 
 }
