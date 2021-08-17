@@ -902,6 +902,16 @@ main .estados .active {
 }
 
 @media screen and (max-width: 768px) {
+    .alert {
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+    }
+    
+    .show-alert {
+        top: 0px;
+    }
+
     .main {
         max-width: 100%;
     }
