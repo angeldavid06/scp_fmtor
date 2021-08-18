@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenida</title>
-    <link rel="stylesheet" href="../public/css/estilos.css">
+    <link rel="stylesheet" href="public/css/estilos.css">
 </head>
 <body>
     <div class="welcome">
-        <img class="source source-1" src="../public/img/aux-2.png" alt="" srcset="">
+        <img class="source source-1" src="public/img/aux-2.png" alt="" srcset="">
         <div class="row-con">
             <div class="left">
                 <p>Bienvenido</p>
@@ -18,13 +18,13 @@
             </div>
             <div class="center">
                 <div class="card-sm card-sm-1">
-                    <img class="tornillo tornillo-1" src="../public/img/tornillo-1.png" alt="" srcset="">
+                    <img class="tornillo tornillo-1" src="public/img/tornillo-1.png" alt="" srcset="">
                 </div>
                 <div class="card-sm card-sm-2">
-                    <img class="tornillo tornillo-2" src="../public/img/tornillo-2.png" alt="" srcset="">
+                    <img class="tornillo tornillo-2" src="public/img/tornillo-2.png" alt="" srcset="">
                 </div>
                 <div class="card-sm card-sm-3">
-                    <img class="tornillo tornillo-3" src="../public/img/tornillo-3.png" alt="" srcset="">
+                    <img class="tornillo tornillo-3" src="public/img/tornillo-3.png" alt="" srcset="">
                 </div>
             </div>
             <div class="form-login">
@@ -43,9 +43,9 @@
                 </form>
             </div>
         </div>
-        <img class="source source-2" src="../public/img/aux-1.png" alt="" srcset="">
+        <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
-    <script src="../public/js/alert.js"></script>
-    <script src="../public/js/login.js"></script>
+    <script src="public/js/alert.js"></script>
+    <script src="public/js/login.js"></script>
 </body>
 </html>
