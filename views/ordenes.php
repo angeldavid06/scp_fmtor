@@ -94,6 +94,20 @@
                                 <p>Buscar cliente:</p>
                                 <input class="input" type="text" name="" id="">
                             </div>
+                            <h3>Filtrar por estado:</h3>
+                            <div class="filtro fecha">
+                                <p>Selecciona el estado de las O.P.:</p>
+                                <select name="" id="">
+                                    <option value="1">FORJADO</option>
+                                    <option value="2">RANURADO</option>
+                                    <option value="3">ROLADO</option>
+                                    <option value="4">SHANK</option>
+                                    <option value="5">CEMENTADO</option>
+                                    <option value="6">ACABADO</option>
+                                    <option value="7">TERMINADO</option>
+                                    <option value="8">CANCELADO</option>
+                                </select>
+                            </div>
                             <button>Buscar</button>
                             <label class="btn-cancel">Cancelar</label>
                         </div>
