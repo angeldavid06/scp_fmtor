@@ -59,5 +59,6 @@
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="public/js/filtros.js"></script>
+    <script src="public/js/sesion.js"></script>
 </body>
 </html>

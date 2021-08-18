@@ -224,5 +224,6 @@
     <script src="public/js/alert.js"></script>
     <script src="public/js/estados.js"></script>
     <script src="public/js/control.js"></script>
+    <script src="public/js/sesion.js"></script>
 </body>
 </html>

@@ -31,7 +31,7 @@
         }
 
         public function cerrar () {
-            header('Location: http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=ingresar');
+            header('Location: http://192.168.0.43/scp_fmtor/');
         }
 
         public function insertar () { 

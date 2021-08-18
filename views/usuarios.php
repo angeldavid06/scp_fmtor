@@ -71,5 +71,6 @@
     </div>
     <script src="public/js/alert.js"></script>
     <script src="public/js/usuario.js"></script>
+    <script src="public/js/sesion.js"></script>
 </body>
 </html>
