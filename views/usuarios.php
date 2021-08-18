@@ -55,6 +55,8 @@
                             <input class="input" type="text" name="nombre_usuario" id="nombre_usuario">
                             <p>Ingresa la contraseña:</p>
                             <input class="input" type="text" name="password" id="password">
+                            <p>Ingresa el correo del usuario:</p>
+                            <input class="input" type="email" name="password" id="password">
                             <p>Selecciona el rol:</p>
                             <select class="input" name="rol" id="rol">
                                 <option value=""></option>
