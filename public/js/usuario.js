@@ -32,8 +32,8 @@ form_usuarios.addEventListener('submit', (evt) => {
     }
 
     if (aux) {
-        // Función fetch
     } else {
         render_alert('Error al intentar realizar el registro:','Debes llenar los campos correctamente', 'rojo')
     }
 })
+

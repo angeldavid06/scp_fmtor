@@ -23,28 +23,33 @@
          return $insert;
       }
 
-      public function actualizar($tabla,$valores,$condicion){
+      public function actualizar($tabla,$valores,$condicion) {
          $sql="UPDATE $tabla set $valores WHERE $condicion";
          $actu=$this->db->query($sql);
          return $actu;
 
       }
 
-      public function eliminar($tabla,$condicion){
+      public function eliminar($tabla,$condicion) {
          $sql="DELETE FROM $tabla WHERE $condicion";
          $eliminar=$this->db->query($sql);
          return $eliminar;
       }
 
-      public function buscar($tabla,$campo,$condicion){
+      public function buscar($tabla,$campo,$condicion) {
          $sql="SELECT $campo FROM $tabla WHERE $condicion";
          $buscar=$this->db->query($sql);
          return $buscar;
-         
       }
 
       public function filtrar(){
 
+      }
+
+      public function ingresarU ($nombre,$password) {
+         $sql = "SELECT count(*) AS total FROM t_usuarios WHERE nombre = '$nombre' AND password = '$password'";
+         $query = $this->db->query($sql);
+         return $query->fetch_object();
       }
     
   }

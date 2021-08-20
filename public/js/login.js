@@ -24,5 +24,22 @@ form.addEventListener('submit', (evt) => {
     } else if (usu.value == '') {
         usu.classList.add('input-error')
         render_alert('Error al iniciar sesión:','No ha introducido el nombre de usuario','rojo');
+    } else {
+        iniciar_sesion(form)
     }
 });
+
+const iniciar_sesion = (form) => {
+    const data = new FormData(form)
+    let options = {
+                method: "POST",
+                body: data
+            }
+    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=ingresar',options)
+    .then((res) => {
+        console.log(res.ok);
+    })
+    .catch((error) => {
+        console.log(error)
+    });
+}

@@ -45,5 +45,9 @@
             $this->idRol=$idRol;
         }
 
-}
+        public function ingresar () {
+            $result = Model::ingresarU($this->nombre, $this->password);
+            return $result;
+        }
+    }
 

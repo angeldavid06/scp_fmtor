@@ -1,6 +1,4 @@
-<?php 
-    // require_once 'public/components/sesion.php'; 
-?>
+<?php require_once 'public/components/sesion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -27,7 +27,16 @@
         }
 
         public function ingresar () {
-            $this->web->View('login', '');
+            if (isset($_POST['nombre_usuario']) && isset($_POST['password'])) {
+                $this->model->setNombre($_POST['nombre_usuario']);
+                $this->model->setPassword($_POST['password']);
+                $result = $this->model->ingresar();
+                if ($result->total > 0) {
+                    echo true;
+                } else {
+                    echo false;
+                }
+            }
         }
 
         public function cerrar () {
