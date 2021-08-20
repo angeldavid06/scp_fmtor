@@ -67,47 +67,47 @@
                             <h2>Filtrar Ordenes de Producción</h2>
                             <h3>Filtrar por O.P.:</h3>
                             <div class="filtro fecha">
-                                <input type="checkbox" class="checkbox" name="check_op" id="check_op">
-                                <label class="lbl_check"  for="check_op">Buscar O.P.:</label>
-                                <input class="input" type="number" name="" id="">
-                                <input type="checkbox" class="checkbox" name="check_rango_op" id="check_rango_op">
-                                <label class="lbl_check"  for="check_rango_op">Filtrar por rango de O.P.: </label>
+                                <input type="checkbox" data-check="f_op" class="checkbox" name="check_op" id="check_op">
+                                <label class="lbl_check" id="lbl_check_op"  for="check_op">Buscar O.P.:</label>
+                                <input class="input" type="number" name="f_op" id="f_op" disabled>
+                                <input type="checkbox" data-check="f_r_op" data-rango="true" class="checkbox" name="check_rango_op" id="check_rango_op">
+                                <label class="lbl_check" id="lbl_check_rango_op"  for="check_rango_op">Filtrar por rango de O.P.: </label>
                                 <div class="rango">
-                                    <input class="input" type="number" name="" id="">
+                                    <input class="input" type="number" name="f_r_op_m" id="f_r_op_m" disabled>
                                     <p>-</p>
-                                    <input class="input" type="number" name="" id="">
+                                    <input class="input" type="number" name="f_r_op_M" id="f_r_op_M" disabled>
                                 </div>
                             </div>
                             <h3>Filtrar por fecha:</h3>
                             <div class="filtro fecha">
-                                <input type="checkbox" class="checkbox" name="check_fecha" id="check_fecha">
-                                <label class="lbl_check" for="check_fecha">Filtrar por fecha especifica:</label>
-                                <input class="input" type="date" name="" id="">
-                                <input type="checkbox" class="checkbox" name="check_fecha_mes" id="check_fecha_mes">
-                                <label class="lbl_check" for="check_fecha_mes">Filtrar por mes: </label>
-                                <input class="input" type="month" name="" id="">
-                                <input type="checkbox" class="checkbox" name="check_fecha_año" id="check_fecha_año">
-                                <label class="lbl_check" for="check_fecha_año">Filtrar por año: </label>
-                                <input class="input" type="number" name="" id="">
-                                <input type="checkbox" class="checkbox" name="check_rango_fecha" id="check_rango_fecha">
-                                <label class="lbl_check" for="check_rango_fecha">Filtrar por rango de fecha: </label>
+                                <input type="checkbox" data-check="f_fecha" class="checkbox" name="check_fecha" id="check_fecha">
+                                <label class="lbl_check" id="lbl_check_fecha" for="check_fecha">Filtrar por fecha especifica:</label>
+                                <input class="input" type="date" name="f_fecha" id="f_fecha" disabled>
+                                <input type="checkbox" data-check="f_mes" class="checkbox" name="check_fecha_mes" id="check_fecha_mes">
+                                <label class="lbl_check" id="lbl_check_fecha_mes" for="check_fecha_mes">Filtrar por mes: </label>
+                                <input class="input" type="month" name="f_mes" id="f_mes" disabled>
+                                <input type="checkbox" data-check="f_anio" class="checkbox" name="check_fecha_anio" id="check_fecha_anio">
+                                <label class="lbl_check" id="lbl_check_fecha_anio" for="check_fecha_anio">Filtrar por año: </label>
+                                <input class="input" type="number" name="f_anio" id="f_anio" disabled>
+                                <input type="checkbox" data-check="f_r_fecha" data-rango="true" class="checkbox" name="check_rango_fecha" id="check_rango_fecha">
+                                <label class="lbl_check" id="lbl_check_rango_fecha" for="check_rango_fecha">Filtrar por rango de fecha: </label>
                                 <div class="rango">
-                                    <input class="input" type="date" name="" id="">
+                                    <input class="input" type="date" name="f_r_fecha_m" id="f_r_fecha_m" disabled>
                                     <p>-</p>
-                                    <input class="input" type="date" name="" id="">
+                                    <input class="input" type="date" name="f_r_fecha_M" id="f_r_fecha_M" disabled>
                                 </div>
                             </div>
                             <h3>Filtrar por cliente:</h3>
                             <div class="filtro fecha">
-                                <input type="checkbox" class="checkbox" name="check_cliente" id="check_cliente">
-                                <label class="lbl_check" for="check_cliente">Buscar cliente:</label>
-                                <input class="input" type="text" name="" id="">
+                                <input type="checkbox" data-check="f_cliente" class="checkbox" name="check_cliente" id="check_cliente">
+                                <label class="lbl_check" id="lbl_check_cliente" for="check_cliente">Buscar cliente:</label>
+                                <input class="input" type="text" name="f_cliente" id="f_cliente" disabled>
                             </div>
                             <h3>Filtrar por estado:</h3>
                             <div class="filtro fecha">
-                                <input type="checkbox" class="checkbox" name="check_estado" id="check_estado">
-                                <label class="lbl_check" for="check_estado">Selecciona el estado de las O.P.:</label>
-                                <select name="" id="">
+                                <input type="checkbox" data-check="f_estado" class="checkbox" name="check_estado" id="check_estado">
+                                <label class="lbl_check" id="lbl_check_estado" for="check_estado">Selecciona el estado de las O.P.:</label>
+                                <select name="f_estado" id="f_estado" disabled>
                                     <option value="1">FORJADO</option>
                                     <option value="2">RANURADO</option>
                                     <option value="3">ROLADO</option>
@@ -128,7 +128,7 @@
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/filtros.js"></script>
+    <script src="public/js/filtros.js?1.1"></script>
     <script src="public/js/ordenes.js"></script>
     <script src="public/js/sesion.js"></script>
 </body>

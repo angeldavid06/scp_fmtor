@@ -93,6 +93,17 @@ textarea:focus {
     box-shadow: 0px 0px 0px 5px var(--color-blue-3);
 }
 
+input[type="text"]:disabled,
+input[type="date"]:disabled,
+input[type="month"]:disabled,
+input[type="number"]:disabled,
+input[type="password"]:disabled,
+.lbl_check:disabled,
+select:disabled,
+textarea:disabled {
+    opacity: 0.5;
+}
+
 input[type="text"].input-error,
 input[type="date"].input-error,
 input[type="month"].input-error,
