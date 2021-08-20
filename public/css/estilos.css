@@ -670,9 +670,45 @@ main .ingresar h3 {
     font-size: 1.5em;
 }
 
-main .filtrar p,
-main .ingresar p {
-    padding: 10px 0px;
+main .filtrar label,
+main .ingresar label {
+    padding: 10px 0px 10px 30px;
+    position: relative;
+}
+
+main .filtrar .lbl_check {
+    cursor: pointer;
+}
+
+main .filtrar .lbl_check::after,
+main .ingresar .lbl_check::after {
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 14px;
+    border: 3px solid var(--color-gray);
+    border-radius: 4px;
+    left: 0;
+    top: calc(50% - 10px);
+    transition: all .3s;
+}
+
+main .filtrar input[type="checkbox"],
+main .ingresar input[type="checkbox"] {
+    display: none;
+    position: relative;
+}
+
+main .filtrar input[type="checkbox"]:checked + .lbl_check::after {
+    border: 3px solid var(--color-blue);
+    background-color: var(--color-blue);
+}
+
+main .filtrar input,
+main .ingresar input,
+main .filtrar select,
+main .ingresar select {
+    margin: 10px 0px;
 }
 
 main .filtrar .rango {
@@ -691,6 +727,7 @@ main .filtrar .btn-cancel,
 main .ingresar button,
 main .ingresar .contenedor_ingresar .btn-cancel {
     margin: 15px 0px 30px 0px;
+    padding: 15px 30px;
 }
 
 main .informacion {
