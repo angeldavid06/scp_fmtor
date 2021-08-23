@@ -44,10 +44,10 @@
                             <th>Estado</th>
                         </thead>
                         <tbody class="body">
-                            <?php while ($ord = $data->fe_object()):?>
+                            <?php while ($ord = $data->fetch_object()):?>
                                 <tr>
                                     <td><?=$ord->calibre?></td>
-                                    <td><?=$ord->ki?></td>
+                                    <td><?=$ord->kilos?></td>
                                     <td><?=$ord->factor?></td>
                                     <td><?=$ord->op?></td>
                                     <td><?=$ord->fecha?></td>
