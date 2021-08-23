@@ -12,8 +12,8 @@
       }
 
       public function mostrar($tabla){
-         $sql="SELECT * FROM $tabla ORDER BY DESC";
-         $mostrar=$this->db->query($sql);
+         $sql="SELECT * FROM $tabla ORDER BY id DESC";
+         $mostrar = $this->db->query($sql);
          return $mostrar;
       }
 
@@ -47,9 +47,14 @@
       }
 
       public function ingresarU ($nombre,$password) {
-         $sql = "SELECT count(*) AS total FROM t_usuarios WHERE nombre = '$nombre' AND password = '$password'";
-         $query = $this->db->query($sql);
-         return $query->fetch_object();
+         $sql = "SELECT count(t_usuarios.id) AS total, t_usuarios.nombre, t_usuarios.password, t_rol.nombre AS rol FROM t_usuarios, t_rol WHERE t_usuarios.nombre = '$nombre' AND t_usuarios.id_rol = t_rol.id";
+         $query = mysqli_query($this->db,$sql);
+         $assoc = mysqli_fetch_assoc($query);
+         if (password_verify($password,$assoc['password'])) {
+            return $assoc;
+         } else {
+            return 0;
+         }
       }
     
   }

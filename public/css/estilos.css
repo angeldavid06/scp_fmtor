@@ -68,6 +68,7 @@ p, span, a, i, li, button, label, input, th, td, option, select {
 
 input[type="text"],
 input[type="date"],
+input[type="email"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
@@ -83,6 +84,7 @@ textarea {
 
 input[type="text"]:focus,
 input[type="date"]:focus,
+input[type="email"]:focus,
 input[type="month"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
@@ -95,6 +97,7 @@ textarea:focus {
 
 input[type="text"]:disabled,
 input[type="date"]:disabled,
+input[type="email"]:disabled,
 input[type="month"]:disabled,
 input[type="number"]:disabled,
 input[type="password"]:disabled,
@@ -106,6 +109,7 @@ textarea:disabled {
 
 input[type="text"].input-error,
 input[type="date"].input-error,
+input[type="email"].input-error,
 input[type="month"].input-error,
 input[type="number"].input-error,
 input[type="password"].input-error,

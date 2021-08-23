@@ -6,6 +6,7 @@
         public $id;
         public $nombre;
         public $password;
+        public $email;
         public $idRol;
 
         public function __construct(){
@@ -22,6 +23,10 @@
 
         public function getPassword(){
            return $this->password;
+        }
+
+        public function getEmail(){
+           return $this->email;
         }
 
         public function getIdRol(){
@@ -41,6 +46,10 @@
             $this->password=$password;
         }
 
+        public function setEmail($email) :void {
+            $this->email=$email;
+        }
+
         public function setIdRol($idRol) : void{
             $this->idRol=$idRol;
         }
@@ -48,6 +57,11 @@
         public function ingresar () {
             $result = Model::ingresarU($this->nombre, $this->password);
             return $result;
+        }
+
+        public function sesion () {
+            $_SESSION['usuario'] = $this->nombre;
+            $_SESSION['rol'] = $this->idRol;
         }
     }
 

@@ -7,11 +7,11 @@ if (document.getElementsByClassName('btn-login-form')) {
 }
 
 const form = document.getElementById('form-login');
+const usu = document.getElementById('nombre_usuario');
+const pass = document.getElementById('password');
 
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    const usu = document.getElementById('nombre_usuario');
-    const pass = document.getElementById('password');
     usu.classList.remove('input-error')
     pass.classList.remove('input-error')
     if (usu.value == '' && pass.value == '') {
@@ -29,17 +29,28 @@ form.addEventListener('submit', (evt) => {
     }
 });
 
+const error_incio_sesion = () => {
+    usu.classList.add('input-error')
+    pass.classList.add('input-error')
+    render_alert('Error al iniciar sesión:','El usuario o contraseña introducidos son incorrectos','rojo');
+}
+
 const iniciar_sesion = (form) => {
     const data = new FormData(form)
     let options = {
-                method: "POST",
-                body: data
-            }
+        method: "POST",
+        body: data
+    }
     fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=ingresar',options)
-    .then((res) => {
-        console.log(res.ok);
+    .then(res => (res.ok ? res.json() : Promise.reject(res)))
+    .then(json => {
+        if (json.total > 0) {
+            window.location.href = 'http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=menu';
+        } else {
+            error_incio_sesion();
+        }
     })
     .catch((error) => {
-        console.log(error)
+        console.log('Error: ',error)
     });
 }
