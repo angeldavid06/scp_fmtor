@@ -37,7 +37,7 @@
                                 <tr>
                                     <td class="td-btn"><button class="material-icons btn-icon">edit</button></td>
                                     <td class="td-btn"><button class="material-icons btn-icon">close</button></td>
-                                    <td><?=$usu->nombre?></td>
+                                    <td><?=$usu->usuario?></td>
                                     <td><?=$usu->correo?></td>
                                     <td><?=$usu->rol?></td>
                                 </tr>
