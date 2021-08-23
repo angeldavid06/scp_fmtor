@@ -12,7 +12,7 @@
         }
 
         public function mostrar(){
-            $ops=$this->model->mostrar('t_op');
+            $ops=$this->model->mostrar('ordenes');
             $this->web->View('ordenes',$ops);
         }
 

@@ -43,7 +43,22 @@
                             <th>Acumulado</th>
                             <th>Estado</th>
                         </thead>
-                        <tbody>
+                        <tbody class="body">
+                            <?php while ($ord = $data->fe_object()):?>
+                                <tr>
+                                    <td><?=$ord->calibre?></td>
+                                    <td><?=$ord->ki?></td>
+                                    <td><?=$ord->factor?></td>
+                                    <td><?=$ord->op?></td>
+                                    <td><?=$ord->fecha?></td>
+                                    <td><?=$ord->Cliente?></td>
+                                    <td><?=$ord->Descripción?></td>
+                                    <td><?=$ord->nombre?></td>
+                                    <td><?=$ord->cantidad?></td>
+                                    <td><?=$ord->precio?></td>
+                                    <td><?=$ord->estado?></td>
+                                </tr>
+                                <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
