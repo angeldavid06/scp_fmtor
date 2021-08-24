@@ -1,37 +1,37 @@
-const btn_cancel_ingresar = document.getElementsByClassName('btn-cancel');
-const btn_add = document.getElementsByClassName('btn-form-add');
+const btn_cancel_ingresar = document.getElementsByClassName('btn-cancel')
+const btn_add = document.getElementsByClassName('btn-form-add')
 
 btn_cancel_ingresar[0].addEventListener('click', () => {
-    const ingresar = document.getElementsByClassName('ingresar');
-    ingresar[0].classList.toggle('open');
+    const ingresar = document.getElementsByClassName('ingresar')
+    ingresar[0].classList.toggle('open')
 });
 
 btn_add[0].addEventListener('click', () => {
-    const ingresar = document.getElementsByClassName('ingresar');
-    ingresar[0].classList.toggle('open');
+    const ingresar = document.getElementsByClassName('ingresar')
+    ingresar[0].classList.toggle('open')
 });
 
 const quitar_clase = () => {
-    const inputs = document.getElementsByClassName('input');
+    const inputs = document.getElementsByClassName('input')
     for (let i = 0; i < inputs.length; i++) {
-        inputs[i].classList.remove('input-error');
+        inputs[i].classList.remove('input-error')
     }
 }
 
 const form_usuarios = document.getElementById('form-usuarios');
 form_usuarios.addEventListener('submit', (evt) => {
     let aux = true;
-    evt.preventDefault();
-    quitar_clase();
-    const inputs = document.getElementsByClassName('input');
+    evt.preventDefault()
+    quitar_clase()
+    const inputs = document.getElementsByClassName('input')
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value == '') {
-            inputs[i].classList.add('input-error');
+            inputs[i].classList.add('input-error')
             aux = false;
         }
     }
     if (aux) {
-        insertar_usuario();
+        insertar_usuario()
     } else {
         render_alert('Error al intentar realizar el registro:','Debes llenar los campos correctamente', 'rojo')
     }
@@ -43,15 +43,18 @@ const insertar_usuario = () => {
         method: "POST",
         body: data
     }
+    preloader()
     fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=insertar', options)
-    .then(res => (res.ok ? res.text() : Promise.reject(res)))
+    .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(res => {
+        ocultarPreloader() 
         if (res > 0) {
             render_alert('Registro exitoso:','El usuario se añadio correctamente', 'azul')
             const inputs = document.getElementsByClassName('input')
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].value = '';
             }
+            obtener_usuarios()
         } else {
             render_alert('Error al intentar realizar el registro:','No se pudo añadir correctamente el usuario', 'rojo')
         }
@@ -61,17 +64,9 @@ const insertar_usuario = () => {
     })
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     cargar_todos();
-// });
-
-
-{/* <tr>
-    <td class="td-btn"><button class="material-icons btn-icon">edit</button></td>
-    <td class="td-btn"><button class="material-icons btn-icon">close</button></td>
-    <td>item-3</td>
-    <td>item-4</td>
-</tr> */}
+document.addEventListener('DOMContentLoaded', () => {
+    obtener_usuarios();
+});
 
 const quitar_filas = (t_body) => {
     while (t_body.firstChild) {
@@ -80,18 +75,93 @@ const quitar_filas = (t_body) => {
 }
 
 const cargar_todos = () => {
-    const t_body = document.getElementsByClassName('body');
-    const fragmento = document.createDocumentFragment();
-    quitar_filas(t_body[0]);
-    obtener_usuarios();
+    const t_body = document.getElementsByClassName('body')
+    const fragmento = document.createDocumentFragment()
+    quitar_filas(t_body[0])
+    obtener_usuarios()
 }
 
 const obtener_usuarios = () => {
-    fetch('')
-    .then(() => {
-
+    preloader()
+    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=obtener')
+    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+    .then((json) => {
+        ocultarPreloader() 
+        render_usuarios(json)
     })
-    .catch(() => {
+    .catch((err) => {
+        console.log(err)
+    })
+}
 
+const render_usuarios = (json) => {
+    const body = document.getElementsByClassName('body')
+    const fragmento = document.createDocumentFragment()
+    
+    quitar_filas(body[0])
+
+    json.forEach(el => {
+        const tr = document.createElement('tr')
+        const td_btn_edit = document.createElement('td')
+        const td_btn_delete = document.createElement('td')
+        const btn_edit = document.createElement('button')
+        const btn_delete = document.createElement('button')
+        const td_user = document.createElement('td')
+        const td_email = document.createElement('td')
+        const td_rol = document.createElement('td')
+
+        btn_edit.innerHTML = 'edit'
+        btn_edit.dataset.id = el.id
+        btn_edit.dataset.action = 'actualizar'
+        btn_edit.classList.add('material-icons')
+        btn_edit.classList.add('btn-icon')
+        btn_edit.classList.add('btn-update')
+        
+        btn_delete.innerHTML = 'delete'
+        btn_delete.dataset.id = el.id
+        btn_delete.dataset.action = 'eliminar'
+        btn_delete.classList.add('material-icons')
+        btn_delete.classList.add('btn-icon')
+        btn_delete.classList.add('btn-delete')
+
+        td_btn_edit.classList.add('td-btn')
+        td_btn_delete.classList.add('td-btn')
+
+        td_user.innerHTML = el.usuario
+        td_email.innerHTML = el.correo
+        td_rol.innerHTML = el.rol
+
+        td_btn_edit.appendChild(btn_edit)
+        td_btn_delete.appendChild(btn_delete)
+        tr.appendChild(td_btn_edit)
+        tr.appendChild(td_btn_delete)
+        tr.appendChild(td_user)
+        tr.appendChild(td_email)
+        tr.appendChild(td_rol)
+        fragmento.appendChild(tr)
+    });
+    body[0].appendChild(fragmento)
+}
+
+document.addEventListener('click', (evt) => {
+    if (evt.target.dataset.id) {
+        if (evt.target.dataset.action == 'actualizar') {
+
+        } else if (evt.target.dataset.action == 'eliminar') {
+            eliminar_usuario(evt.target.dataset.action, evt.target.dataset.id)
+        }
+    }
+});
+
+
+const eliminar_usuario = (action, id) => {
+    preloader()
+    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action='+action+'&id='+id)
+    .then((res) => {
+        ocultarPreloader() 
+        obtener_usuarios()
+    })
+    .catch((err) => {
+        console.log(err)
     })
 }

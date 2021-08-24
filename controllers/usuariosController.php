@@ -12,7 +12,7 @@
 
         }
 
-        public function mostrar(){
+        public function mostrar () {
             $usuarios=$this->model->mostrar('usuarios');
             $this->web->View('usuarios',$usuarios);
         }
@@ -53,6 +53,16 @@
             $this->model->sesion();
         }
 
+        public function obtener () {
+            $usuarios = $this->model->mostrar('usuarios');
+            $Array = array();
+            while ($row = $usuarios->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
+        }
+
         public function insertar () { 
             if (isset($_POST['usuario'])) {
                 $usuario = $_POST['usuario'];
@@ -67,11 +77,13 @@
             }
         }
 
-        public function actualizar(){
+        public function actualizar () {
 
         }
 
-        public function eliminar(){
-
+        public function eliminar () {
+            $id = $_GET['id'];
+            $result = $this->model->eliminar('t_usuarios','id='.$id);
+            return $result;
         }
 }

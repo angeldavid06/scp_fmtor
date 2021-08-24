@@ -59,5 +59,6 @@
     </div>
     <script src="public/js/filtros.js"></script>
     <script src="public/js/sesion.js"></script>
+    <script src="public/js/preloader.js"></script>
 </body>
 </html>

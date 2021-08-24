@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de usuarios</title>
-    <link rel="stylesheet" href="public/css/estilos.css?1.5">
+    <link rel="stylesheet" href="public/css/estilos.css?1.6">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -33,15 +33,6 @@
                             <th>Rol</th>
                         </thead>
                         <tbody class="body">
-                            <?php while ($usu = $data->fetch_object()):?>
-                                <tr>
-                                    <td class="td-btn"><button class="material-icons btn-icon">edit</button></td>
-                                    <td class="td-btn"><button class="material-icons btn-icon">close</button></td>
-                                    <td><?=$usu->usuario?></td>
-                                    <td><?=$usu->correo?></td>
-                                    <td><?=$usu->rol?></td>
-                                </tr>
-                            <?php endwhile;?>
                         </tbody>
                     </table>
                 </div>
@@ -50,14 +41,14 @@
                         <form id="form-usuarios">
                             <h2>Nuevo Usuario</h2>
                             <p>Ingresa el nombre de usuario:</p>
-                            <input class="input" type="text" name="usuario" id="usuario">
+                            <input class="input" type="text" name="usuario" id="usuario" placeholder="Nombre de usuario">
                             <p>Ingresa la contraseña:</p>
-                            <input class="input" type="password" name="password" id="password">
+                            <input class="input" type="password" name="password" id="password" placeholder="Contraseña del usuario">
                             <p>Ingresa el correo del usuario:</p>
-                            <input class="input" type="email" name="email" id="email">
+                            <input class="input" type="email" name="email" id="email" placeholder="Correo electrónico del usuario">
                             <p>Selecciona el rol:</p>
                             <select class="input" name="rol" id="rol">
-                                <option value="0"></option>
+                                <option value="0">Rol del usuario</option>
                                 <option value="1">Administrador</option>
                                 <option value="2">General</option>
                             </select>
@@ -71,7 +62,8 @@
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/usuario.js?1.3"></script>
+    <script src="public/js/usuario.js?1.4"></script>
     <script src="public/js/sesion.js"></script>
+    <script src="public/js/preloader.js"></script>
 </body>
 </html>
