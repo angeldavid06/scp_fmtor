@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once 'public/componentes/head.php'; ?>
     <title>Bienvenida</title>
-    <link rel="stylesheet" href="public/css/estilos.css">
     <!-- <link rel="shortcut icon" type="image/png" href="fmtor_16.png">
     <link rel="apple-touch-startup-image" href="fmtor_16.png">
     <link rel="apple-touch-icon" href="fmtor_16.png">
