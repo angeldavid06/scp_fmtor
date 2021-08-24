@@ -54,11 +54,11 @@
          return $filtrar;
       }
       
-      function filtrar ($tabla,$campo,$valor) { 
+      public function filtrar ($tabla,$campo,$valor) { 
          $sql = "SELECT * FROM $tabla WHERE $campo = '$valor'";
          $filtrar = $this->db->query($sql);
          return $filtrar;
-       }
+      }
 
       public function ingresarU ($nombre,$password) {
          $sql = "SELECT count(t_usuarios.id) AS total, t_usuarios.nombre, t_usuarios.password, t_rol.nombre AS rol FROM t_usuarios, t_rol WHERE t_usuarios.nombre = '$nombre' AND t_usuarios.id_rol = t_rol.id";
