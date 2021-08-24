@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenida</title>
     <link rel="stylesheet" href="public/css/estilos.css">
+    <!-- <link rel="shortcut icon" type="image/png" href="fmtor_16.png">
+    <link rel="apple-touch-startup-image" href="fmtor_16.png">
+    <link rel="apple-touch-icon" href="fmtor_16.png">
+
+    <link rel="manifest" href="manifest.json">
+    <script src="script.js"></script> -->
 </head>
 <body>
     <div class="welcome">
