@@ -52,10 +52,13 @@
                                     <td><?=$ord->op?></td>
                                     <td><?=$ord->fecha?></td>
                                     <td><?=$ord->Cliente?></td>
+                                    <td><?=$ord->Medida?></td>
                                     <td><?=$ord->Descripción?></td>
-                                    <td><?=$ord->nombre?></td>
+                                    <td><?=$ord->Acabado?></td>
                                     <td><?=$ord->cantidad?></td>
                                     <td><?=$ord->precio?></td>
+                                    <td><?=$ord->Total?></td>
+                                    <td><?=$ord->Acumulado?></td>
                                     <td><?=$ord->estado?></td>
                                 </tr>
                                 <?php endwhile; ?>
