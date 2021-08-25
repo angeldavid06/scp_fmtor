@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once 'public/componentes/head.php'; ?>
+    <?php require_once 'public/components/head.php'; ?>
     <title>Bienvenida</title>
     <!-- <link rel="shortcut icon" type="image/png" href="fmtor_16.png">
     <link rel="apple-touch-startup-image" href="fmtor_16.png">

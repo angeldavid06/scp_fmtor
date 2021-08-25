@@ -3,7 +3,12 @@ const btn_add = document.getElementsByClassName('btn-form-add')
 
 btn_cancel_ingresar[0].addEventListener('click', () => {
     const ingresar = document.getElementsByClassName('ingresar')
-    ingresar[0].classList.toggle('open')
+    ingresar[0].classList.remove('open')
+});
+
+btn_cancel_ingresar[1].addEventListener('click', () => {
+    const ingresar = document.getElementsByClassName('ingresar')
+    ingresar[1].classList.remove('open')
 });
 
 btn_add[0].addEventListener('click', () => {
@@ -19,7 +24,27 @@ const quitar_clase = () => {
 }
 
 const form_usuarios = document.getElementById('form-usuarios');
+let id_aux = 0;
 form_usuarios.addEventListener('submit', (evt) => {
+    let aux = true;
+    evt.preventDefault()
+    quitar_clase()
+    const inputs = document.getElementsByClassName('input')
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value == '') {
+            inputs[i].classList.add('input-error')
+            aux = false;
+        }
+    }
+    if (aux) {
+        insertar_usuario()
+    } else {
+        render_alert('Error al intentar realizar el registro:','Debes llenar los campos correctamente', 'rojo')
+    }
+})
+
+const form_usuarios_actualizar = document.getElementById('form-usuarios-actualizar');
+form_usuarios_actualizar.addEventListener('submit', (evt) => {
     let aux = true;
     evt.preventDefault()
     quitar_clase()
@@ -116,6 +141,7 @@ const render_usuarios = (json) => {
         btn_edit.classList.add('material-icons')
         btn_edit.classList.add('btn-icon')
         btn_edit.classList.add('btn-update')
+        btn_edit.classList.add('btn-form-update')
         
         btn_delete.innerHTML = 'delete'
         btn_delete.dataset.id = el.id
@@ -146,22 +172,41 @@ const render_usuarios = (json) => {
 document.addEventListener('click', (evt) => {
     if (evt.target.dataset.id) {
         if (evt.target.dataset.action == 'actualizar') {
-
+            const ingresar = document.getElementsByClassName('actualizar')
+            ingresar[0].classList.add('open')
+            id_aux = evt.target.dataset.id
         } else if (evt.target.dataset.action == 'eliminar') {
-            eliminar_usuario(evt.target.dataset.action, evt.target.dataset.id)
+            eliminar_usuario(evt.target.dataset.id)
         }
     }
 });
 
 
-const eliminar_usuario = (action, id) => {
+const eliminar_usuario = (id) => {
     preloader()
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action='+action+'&id='+id)
+    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=eliminar&id='+id)
     .then((res) => {
         ocultarPreloader() 
         obtener_usuarios()
     })
     .catch((err) => {
         console.log(err)
+    })
+}
+
+const actualizar_usuario = (id) => {
+    preloader()
+    const data = new FormData(form_usuarios_actualizar);
+    const options = {
+        method: 'POST',
+        body: data
+    }
+    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=actualizar',options)
+    .then((res) => {
+        ocultarPreloader()
+        obtener_usuarios()
+    })
+    .catch((res) => {
+        console.log(res);
     })
 }

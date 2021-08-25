@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once 'public/componentes/head.php'; ?>
+    <?php require_once 'public/components/head.php'; ?>
     <title>Control de Producción</title>
 </head>
 <body>

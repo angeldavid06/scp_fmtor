@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once 'public/componentes/head.php'; ?>
+    <?php require_once 'public/components/head.php'; ?>
     <title>Gestión de usuarios</title>
 </head>
 <body>
@@ -48,7 +48,30 @@
                                 <option value="1">Administrador</option>
                                 <option value="2">General</option>
                             </select>
-                            <button data-btn="insertar" id="btn-form-control-registrar">Registrar</button>
+                            <button data-btn="actualizar" id="btn-form-control-registrar">Registrar</button>
+                            <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="ingresar actualizar">
+                    <div class="contenedor_actualizar">
+                        <form id="form-usuarios-actualizar">
+                            <h2>Actualizar usuario</h2>
+                            <!-- <p>Ingresa el nombre de usuario:</p>
+                            <input class="input" type="text" hidden="" name="" id="">
+                            <input class="input" type="text" name="usuario" id="usuario" placeholder="Nombre de usuario">
+                            <p>Ingresa la contraseña:</p>
+                            <input class="input" type="password" name="password" id="password" placeholder="Contraseña del usuario">
+                            <p>Ingresa el correo del usuario:</p>
+                            <input class="input" type="email" name="email" id="email" placeholder="Correo electrónico del usuario">
+                            <p>Selecciona el rol:</p>
+                            <select class="input" name="rol" id="rol">
+                                <option value="0">Rol del usuario</option>
+                                <option value="1">Administrador</option>
+                                <option value="2">General</option>
+                            </select> -->
+                            <button data-btn="actualizar" id="btn-form-control-actualizar">Registrar</button>
                             <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
                         </form>
                     </div>
@@ -58,7 +81,7 @@
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/usuario.js?1.4"></script>
+    <script src="public/js/usuario.js?1.5"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
 </body>
