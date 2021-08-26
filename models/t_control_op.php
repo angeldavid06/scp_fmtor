@@ -95,7 +95,7 @@
            $this->turno=$turno;
        }
 
-       public function setObservaciones($observaciones):vois{
+       public function setObservaciones($observaciones):void{
            $this->observaciones=$observaciones;
        }
 
