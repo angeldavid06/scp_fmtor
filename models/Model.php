@@ -33,7 +33,6 @@
          $sql="UPDATE $tabla set $valores WHERE $condicion";
          $actu=$this->db->query($sql);
          return $actu;
-
       }
 
       public function eliminar($tabla,$condicion) {
@@ -42,8 +41,8 @@
          return $eliminar;
       }
 
-      public function buscar($tabla,$campo,$condicion) {
-         $sql="SELECT $campo FROM $tabla WHERE $condicion";
+      public function buscar($tabla,$campo,$valor) {
+         $sql="SELECT * FROM $tabla WHERE $campo = '$valor'";
          $buscar=$this->db->query($sql);
          return $buscar;
       }

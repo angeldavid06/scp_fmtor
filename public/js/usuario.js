@@ -24,12 +24,11 @@ const quitar_clase = () => {
 }
 
 const form_usuarios = document.getElementById('form-usuarios');
-let id_aux = 0;
 form_usuarios.addEventListener('submit', (evt) => {
     let aux = true;
     evt.preventDefault()
     quitar_clase()
-    const inputs = document.getElementsByClassName('input')
+    const inputs = document.getElementsByClassName('inputI')
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value == '') {
             inputs[i].classList.add('input-error')
@@ -48,7 +47,7 @@ form_usuarios_actualizar.addEventListener('submit', (evt) => {
     let aux = true;
     evt.preventDefault()
     quitar_clase()
-    const inputs = document.getElementsByClassName('input')
+    const inputs = document.getElementsByClassName('inputU')
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value == '') {
             inputs[i].classList.add('input-error')
@@ -56,7 +55,7 @@ form_usuarios_actualizar.addEventListener('submit', (evt) => {
         }
     }
     if (aux) {
-        insertar_usuario()
+        actualizar_usuario()
     } else {
         render_alert('Error al intentar realizar el registro:','Debes llenar los campos correctamente', 'rojo')
     }
@@ -119,6 +118,30 @@ const obtener_usuarios = () => {
     })
 }
 
+const obtener_usuario = (id) => {
+    preloader()
+    console.log(id);
+    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=obtener_usuario&id='+id)
+    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+    .then((json) => {
+        ocultarPreloader() 
+        let input_id = document.getElementById('id')
+        let input_usuarioU = document.getElementById('usuarioU')
+        let input_emailU = document.getElementById('emailU')
+        let input_rolU = document.getElementById('rolU')
+        json.forEach(el => {
+            input_id.value = el.id
+            input_usuarioU.value = el.nombre
+            input_emailU.value = el.correo
+            input_rolU.options[el.id_rol].setAttribute('selected','')
+            console.log(input_rolU);
+        })
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
 const render_usuarios = (json) => {
     const body = document.getElementsByClassName('body')
     const fragmento = document.createDocumentFragment()
@@ -174,7 +197,7 @@ document.addEventListener('click', (evt) => {
         if (evt.target.dataset.action == 'actualizar') {
             const ingresar = document.getElementsByClassName('actualizar')
             ingresar[0].classList.add('open')
-            id_aux = evt.target.dataset.id
+            obtener_usuario(evt.target.dataset.id)
         } else if (evt.target.dataset.action == 'eliminar') {
             eliminar_usuario(evt.target.dataset.id)
         }
@@ -194,7 +217,7 @@ const eliminar_usuario = (id) => {
     })
 }
 
-const actualizar_usuario = (id) => {
+const actualizar_usuario = () => {
     preloader()
     const data = new FormData(form_usuarios_actualizar);
     const options = {
@@ -202,7 +225,9 @@ const actualizar_usuario = (id) => {
         body: data
     }
     fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=actualizar',options)
+    .then((res) => (res.ok ? res.text() : Promise.reject(res)))
     .then((res) => {
+        console.log(res);
         ocultarPreloader()
         obtener_usuarios()
     })

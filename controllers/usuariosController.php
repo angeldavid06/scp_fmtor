@@ -63,6 +63,16 @@
             echo $json;
         }
 
+        public function obtener_usuario () {
+            $usuarios = $this->model->buscar('t_usuarios','id',$_GET['id']);
+            $Array = array();
+            while ($row = $usuarios->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
+        }
+
         public function insertar () { 
             if (isset($_POST['usuario'])) {
                 $usuario = $_POST['usuario'];
@@ -78,7 +88,19 @@
         }
 
         public function actualizar () {
-
+            // $tabla,$valores,$condicion
+            if (isset($_POST['id'])) {
+                $id = $_POST['id'];
+                $usuario = $_POST['usuarioU'];
+                $correo = $_POST['emailU'];
+                $rol = $_POST['rolU'];
+                $condicion = "id = '$id'";
+                $valores = "nombre = '$usuario', correo='$correo', id_rol = '$rol'";
+                $result = $this->model->actualizar('t_usuarios',$valores,$condicion);
+                echo $result;
+            } else {
+                echo 0;
+            }
         }
 
         public function eliminar () {
