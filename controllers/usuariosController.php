@@ -63,6 +63,16 @@
             echo $json;
         }
 
+        public function obtener_bitacora () {
+            $bitacora = $this->model->mostrar('bitacora');
+            $Array = array();
+            while ($row = $bitacora->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
+        }
+
         public function obtener_usuario () {
             $usuarios = $this->model->buscar('t_usuarios','id',$_GET['id']);
             $Array = array();
