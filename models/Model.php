@@ -54,7 +54,7 @@
       }
       
       public function filtrar ($tabla,$campo,$valor) { 
-         $sql = "SELECT * FROM $tabla WHERE $campo LIKE '%'.$valor.'%'";
+         $sql = "SELECT * FROM $tabla WHERE $campo LIKE '%$valor%'";
          $filtrar = $this->db->query($sql);
          return $filtrar;
       }
