@@ -29,7 +29,3 @@ SELECT * FROM reporte_diario WHERE fecha LIKE '%2020-%';
 -- Estado
 
 SELECT * FROM ordenes WHERE estado='Forjado';
-
-Sentencia para insertar en la bitacora
-
-INSERT INTO  tabla (usuario,tabla,accion,descripcion,fecha)values($usuario,$tabla,'insertar','Se inserto un nuevo dato,sysdate());
