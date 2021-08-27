@@ -12,8 +12,27 @@
         }
 
         public function mostrar(){
-            $ops=$this->model->mostrar('ordenes');
-            $this->web->View('ordenes',$ops);
+            $this->web->View('ordenes','');
+        }
+        
+        public function obtener_ordenes () {
+            $ops = $this->model->mostrar('ordenes');
+            $Array = array();
+            while ($row = $ops->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
+        }
+
+        public function obtener_reporte_diario () {
+            $ops = $this->model->mostrar('reporte_diario');
+            $Array = array();
+            while ($row = $ops->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
         }
 
    }

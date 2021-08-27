@@ -44,24 +44,6 @@
                             <th>Estado</th>
                         </thead>
                         <tbody class="body">
-                            <?php while ($ord = $data->fetch_object()):?>
-                                <tr>
-                                    <td><?=$ord->calibre?></td>
-                                    <td><?=$ord->kilos?></td>
-                                    <td><?=$ord->factor?></td>
-                                    <td><?=$ord->op?></td>
-                                    <td><?=$ord->fecha?></td>
-                                    <td><?=$ord->Cliente?></td>
-                                    <td><?=$ord->Medida?></td>
-                                    <td><?=$ord->Descripción?></td>
-                                    <td><?=$ord->Acabado?></td>
-                                    <td><?=$ord->cantidad?></td>
-                                    <td><?=$ord->precio?></td>
-                                    <td><?=$ord->Total?></td>
-                                    <td><?=$ord->Acumulado?></td>
-                                    <td><?=$ord->estado?></td>
-                                </tr>
-                                <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
@@ -144,8 +126,9 @@
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/filtros.js?1.1"></script>
-    <script src="public/js/ordenes.js"></script>
+    <script src="public/js/preloader.js"></script>
+    <script src="public/js/filtros.js?1.2"></script>
+    <script src="public/js/ordenes.js?1.1"></script>
     <script src="public/js/sesion.js"></script>
 </body>
 </html>

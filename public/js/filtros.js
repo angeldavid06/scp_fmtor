@@ -1,9 +1,16 @@
-let cabeceras = [['Cal.', 'Kg.', 'Factor', 'N°. O.P.', 'Fecha de O.P.', 'Cliente', 'Medida', 'Descripción', 'Acabado', 'Cant.', 'Precio', 'Total', 'Acumulado', 'Estado'],['O.P.', 'Cliente', 'Kg.', 'Pzas. Producidas', 'Máquina', 'Descripción', 'Observaciones']];
+let cabeceras = [['Cal.', 'Kg.', 'Factor', 'N°. O.P.', 'Fecha de O.P.', 'Cliente', 'Medida', 'Descripción', 'Acabado', 'Cant.', 'Precio', 'Total', 'Acumulado', 'Estado'],['Fecha','Turno','Estado','O.P.', 'Cliente', 'Kg.', 'Pzas. Producidas', 'Máquina', 'Descripción', 'Observaciones']];
 
 const limpiar_cabecera = () => {
     const thead = document.getElementsByClassName('cabecera');
     while (thead[0].firstChild) {
         thead[0].removeChild(thead[0].firstChild);
+    }
+}
+
+const limpiar_tabla = () => {
+    const tbody = document.getElementsByClassName('body');
+    while (tbody[0].firstChild) {
+        tbody[0].removeChild(tbody[0].firstChild);
     }
 }
 
@@ -40,6 +47,11 @@ form_formatos.addEventListener('submit', (evt) => {
     const select = document.getElementById('seleccion_formato');
     cabecera_op(cabeceras[select.value]);
     limpiar_tabla();
+    if (select.value == 0) {
+        obtener_ordenes()
+    } else if (select.value == 1) {
+        obtener_reporte_diario()
+    }
 });
 
 const checkbox = ['check_op','check_rango_op','check_fecha','check_fecha_mes','check_fecha_anio','check_rango_fecha','check_cliente','check_estado'];
