@@ -47,7 +47,7 @@ const enviar_datos = () => {
     const op = document.getElementById('check_op')
     const fecha = document.getElementById('check_fecha')
     const cliente=document.getElementById('check_cliente')
-    const estado=document.getElementById('f_estado')
+    const estado=document.getElementById('check_estado')
     if (op.checked) {
         buscar_dato('buscar_op')
     }

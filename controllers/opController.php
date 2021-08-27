@@ -55,7 +55,7 @@
                 if(isset($_POST['f_fecha'])){
                     $fecha=$this->model->buscar('ordenes','fecha',$_POST['f_fecha']);
                     $Array = array();
-                    while($row = $fecha->fetch_array(MYSQL_ASSOC)){
+                    while($row = $fecha->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
                     }
                     $json=json_encode($Array);
@@ -69,7 +69,7 @@
                 if(isset($_POST['f_cliente'])){
                     $cliente=$this->model->buscar('ordenes','Cliente',$_POST['f_cliente']);
                     $Array= array();
-                    while($row = $cliente->fecth_array(MYSQL_ASSOC)){
+                    while($row = $cliente->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
                     }
                     $json=json_encode($Array);
@@ -81,9 +81,9 @@
         public function buscar_estado(){
             if(isset($_POST['check_estado'])){
                 if(isset($_POST['f_estado'])){
-                    $estado=$this->model->buscar('ordenes','Estado',$_POST['f_estado']);
+                    $estado=$this->model->buscar('ordenes','estado',$_POST['f_estado']);
                     $Array= array();
-                    while($row = $estado->fecth_array(MYSQL_ASSOC)){
+                    while($row = $estado->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
                     }
                     $json=json_encode($Array);

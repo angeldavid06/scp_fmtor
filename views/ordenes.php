@@ -106,14 +106,14 @@
                                 <input type="checkbox" data-check="f_estado" class="checkbox" name="check_estado" id="check_estado">
                                 <label class="lbl_check" id="lbl_check_estado" for="check_estado">Selecciona el estado de las O.P.:</label>
                                 <select name="f_estado" id="f_estado" disabled>
-                                    <option value="1">FORJADO</option>
-                                    <option value="2">RANURADO</option>
-                                    <option value="3">ROLADO</option>
-                                    <option value="4">SHANK</option>
-                                    <option value="5">CEMENTADO</option>
-                                    <option value="6">ACABADO</option>
-                                    <option value="7">TERMINADO</option>
-                                    <option value="8">CANCELADO</option>
+                                    <option value="FORJADO">FORJADO</option>
+                                    <option value="RANURADO">RANURADO</option>
+                                    <option value="ROLADO">ROLADO</option>
+                                    <option value="SHANK">SHANK</option>
+                                    <option value="CEMENTADO">CEMENTADO</option>
+                                    <option value="ACABADO">ACABADO</option>
+                                    <option value="TERMINADO">TERMINADO</option>
+                                    <option value="CANCELADO">CANCELADO</option>
                                 </select>
                             </div>
                             <button>Buscar</button>
