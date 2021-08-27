@@ -80,7 +80,10 @@
                 $rol =$_POST['rol'];
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 10]);
                 $values = "'$usuario','$password','$email','$rol'";
+                $user=$_SESSION['usuario'];
                 $result = $this->model->insert('t_usuarios','nombre,password,correo,id_rol',$values);
+                $bit="'$usuario','t_usuarios','insertar','Se inserto un nuevo usuario',sysdate()";
+                $bitacora=$this->model->insert('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
                 echo $result;
             } else {
                 echo 'Error: No se envio nada';
@@ -97,6 +100,8 @@
                 $condicion = "id = '$id'";
                 $valores = "nombre = '$usuario', correo='$correo', id_rol = '$rol'";
                 $result = $this->model->actualizar('t_usuarios',$valores,$condicion);
+                $bit="'$usuario','t_usuarios','actualizar','Se actualizo información de un usuario','sysdate()'";
+                $bitacora=$this->model->insert('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
                 echo $result;
             } else {
                 echo 0;
@@ -106,6 +111,8 @@
         public function eliminar () {
             $id = $_GET['id'];
             $result = $this->model->eliminar('t_usuarios','id='.$id);
+            $bit="'$usuario','t_usuarios','eliminar','Se elimino un usuario','sysdate()'";
+            $bitacora=$this->model->insert('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
             return $result;
         }
 }
