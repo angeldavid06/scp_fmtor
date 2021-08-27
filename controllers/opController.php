@@ -79,6 +79,22 @@
             }
         }
 
+        public function buscar_anio(){
+            if(iseet($_POST['check_fecha_anio'])){
+                if(isset($_POST['f_anio'])){
+                    $value=$_POST['f_anio'].'-';
+                    $anio=$this->model->filtrar('ordenes','fecha',$value);
+                    $Array=array();
+                    while($row = $anio->fetch_array(MYSQLI_ASSOC)){
+                        $Array[]=$row;
+                    }
+                    $json=json_encode($Array);
+                    echo $json;
+
+                }
+            }
+        }
+
         public function buscar_cliente(){
             if(isset($_POST['check_cliente'])){
                 if(isset($_POST['f_cliente'])){
