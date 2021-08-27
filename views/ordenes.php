@@ -83,7 +83,20 @@
                                 <input class="input" type="date" name="f_fecha" id="f_fecha" disabled>
                                 <input type="checkbox" data-check="f_mes" class="checkbox" name="check_fecha_mes" id="check_fecha_mes">
                                 <label class="lbl_check" id="lbl_check_fecha_mes" for="check_fecha_mes">Filtrar por mes: </label>
-                                <input class="input" type="month" name="f_mes" id="f_mes" disabled>
+                                <select class="input" name="f_mes" id="f_mes">
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                    <option value="03">Marzo</option>
+                                    <option value="04">Abril</option>
+                                    <option value="05">Mayo</option>
+                                    <option value="06">Junio</option>
+                                    <option value="07">Julio</option>
+                                    <option value="08">Agosto</option>
+                                    <option value="09">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
                                 <input type="checkbox" data-check="f_anio" class="checkbox" name="check_fecha_anio" id="check_fecha_anio">
                                 <label class="lbl_check" id="lbl_check_fecha_anio" for="check_fecha_anio">Filtrar por año: </label>
                                 <input class="input" type="number" name="f_anio" id="f_anio" disabled>
