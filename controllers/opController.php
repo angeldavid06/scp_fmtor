@@ -67,7 +67,7 @@
         public function buscar_mes(){
             if(isset($_POST['check_fecha_mes'])){
                 if(isset($_POST['f_mes'])){
-                    $mes=$this->model->filtar('ordenes','fecha','-'.$_POST['f_mes'].'-');
+                    $mes=$this->model->filtrar('ordenes','fecha','-'.$_POST['f_mes'].'-');
                     $Array=array();
                     while($row=$mes->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
