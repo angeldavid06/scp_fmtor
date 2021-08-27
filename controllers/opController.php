@@ -80,7 +80,7 @@
         }
 
         public function buscar_anio(){
-            if(iseet($_POST['check_fecha_anio'])){
+            if(isset($_POST['check_fecha_anio'])){
                 if(isset($_POST['f_anio'])){
                     $value=$_POST['f_anio'].'-';
                     $anio=$this->model->filtrar('ordenes','fecha',$value);
