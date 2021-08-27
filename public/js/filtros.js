@@ -48,6 +48,7 @@ const enviar_datos = () => {
     const fecha = document.getElementById('check_fecha')
     const cliente=document.getElementById('check_cliente')
     const estado=document.getElementById('check_estado')
+    const mes=document.getElementById('check_fecha_mes')
     if (op.checked) {
         buscar_dato('buscar_op')
     }
@@ -61,6 +62,9 @@ const enviar_datos = () => {
 
     else if(estado.checked){
         buscar_dato('buscar_estado')
+    }
+    else if(mes.checked){
+        buscar_dato('buscar_mes')
     }
 }
 
