@@ -127,8 +127,8 @@
     </div>
     <script src="public/js/alert.js"></script>
     <script src="public/js/preloader.js"></script>
-    <script src="public/js/filtros.js?1.2"></script>
-    <script src="public/js/ordenes.js?1.1"></script>
+    <script src="public/js/filtros.js?1.3"></script>
+    <script src="public/js/ordenes.js?1.2"></script>
     <script src="public/js/sesion.js"></script>
 </body>
 </html>

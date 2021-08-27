@@ -35,4 +35,18 @@
             echo $json;
         }
 
+        public function buscar_op () { 
+            if (isset($_POST['check_op'])) {
+                if (isset($_POST['f_op'])) {
+                    $op = $this->model->buscar('ordenes','op',$_POST['f_op']);
+                    $Array = array();
+                    while ($row = $op->fetch_array(MYSQLI_ASSOC)) {
+                        $Array[] = $row;
+                    }
+                    $json = json_encode($Array);
+                    echo $json;
+                }
+            }
+        }
+
    }

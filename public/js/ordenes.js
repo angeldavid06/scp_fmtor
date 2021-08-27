@@ -121,7 +121,6 @@ const obtener_ordenes = () => {
     .then(json => {
         ocultarPreloader() 
         render_ordenes(json)
-        console.log(json)
     })
     .catch(err => {
         console.log(err)
@@ -135,7 +134,6 @@ const obtener_reporte_diario = () => {
     .then(json => {
         ocultarPreloader() 
         render_reporte_diario(json)
-        console.log(json)
     })
     .catch(err => {
         console.log(err)

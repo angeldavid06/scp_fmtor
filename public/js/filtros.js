@@ -1,3 +1,4 @@
+const checkbox = ['check_op','check_rango_op','check_fecha','check_fecha_mes','check_fecha_anio','check_rango_fecha','check_cliente','check_estado'];
 let cabeceras = [['Cal.', 'Kg.', 'Factor', 'N°. O.P.', 'Fecha de O.P.', 'Cliente', 'Medida', 'Descripción', 'Acabado', 'Cant.', 'Precio', 'Total', 'Acumulado', 'Estado'],['Fecha','Turno','Estado','O.P.', 'Cliente', 'Kg.', 'Pzas. Producidas', 'Máquina', 'Descripción', 'Observaciones']];
 
 const limpiar_cabecera = () => {
@@ -39,7 +40,34 @@ if (document.getElementsByClassName('btn_filtrar_open')) {
 const form_filtros = document.getElementById('form-filtros');
 form_filtros.addEventListener('submit', (evt) => {
     evt.preventDefault();
+    enviar_datos()
 });
+
+const enviar_datos = () => {
+    const op = document.getElementById('check_op')
+    if (op.checked) {
+        buscar_dato('buscar_op')
+    }
+}
+
+const buscar_dato = (metodo) => {
+    preloader()
+    const data = new FormData(form_filtros)
+    const options = {
+        method: 'POST',
+        body: data
+    }
+    fetch('http://192.168.0.43/scp_fmtor/?controller=opController&action='+metodo, options)
+    .then(res => res.ok ? res.json() : Promise.reject(res))
+    .then(json => {
+        ocultarPreloader() 
+        limpiar_tabla()
+        render_ordenes(json)
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
 
 const form_formatos = document.getElementById('form-formatos');
 form_formatos.addEventListener('submit', (evt) => {
@@ -54,7 +82,6 @@ form_formatos.addEventListener('submit', (evt) => {
     }
 });
 
-const checkbox = ['check_op','check_rango_op','check_fecha','check_fecha_mes','check_fecha_anio','check_rango_fecha','check_cliente','check_estado'];
 
 const filtros_personalizados = (check, filtro) => {
     if (check && (filtro == 'f_op' || filtro == 'f_fecha')) {
