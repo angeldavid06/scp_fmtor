@@ -45,8 +45,22 @@ form_filtros.addEventListener('submit', (evt) => {
 
 const enviar_datos = () => {
     const op = document.getElementById('check_op')
+    const fecha = document.getElementById('check_fecha')
+    const cliente=document.getElementById('check_cliente')
+    const estado=document.getElementById('f_estado')
     if (op.checked) {
         buscar_dato('buscar_op')
+    }
+    else if(fecha.checked){
+        buscar_dato('buscar_fecha')
+    }
+
+    else if(cliente.checked){
+        buscar_dato('buscar_cliente')
+    }
+
+    else if(estado.checked){
+        buscar_dato('buscar_estado')
     }
 }
 
@@ -68,6 +82,10 @@ const buscar_dato = (metodo) => {
         console.log(err);
     })
 }
+
+
+
+
 
 const form_formatos = document.getElementById('form-formatos');
 form_formatos.addEventListener('submit', (evt) => {
