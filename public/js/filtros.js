@@ -50,8 +50,12 @@ const enviar_datos = () => {
     const estado=document.getElementById('check_estado')
     const mes=document.getElementById('check_fecha_mes')
     const anio=document.getElementById('check_fecha_anio')
+    const r_op=document.getElementById('check_rango_op')
     if (op.checked) {
         buscar_dato('buscar_op')
+    }
+    else if(r_op.checked){
+        buscar_dato('buscar_rango_op')
     }
     else if(fecha.checked){
         buscar_dato('buscar_fecha')
