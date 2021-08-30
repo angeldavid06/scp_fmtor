@@ -90,7 +90,7 @@ const render_reporte_diario = (json) => {
 
         fecha.innerHTML = el.Fecha
         turno.innerHTML = el.turno
-        estado.innerHTML = el.Departamento
+        estado.innerHTML = el.estado
         op.innerHTML = el.Orden_de_producción
         cliente.innerHTML = el.Cliente
         kg.innerHTML = el.kilos

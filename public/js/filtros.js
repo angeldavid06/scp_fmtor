@@ -1,5 +1,5 @@
 const checkbox = ['check_op','check_rango_op','check_fecha','check_fecha_mes','check_fecha_anio','check_rango_fecha','check_cliente','check_estado'];
-let cabeceras = [['Cal.', 'Kg.', 'Factor', 'N°. O.P.', 'Fecha de O.P.', 'Cliente', 'Medida', 'Descripción', 'Acabado', 'Cant.', 'Precio', 'Total', 'Acumulado', 'Estado'],['Fecha','Turno','Estado','O.P.', 'Cliente', 'Kg.', 'Pzas. Producidas', 'Máquina', 'Descripción', 'Observaciones']];
+let cabeceras = [['Cal.', 'Kg.', 'Factor', 'N°. O.P.', 'Fecha de O.P.', 'Cliente', 'Medida', 'Descripción', 'Acabado', 'Cant.', 'Precio', 'Total', 'Acumulado', 'Estado'],['Fecha','Turno','Departamento','O.P.', 'Cliente', 'Kg.', 'Pzas. Producidas', 'Máquina', 'Descripción', 'Observaciones']];
 
 const limpiar_cabecera = () => {
     const thead = document.getElementsByClassName('cabecera');
@@ -46,33 +46,28 @@ form_filtros.addEventListener('submit', (evt) => {
 const enviar_datos = () => {
     const op = document.getElementById('check_op')
     const fecha = document.getElementById('check_fecha')
-    const cliente=document.getElementById('check_cliente')
-    const estado=document.getElementById('check_estado')
-    const mes=document.getElementById('check_fecha_mes')
-    const anio=document.getElementById('check_fecha_anio')
-    const r_op=document.getElementById('check_rango_op')
+    const cliente = document.getElementById('check_cliente')
+    const estado = document.getElementById('check_estado')
+    const mes = document.getElementById('check_fecha_mes')
+    const anio = document.getElementById('check_fecha_anio')
+    const r_op = document.getElementById('check_rango_op')
+    const r_fecha = document.getElementById('check_rango_fecha')
+    
     if (op.checked) {
         buscar_dato('buscar_op')
-    }
-    else if(r_op.checked){
+    } else if(r_op.checked){
         buscar_dato('buscar_rango_op')
-    }
-    else if(fecha.checked){
+    } else if(r_fecha.checked){
+        buscar_dato('buscar_rango_fecha')
+    } else if(fecha.checked){
         buscar_dato('buscar_fecha')
-    }
-
-    else if(cliente.checked){
+    } else if(cliente.checked){
         buscar_dato('buscar_cliente')
-    }
-
-    else if(estado.checked){
+    } else if(estado.checked){
         buscar_dato('buscar_estado')
-    }
-    else if(mes.checked){
+    } else if(mes.checked){
         buscar_dato('buscar_mes')
-    }
-
-    else if(anio.checked){
+    } else if(anio.checked){
         buscar_dato('buscar_anio')
     }
 }
@@ -89,30 +84,33 @@ const buscar_dato = (metodo) => {
     .then(json => {
         ocultarPreloader() 
         limpiar_tabla()
-        render_ordenes(json)
+        const input_tabla = document.getElementById('tabla')
+        if (input_tabla.value == 'ordenes') {
+            render_ordenes(json)
+        } else if (input_tabla.value == 'reporte_diario') {
+            render_reporte_diario(json)
+        }
     })
     .catch(err => {
         console.log(err);
     })
 }
 
-
-
-
-
 const form_formatos = document.getElementById('form-formatos');
 form_formatos.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    const select = document.getElementById('seleccion_formato');
+    const select = document.getElementById('seleccion_formato')
+    const input_tabla = document.getElementById('tabla')
     cabecera_op(cabeceras[select.value]);
     limpiar_tabla();
     if (select.value == 0) {
+        input_tabla.value = 'ordenes'
         obtener_ordenes()
     } else if (select.value == 1) {
+        input_tabla.value = 'reporte_diario'
         obtener_reporte_diario()
     }
 });
-
 
 const filtros_personalizados = (check, filtro) => {
     if (check && (filtro == 'f_op' || filtro == 'f_fecha')) {

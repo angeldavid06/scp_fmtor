@@ -38,7 +38,7 @@
         public function buscar_op () { 
             if (isset($_POST['check_op'])) {
                 if (isset($_POST['f_op'])) {
-                    $op = $this->model->buscar('ordenes','op',$_POST['f_op']);
+                    $op = $this->model->buscar($_POST['tabla'],'op',$_POST['f_op']);
                     $Array = array();
                     while ($row = $op->fetch_array(MYSQLI_ASSOC)) {
                         $Array[] = $row;
@@ -49,18 +49,30 @@
             }
         }
 
-        public function buscar_rango_op(){
+        public function buscar_rango_op () {
             if(isset($_POST['check_rango_op'])){
-                            if(isset($_POST['f_r_op_m'])&& isset($_POST['f_r_op_M'])){
-                    $r_op=$this->model->filtrar_rango('ordenes','op',$_POST['f_r_op_m'],$_POST['f_r_op_M']);
+                if(isset($_POST['f_r_op_m'])&& isset($_POST['f_r_op_M'])){
+                    $r_op=$this->model->filtrar_rango($_POST['tabla'],'op',$_POST['f_r_op_m'],$_POST['f_r_op_M']);
                     $Array=array();
                     while($row=$r_op->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
                     }
-
                     $json=json_encode($Array);
                     echo $json;
+                }
+            }  
+        }  
 
+        public function buscar_rango_fecha(){
+            if(isset($_POST['check_rango_fecha'])){
+                if(isset($_POST['f_r_fecha_m'])&& isset($_POST['f_r_fecha_M'])){
+                    $r_op=$this->model->filtrar_rango($_POST['tabla'],'fecha',$_POST['f_r_fecha_m'],$_POST['f_r_fecha_M']);
+                    $Array=array();
+                    while($row=$r_op->fetch_array(MYSQLI_ASSOC)){
+                        $Array[]=$row;
+                    }
+                    $json=json_encode($Array);
+                    echo $json;
                 }
             }  
         }  
@@ -68,7 +80,7 @@
         public function buscar_fecha(){
             if(isset($_POST['check_fecha'])){
                 if(isset($_POST['f_fecha'])){
-                    $fecha=$this->model->buscar('ordenes','fecha',$_POST['f_fecha']);
+                    $fecha=$this->model->buscar($_POST['tabla'],'fecha',$_POST['f_fecha']);
                     $Array = array();
                     while($row = $fecha->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
@@ -83,7 +95,7 @@
             if(isset($_POST['check_fecha_mes'])){
                 if(isset($_POST['f_mes'])){
                     $value ='-'.$_POST['f_mes'].'-';
-                    $mes = $this->model->filtrar('ordenes','fecha',$value);
+                    $mes = $this->model->filtrar($_POST['tabla'],'fecha',$value);
                     $Array = array();
                     while($row = $mes->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
@@ -98,7 +110,7 @@
             if(isset($_POST['check_fecha_anio'])){
                 if(isset($_POST['f_anio'])){
                     $value=$_POST['f_anio'].'-';
-                    $anio=$this->model->filtrar('ordenes','fecha',$value);
+                    $anio=$this->model->filtrar($_POST['tabla'],'fecha',$value);
                     $Array=array();
                     while($row = $anio->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
@@ -113,7 +125,7 @@
         public function buscar_cliente(){
             if(isset($_POST['check_cliente'])){
                 if(isset($_POST['f_cliente'])){
-                    $cliente=$this->model->buscar('ordenes','Cliente',$_POST['f_cliente']);
+                    $cliente=$this->model->buscar($_POST['tabla'],'Cliente',$_POST['f_cliente']);
                     $Array= array();
                     while($row = $cliente->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;
@@ -127,7 +139,7 @@
         public function buscar_estado(){
             if(isset($_POST['check_estado'])){
                 if(isset($_POST['f_estado'])){
-                    $estado=$this->model->buscar('ordenes','estado',$_POST['f_estado']);
+                    $estado=$this->model->buscar($_POST['tabla'],'estado',$_POST['f_estado']);
                     $Array= array();
                     while($row = $estado->fetch_array(MYSQLI_ASSOC)){
                         $Array[]=$row;

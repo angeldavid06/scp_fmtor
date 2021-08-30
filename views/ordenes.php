@@ -62,6 +62,7 @@
                     </form>
                     <form id="form-filtros">
                         <div class="contenedor_filtros">
+                            <input type="text" name="tabla" id="tabla" value="ordenes" hidden>
                             <h2>Filtrar Ordenes de Producción</h2>
                             <h3>Filtrar por O.P.:</h3>
                             <div class="filtro fecha">
@@ -140,8 +141,8 @@
     </div>
     <script src="public/js/alert.js"></script>
     <script src="public/js/preloader.js"></script>
-    <script src="public/js/filtros.js?1.3"></script>
-    <script src="public/js/ordenes.js?1.2"></script>
+    <script src="public/js/filtros.js?1.4"></script>
+    <script src="public/js/ordenes.js?1.3"></script>
     <script src="public/js/sesion.js"></script>
 </body>
 </html>

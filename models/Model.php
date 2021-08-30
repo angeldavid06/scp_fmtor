@@ -48,7 +48,7 @@
       }
 
       public function filtrar_rango ($tabla,$campo,$d1,$d2) {
-         $sql = "SELECT * FROM $tabla WHERE $campo BETWEEN '$d1' AND '$d2'";
+         $sql = "SELECT * FROM $tabla WHERE $campo BETWEEN '$d1' AND '$d2' ORDER BY $campo ASC";
          $filtrar = $this->db->query($sql);
          return $filtrar;
       }
