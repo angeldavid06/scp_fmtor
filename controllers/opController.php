@@ -49,6 +49,21 @@
             }
         }
 
+        public function buscar_rango_op(){
+            if(isset($_POST['check_rango_op'])){
+                            if(isset($_POST['f_r_op_m'])&& isset($_POST['f_r_op_M'])){
+                    $r_op=$this->model->filtrar_rango('ordenes','op',$_POST['f_r_op_m'],$_POST['f_r_op_M']);
+                    $Array=array();
+                    while($row=$r_op->fetch_array(MYSQLI_ASSOC)){
+                        $Array[]=$row;
+                    }
+
+                    $json=json_encode($Array);
+                    echo $json;
+
+                }
+            }  
+        }  
 
         public function buscar_fecha(){
             if(isset($_POST['check_fecha'])){
