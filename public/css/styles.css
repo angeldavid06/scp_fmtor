@@ -196,7 +196,7 @@ button.btn-icon {
 }
 
 .btn-delete {
-    background-color: var(--color-red);
+    background-color: var(--background-red-main);
     color: white;
     padding: 10px;
 }
@@ -218,7 +218,8 @@ button:focus {
 }
 
 .btn-cancel {
-    background-color: var(--color-red);
+    background-color: var(--background-red-main);
+    color: var(--color-red);
     box-shadow: 0px 0px 0px 0px var(--color-red-3);
 }
 
@@ -515,14 +516,13 @@ button:focus {
 header {
     width: 100%;
     display: grid;
-    grid-template: 1fr / 15% 1fr 300px 15%;
+    grid-template: 1fr / 1fr 200px;
     padding: 30px 0px;
-    background-color: var(--background-content);
 }
 
 header .info {
     width: 100%;
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -543,7 +543,7 @@ header .info .usuario p {
 }
 
 header .logo {
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
     max-width: 100%;
     height: 80px;
     display: flex;
@@ -602,6 +602,143 @@ main nav a:focus i {
 main nav a .icon {
     padding: 0px 40px 0px 0px;
     font-size: 60px;
+}
+
+main .filtrar,
+main .ingresar,
+main .actualizar {
+    position: fixed;
+    width: 500px;
+    height: calc(100vh - 40px);
+    max-height: 100vh;
+    overflow-y: auto;
+    left: -500px;
+    top: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-content);
+    padding: 15px 30px 30px 30px;
+    transition: all .3s;
+}
+
+main .open {
+    left: 20px;
+    box-shadow: 50px 0px 60px solid rgba(125, 125, 125, 0.1);
+}
+
+main .filtrar h2,
+main .ingresar h2,
+main .actualizar h2 {
+    font-size: 1.7em;
+    padding: 30px 0px;
+}
+
+main .filtrar h3,
+main .ingresar h3,
+main .actualizar h3 {
+    font-size: 1.3em;
+    padding: 10px 0px 20px 0px;
+}
+
+main .filtrar label,
+main .ingresar label {
+    padding: 10px 0px 10px 30px;
+    position: relative;
+}
+
+main .filtrar input,
+main .ingresar input,
+main .actualizar input,
+main .filtrar select,
+main .ingresar select,
+main .actualizar select {
+    background-color: var(--background-body);
+}
+
+main .filtrar .lbl_check {
+    cursor: pointer;
+}
+
+main .filtrar .lbl_check::after,
+main .ingresar .lbl_check::after {
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 14px;
+    border: 3px solid var(--color-gray);
+    border-radius: 4px;
+    left: 0;
+    top: calc(50% - 10px);
+    transition: all .3s;
+}
+
+main .filtrar .lbl_check::before,
+main .ingresar .lbl_check::before {
+    position: absolute;
+    content: '';
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    left: 7px;
+    top: calc(50% - 3px);
+    transition: all .3s;
+    background-color: transparent;
+}
+
+main .filtrar input[type="checkbox"],
+main .ingresar input[type="checkbox"] {
+    display: none;
+    position: relative;
+}
+
+main .filtrar input[type="checkbox"]:checked + .lbl_check::after {
+    border: 3px solid transparent;
+}
+
+main .filtrar input[type="checkbox"]:checked + .lbl_check::before {
+    height: 18px;
+    width: 18px;
+    left: 0px;
+    top: calc(50% - 10px);
+    background-color: var(--background-blue-main);
+}
+
+main .filtrar input,
+main .ingresar input,
+main .filtrar select,
+main .ingresar select {
+    margin: 10px 0px;
+}
+
+main .filtrar .rango {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    align-items: center;
+    align-content: center;
+}
+
+main .filtrar .rango p {
+    text-align: center;
+    font-size: 2em;
+}
+
+main .filtrar button,
+main .filtrar .btn-cancel,
+main .ingresar button,
+main .ingresar .contenedor_ingresar .btn-cancel,
+main .ingresar .contenedor_actualizar .btn-cancel {
+    width: 100%;
+    margin: 15px 0px 10px 0px;
+    padding: 15px 30px;
+}
+
+main .filtrar .btn-cancel,
+main .ingresar .contenedor_ingresar .btn-cancel,
+main .ingresar .contenedor_actualizar .btn-cancel {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
 }
 
 @media screen and (max-width: 1366px) {
@@ -721,6 +858,11 @@ main nav a .icon {
     main nav a {
         padding: 30px 30px;
     }
+
+    main nav a .icon {
+        padding: 0px 40px 0px 0px;
+        font-size: 40px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -760,7 +902,7 @@ main nav a .icon {
         width: 90%;
         max-width: 90%;
         grid-template-columns: 1fr;
-        grid-template-rows: 250px 1fr;
+        grid-template-rows: 1fr;
     }
 
     .hidden .form-login {
