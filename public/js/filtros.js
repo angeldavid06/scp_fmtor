@@ -79,7 +79,7 @@ const buscar_dato = (metodo) => {
         method: 'POST',
         body: data
     }
-    fetch('http://192.168.0.43/scp_fmtor/?controller=opController&action='+metodo, options)
+    fetch(url+'/scp_fmtor/?controller=opController&action='+metodo, options)
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
         ocultarPreloader() 

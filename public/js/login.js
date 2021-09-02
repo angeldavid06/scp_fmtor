@@ -41,7 +41,7 @@ const iniciar_sesion = (form) => {
         method: "POST",
         body: data
     }
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=ingresar',options)
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=ingresar',options)
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
         if (json.total > 0) {

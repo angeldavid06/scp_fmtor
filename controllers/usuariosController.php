@@ -44,7 +44,7 @@
             session_unset();
             session_reset();
             session_destroy();
-            header('Location: http://192.168.0.43/scp_fmtor/');
+            header('Location: http://localhost/scp_fmtor/');
         }
 
         public function iniciar ($usuario,$rol) {

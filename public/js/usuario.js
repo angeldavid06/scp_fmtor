@@ -68,7 +68,7 @@ const insertar_usuario = () => {
         body: data
     }
     preloader()
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=insertar', options)
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=insertar', options)
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(res => {
         ocultarPreloader() 
@@ -107,7 +107,7 @@ const cargar_todos = () => {
 
 const obtener_usuarios = () => {
     preloader()
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=obtener')
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=obtener')
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
         ocultarPreloader() 
@@ -121,7 +121,7 @@ const obtener_usuarios = () => {
 const obtener_usuario = (id) => {
     preloader()
     console.log(id);
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=obtener_usuario&id='+id)
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=obtener_usuario&id='+id)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
         ocultarPreloader() 
@@ -207,7 +207,7 @@ document.addEventListener('click', (evt) => {
 
 const eliminar_usuario = (id) => {
     preloader()
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=eliminar&id='+id)
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=eliminar&id='+id)
     .then((res) => {
         ocultarPreloader() 
         obtener_usuarios()
@@ -224,7 +224,7 @@ const actualizar_usuario = () => {
         method: 'POST',
         body: data
     }
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=actualizar',options)
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=actualizar',options)
     .then((res) => (res.ok ? res.text() : Promise.reject(res)))
     .then((res) => {
         console.log(res);

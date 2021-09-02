@@ -26,7 +26,7 @@ const render_bitacora = (json) => {
 }
 
 const obtener_bitacora = () => {
-    fetch('http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=obtener_bitacora')
+    fetch(url+'/scp_fmtor/?controller=usuariosController&action=obtener_bitacora')
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
         render_bitacora(json);

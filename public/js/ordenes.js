@@ -116,7 +116,7 @@ const render_reporte_diario = (json) => {
 
 const obtener_ordenes = () => {
     preloader()
-    fetch('http://192.168.0.43/scp_fmtor/?controller=opController&action=obtener_ordenes')
+    fetch(url+'/scp_fmtor/?controller=opController&action=obtener_ordenes')
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
         ocultarPreloader() 
@@ -129,7 +129,7 @@ const obtener_ordenes = () => {
 
 const obtener_reporte_diario = () => {
     preloader()
-    fetch('http://192.168.0.43/scp_fmtor/?controller=opController&action=obtener_reporte_diario')
+    fetch(url+'/scp_fmtor/?controller=opController&action=obtener_reporte_diario')
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
         ocultarPreloader() 
