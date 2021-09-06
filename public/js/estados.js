@@ -33,7 +33,69 @@ const obtener_control = (vista) => {
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
         render_control(vista,json)
+        obtener_op_control(op_control.value)
     })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+const obtener_op_control = (op) => {
+    const info_1 = document.getElementsByClassName('info_1')
+    const info_2 = document.getElementsByClassName('info_2')
+
+    fetch('http://localhost/scp_fmtor/?controller=controlController&action=obtener_info_op&op='+op)
+    .then(res => (res.ok ? res.json() : Promise.reject(res)))
+    .then(json => {
+        console.log(json);
+        quitar_info(info_1[0],info_2[0])
+        render_info(json,info_1[0],info_2[0])
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+const quitar_info = (info_1,info_2) => {
+    while (info_1.firstChild) {
+        info_1.removeChild(info_1.firstChild)
+    }
+    while (info_2.firstChild) {
+        info_2.removeChild(info_2.firstChild)
+    }
+}
+
+{/* <td class="dibujo">Código del dibujo: </td>
+<td class="cliente">Cliente: </td>
+<td class="fecha">Fecha: </td>
+<td class="cantidad">Cantidad: </td>
+<td class="descripcion">Descripción: </td> */}
+
+const render_info = (json,info_1,info_2) => {
+    const fragmento_1 = document.createDocumentFragment()
+    const fragmento_2 = document.createDocumentFragment()
+
+    json.forEach(el => {
+        const dibujo = document.createElement('td')
+        const cliente = document.createElement('td')
+        const fecha = document.createElement('td')
+        const cantidad = document.createElement('td')
+        const descripcion = document.createElement('td')
+
+        dibujo.innerHTML = 'Código de dibujo: '+el.dibujo;
+        cliente.innerHTML = 'Cliente: '+el.Cliente
+        fecha.innerHTML = 'Fecha: '+el.fecha
+        cantidad.innerHTML = 'Cantidad: '+el.cantidad
+        descripcion.innerHTML = 'Descripción: '+el.Descripción
+        
+        fragmento_1.appendChild(dibujo)
+        fragmento_1.appendChild(cliente)
+        fragmento_1.appendChild(fecha)
+        fragmento_1.appendChild(cantidad)
+        fragmento_2.appendChild(descripcion)
+    })
+    info_1.appendChild(fragmento_1)
+    info_2.appendChild(fragmento_2)
 }
 
 const quitar_filas = (tabla) => {

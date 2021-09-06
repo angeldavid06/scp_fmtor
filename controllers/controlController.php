@@ -28,6 +28,17 @@
             echo $json;
         }
 
+        public function obtener_info_op () {
+            $op = $_GET['op'];
+            $ops = $this->model->filtrar('control','op',$op);
+            $Array = array();
+            while ($row = $ops->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
+        }
+
        public function insertar(){
 
        }

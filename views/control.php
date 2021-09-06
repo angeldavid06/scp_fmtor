@@ -22,14 +22,14 @@
                 <div class="informacion">
                     <table>
                         <tbody>
-                            <tr>
-                                <td>Código del dibujo: </td>
-                                <td>Cliente: </td>
-                                <td>Fecha: </td>
-                                <td>Cantidad: </td>
+                            <tr class="info_1">
+                                <td >Código del dibujo: </td>
+                                <td >Cliente: </td>
+                                <td >Fecha: </td>
+                                <td >Cantidad: </td>
                             </tr>
-                            <tr>
-                                <td>Descripción: </td>
+                            <tr class="info_2">
+                                <td >Descripción: </td>
                             </tr>
                         </tbody>
                     </table>
@@ -170,7 +170,7 @@
     </div>
     <script src="public/js/origin.js"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/estados.js?1.1"></script>
+    <script src="public/js/estados.js?1.2"></script>
     <script src="public/js/control.js?1.1"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
