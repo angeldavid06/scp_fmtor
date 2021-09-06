@@ -4,7 +4,10 @@ document.addEventListener('click', (evt) => {
         evt.target.classList.add('active')
         const estado = document.getElementsByClassName('estado_'+evt.target.dataset.estado);
         estado[0].classList.add('active')
-        obtener_control(evt.target.dataset.estado)
+        console.log(document.getElementById('op_control').value);
+        if (document.getElementById('op_control').value != '') {
+            obtener_control(evt.target.dataset.estado)
+        }
     } 
 });
 
@@ -64,12 +67,6 @@ const quitar_info = (info_1,info_2) => {
         info_2.removeChild(info_2.firstChild)
     }
 }
-
-{/* <td class="dibujo">Código del dibujo: </td>
-<td class="cliente">Cliente: </td>
-<td class="fecha">Fecha: </td>
-<td class="cantidad">Cantidad: </td>
-<td class="descripcion">Descripción: </td> */}
 
 const render_info = (json,info_1,info_2) => {
     const fragmento_1 = document.createDocumentFragment()

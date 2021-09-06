@@ -16,6 +16,7 @@
                     </div>
                     <div class="right">
                         <input type="number" name="op_control" id="op_control" placeholder="Buscar O.P.">
+                        <button class="material-icons btn-icon">search</button>
                         <button id="btn-form-control" class="material-icons btn-icon">add</button>
                     </div>
                 </div>
