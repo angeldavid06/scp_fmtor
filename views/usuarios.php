@@ -13,7 +13,7 @@
             <main>
                 <div class="options">
                     <div class="left">
-                        <a href="http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=menu" class="regresar"><i class="material-icons">arrow_back_ios</i>Regresar al menú principal</a>
+                        <a href="http://localhost/scp_fmtor/?controller=usuariosController&action=menu" class="regresar"><i class="material-icons">arrow_back_ios</i>Regresar al menú principal</a>
                     </div>
                     <div class="right">
                         <button class="btn-tooltip btn-icon btn-form-add">Agregar un nuevo usuario</button>
@@ -78,6 +78,7 @@
         </div>
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
+    <script src="public/js/origin.js"></script>
     <script src="public/js/alert.js"></script>
     <script src="public/js/usuario.js?1.6"></script>
     <script src="public/js/sesion.js"></script>

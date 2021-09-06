@@ -48,9 +48,9 @@
         </div>
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
-    <script src="public/js/origin.js"></script>
+    <script src="public/js/origin.js?1.1"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/login.js?1.2"></script>
+    <script src="public/js/login.js?1.7"></script>
     <script src="public/js/preloader.js"></script>
 </body>
 </html>

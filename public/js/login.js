@@ -45,7 +45,7 @@ const iniciar_sesion = (form) => {
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
         if (json.total > 0) {
-            window.location.href = 'http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=menu';
+            window.location.href = url+'/scp_fmtor/?controller=usuariosController&action=menu';
         } else {
             error_incio_sesion();
         }

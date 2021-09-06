@@ -1,1 +1,1 @@
-const url = 'localhost'
+const url = 'http://localhost'

@@ -18,7 +18,7 @@
             <main>
                 <div class="options">
                     <div class="left">
-                        <a href="http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=menu" class="regresar"><i class="material-icons">arrow_back_ios</i>Menú principal</a>
+                        <a href="http://localhost/scp_fmtor/?controller=usuariosController&action=menu" class="regresar"><i class="material-icons">arrow_back_ios</i>Menú principal</a>
                     </div>
                     <div class="right">
                         <button class="btn-icon btn_filtrar_open material-icons">filter_alt</button>
@@ -139,6 +139,7 @@
         </div>
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
+    <script src="public/js/origin.js"></script>
     <script src="public/js/alert.js"></script>
     <script src="public/js/preloader.js"></script>
     <script src="public/js/filtros.js?1.4"></script>
