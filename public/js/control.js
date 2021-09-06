@@ -15,7 +15,7 @@ form_control.addEventListener('submit', (evt)=> {
     try {
         const estado = document.getElementsByClassName('active');
         if (estado[0].dataset.estado) {
-            // console.log(estado[0].dataset.estado);
+            console.log(estado[0].dataset.estado);
         }
         for (let i = 0; i < inputs.length; i++) {
             if (inputs[i].value == '') {
@@ -24,7 +24,7 @@ form_control.addEventListener('submit', (evt)=> {
             }
         }
         if (aux) {
-            // Función Fetch
+            // obtener_control(estado[0].dataset.estado)
         } else {
             render_alert('Error al registrar:', 'Debes llenar los campos correctamente','rojo')
         }
@@ -46,3 +46,4 @@ btn_form_control_cancel.addEventListener('click', () => {
     const form = document.getElementsByClassName('ingresar');
     form[0].classList.toggle('open');
 });
+

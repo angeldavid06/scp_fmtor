@@ -11,9 +11,21 @@
             $this->web = new Web();
         }
 
-        public function mostrar(){
-            $controles=$this->model->mostrar('t_control_op');
-            $this->web->View('control',$controles);
+        public function mostrar () {
+            $this->web->View('control','');
+        }
+
+        public function obtener_control() {
+            $control = json_decode($_GET['control']);
+            $vista = $control->vista;
+            $op = $control->op;
+            $ops = $this->model->filtrar($vista,'op',$op);
+            $Array = array();
+            while ($row = $ops->fetch_array(MYSQLI_ASSOC)) {
+                $Array[] = $row;
+            }
+            $json = json_encode($Array);
+            echo $json;
         }
 
        public function insertar(){
