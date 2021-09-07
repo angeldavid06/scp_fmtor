@@ -713,6 +713,73 @@ main .tabla .table .body .tr {
     grid-template-columns: repeat(14,150px);
 }
 
+main .tabla .table-control .cabecera {
+    display: grid;
+    grid-template-columns: 60px repeat(7,200px);
+}
+
+main .tabla .table-control .body {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+}
+
+main .tabla .table-control .body .tr {
+    grid-template-columns: repeat(7,200px);
+}
+
+main .tabla .table-control .body .tr.open {
+    background-color: var(--background-blue-main);
+}
+
+main .tabla .table-control .body .tr.open p {
+    color: var(--color-blue-main);
+}
+
+main .tabla .table-control .body .button {
+    padding: 0px 0px;
+    margin: 15px 5px;
+    position: relative;
+}
+
+main .tabla .table-control .body .button .options {
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    width: 100px;
+    background-color: var(--background-content);
+    display: grid;
+    grid-template: 1fr / 1fr;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+main .tabla .table-control .body .button .options a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+main .tabla .table-control .body .button .options a i {
+    padding: 0px 20px 0px 0px;
+}
+
+main .tabla .table-control .body .button .open {
+    width: 200px;
+    opacity: 1;
+    visibility: visible;
+    padding: 20px 30px 20px 20px;
+    top: calc(100% + 10px);
+    left: -0px;
+    box-shadow: 0 0 60px var(--background-body);
+}
+
 main .tabla .table .cabecera p {
     width: 100%;
     display: flex;
@@ -723,7 +790,7 @@ main .tabla .table .cabecera p {
 
 main .tabla .table .body .tr {
     padding: 20px;
-    margin: 10px 0px;
+    margin: 10px 10px;
     border-radius: var(--border-radius);
     background-color: var(--background-content);
 }
