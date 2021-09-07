@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="../public/css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
 <body>
     <div class="main">
         <div class="row-con">
-            <header>
+            <button class="btn-menu btn-icon material-icons" id="btn-menu">menu</button>
+            <header class="header">
                 <div class="info">
                     <div class="options">
                         <button class="btn-icon material-icons" id="btn-sesion">logout</button>
@@ -69,8 +69,9 @@
                 </div>
                 <div class="ubicacion">
                     <div class="left">
-                        <a href="http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=menu"
-                            class="regresar"><i class="material-icons">arrow_back_ios</i>Menú principal</a>
+                        <a href="http://192.168.0.43/scp_fmtor/?controller=usuariosController&action=menu" class="regresar">
+                            <i class="material-icons">arrow_back_ios</i>
+                        </a>
                     </div>
                     <div class="right">
                         <p>Ordenes de Producción</p>
@@ -83,74 +84,362 @@
                     <button class="btn-icon material-icons">print</button>
                 </div>
                 <div class="tabla">
-                    <table>
-                        <thead class="cabecera">
-                            <th>CAL.</th>
-                            <th>Kg.</th>
-                            <th>Factor</th>
-                            <th>N° O.P.</th>
-                            <th>Fecha de O.P.</th>
-                            <th>Cliente</th>
-                            <th>Medida</th>
-                            <th>Descripción</th>
-                            <th>Acabado</th>
-                            <th>Cant</th>
-                            <th>Precio</th>
-                            <th>Total</th>
-                            <th>Acumulado</th>
-                            <th>Estado</th>
-                        </thead>
-                        <tbody class="body">
-                            <tr>
-                                <td>Dato-1</td>
-                                <td>Dato-2</td>
-                                <td>Dato-3</td>
-                                <td>Dato-4</td>
-                                <td>Dato-5</td>
-                                <td>Dato-6</td>
-                                <td>Dato-7</td>
-                                <td>Dato-8</td>
-                                <td>Dato-9</td>
-                                <td>Dato-10</td>
-                                <td>Dato-11</td>
-                                <td>Dato-12</td>
-                                <td>Dato-13</td>
-                                <td>Dato-14</td>
-                            </tr>
-                            <tr>
-                                <td>Dato-1</td>
-                                <td>Dato-2</td>
-                                <td>Dato-3</td>
-                                <td>Dato-4</td>
-                                <td>Dato-5</td>
-                                <td>Dato-6</td>
-                                <td>Dato-7</td>
-                                <td>Dato-8</td>
-                                <td>Dato-9</td>
-                                <td>Dato-10</td>
-                                <td>Dato-11</td>
-                                <td>Dato-12</td>
-                                <td>Dato-13</td>
-                                <td>Dato-14</td>
-                            </tr>
-                            <tr>
-                                <td>Dato-1</td>
-                                <td>Dato-2</td>
-                                <td>Dato-3</td>
-                                <td>Dato-4</td>
-                                <td>Dato-5</td>
-                                <td>Dato-6</td>
-                                <td>Dato-7</td>
-                                <td>Dato-8</td>
-                                <td>Dato-9</td>
-                                <td>Dato-10</td>
-                                <td>Dato-11</td>
-                                <td>Dato-12</td>
-                                <td>Dato-13</td>
-                                <td>Dato-14</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table">
+                        <div class="cabecera">
+                            <p>CAL.</p>
+                            <p>Kg.</p>
+                            <p>Factor</th>
+                            <p>N° O.P.</p>
+                            <p>Fecha de O.P.</p>
+                            <p>Cliente</p>
+                            <p>Medida</p>
+                            <p>Descripción</p>
+                            <p>Acabado</p>
+                            <p>Cant</p>
+                            <p>Precio</p>
+                            <p>Total</p>
+                            <p>Acumulado</p>
+                            <p>Estado</p>
+                        </div>
+                        <div class="body">
+                            <div class="tr cancelado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr terminado">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                                <p>Dato-4</p>
+                                <p>Dato-5</p>
+                                <p>Dato-6</p>
+                                <p>Dato-7</p>
+                                <p>Dato-8</p>
+                                <p>Dato-9</p>
+                                <p>Dato-10</p>
+                                <p>Dato-11</p>
+                                <p>Dato-12</p>
+                                <p>Dato-13</p>
+                                <p>Dato-14</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="filtrar">
                     <form id="form-formatos">
