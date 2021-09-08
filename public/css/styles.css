@@ -971,6 +971,11 @@ main .estados .active {
     color: white;
 }
 
+main .control_op_diario {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+}
+
 main .estado_tabla {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1444,8 +1449,14 @@ main .estado_tabla .info_total p {
         left: 0px;
     }
 
+    main .control_op_diario {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
     main .estado_tabla {
         display: grid;
+        grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
     }
     
