@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <!-- <div class="preloader">
+        <div class="progress"></div>
+    </div> -->
     <div class="main">
         <div class="row-con">
             <button class="btn-menu btn-icon material-icons" id="btn-menu">menu</button>
@@ -86,6 +89,25 @@
                     <button class="btn-icon btn_filtrar_open material-icons">search</button>
                     <button class="btn-icon material-icons">print</button>
                 </div>
+                <div class="estados">
+                    <button class="boton_estado active" data-estado="v_forjado" data-id="1">FORJADO</button>
+                    <button class="boton_estado" data-estado="v_ranurado" data-id="2">RANURADO</button>
+                    <button class="boton_estado" data-estado="v_rolado" data-id="3">ROLADO</button>
+                    <button class="boton_estado" data-estado="v_shank" data-id="4">SHANK</button>
+                    <button class="boton_estado" data-estado="v_cementado" data-id="5">CEMENTADO</button>
+                    <button class="boton_estado" data-estado="v_acabado" data-id="6">ACABADO</button>
+                </div>
+                <div class="estado_tabla">
+                    <div class="titulo">
+                        <button class="material-icons btn-icon">add</button>
+                        <h1>FORJADO</h1>
+                    </div>
+                    <div class="info_total">
+                        <p>Factor: 00.00</p>
+                        <p>Pzas. Acumuladas: 0000</p>
+                        <p>Total Kg: 000.00</p>
+                    </div>
+                </div>
                 <div class="tabla">
                     <div class="table table-control">
                         <div class="cabecera">
@@ -101,7 +123,7 @@
                         <div class="body">
                             <div class="button">
                                 <button class="btn-icon material-icons">more_vert</button>
-                                <div class="options" data-id="">
+                                <div class="options open" data-id="">
                                     <a href="">
                                         <i class="material-icons">edit</i>
                                         Editar
