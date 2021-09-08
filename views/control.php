@@ -36,12 +36,12 @@
                     </table>
                 </div>
                 <div class="estados">
-                    <button class="boton_estado" data-estado="v_forjado">FORJADO</button>
-                    <button class="boton_estado" data-estado="v_ranurado">RANURADO</button>
-                    <button class="boton_estado" data-estado="v_rolado">ROLADO</button>
-                    <button class="boton_estado" data-estado="v_shank">SHANK</button>
-                    <button class="boton_estado" data-estado="v_cementado">CEMENTADO</button>
-                    <button class="boton_estado" data-estado="v_acabado">ACABADO</button>
+                    <button class="boton_estado" data-estado="v_forjado" data-id="1">FORJADO</button>
+                    <button class="boton_estado" data-estado="v_ranurado" data-id="2">RANURADO</button>
+                    <button class="boton_estado" data-estado="v_rolado" data-id="3">ROLADO</button>
+                    <button class="boton_estado" data-estado="v_shank" data-id="4">SHANK</button>
+                    <button class="boton_estado" data-estado="v_cementado" data-id="5">CEMENTADO</button>
+                    <button class="boton_estado" data-estado="v_acabado" data-id="6">ACABADO</button>
                 </div>
                 <div class="contenedor_tablas">
                     <div class="tabla_estado estado_v_forjado">
@@ -151,16 +151,22 @@
                     <div class="contenedor_ingresar">
                         <form id="form-control">
                             <h2>Nuevo Registro</h2>
+                            <input type="text" name="estado" id="estado" hidden>
+                            <input type="text" name="op" id="op" hidden>
                             <p>Ingresa el número de máquina:</p>
-                            <input class="input" type="number" name="" id="">
+                            <input class="input" type="number" name="no_maquina" id="no_maquina">
                             <p>Ingresa el número de botes:</p>
-                            <input class="input" type="number" name="" id="">
+                            <input class="input" type="number" name="no_botes" id="no_botes">
                             <p>Ingresa la fecha de entrega:</p>
-                            <input class="input" type="date" name="" id="">
+                            <input class="input" type="date" name="fecha" id="fecha">
                             <p>Ingresa las pzas. entregadas:</p>
-                            <input class="input" type="number" name="" id="">
+                            <input class="input" type="number" name="pzas" id="pzas">
                             <p>Ingresa los kg. entregados:</p>
-                            <input class="input" type="number" name="" id="">
+                            <input class="input" type="number" name="kg" id="kg">
+                            <p>Ingresa el turno:</p>
+                            <input type="text" name="turno" id="turno">
+                            <p>Ingresa las observaciones:</p>
+                            <textarea name="observaciones" id="observaciones" cols="30" rows="10"></textarea>
                             <button data-btn="insertar" id="btn-form-control-registrar">Registrar</button>
                             <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
                         </form>
@@ -171,8 +177,8 @@
     </div>
     <script src="public/js/origin.js"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/estados.js?1.2"></script>
-    <script src="public/js/control.js?1.1"></script>
+    <script src="public/js/estados.js?1.3"></script>
+    <script src="public/js/control.js?1.2"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
 </body>

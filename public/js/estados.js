@@ -4,7 +4,6 @@ document.addEventListener('click', (evt) => {
         evt.target.classList.add('active')
         const estado = document.getElementsByClassName('estado_'+evt.target.dataset.estado);
         estado[0].classList.add('active')
-        console.log(document.getElementById('op_control').value);
         if (document.getElementById('op_control').value != '') {
             obtener_control(evt.target.dataset.estado)
         }
@@ -50,7 +49,6 @@ const obtener_op_control = (op) => {
     fetch('http://localhost/scp_fmtor/?controller=controlController&action=obtener_info_op&op='+op)
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
-        console.log(json);
         quitar_info(info_1[0],info_2[0])
         render_info(json,info_1[0],info_2[0])
     })

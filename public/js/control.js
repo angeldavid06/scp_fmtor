@@ -13,18 +13,14 @@ form_control.addEventListener('submit', (evt)=> {
     quitar_clase();
     const inputs = document.getElementsByClassName('input');
     try {
-        const estado = document.getElementsByClassName('active');
-        if (estado[0].dataset.estado) {
-            console.log(estado[0].dataset.estado);
-        }
         for (let i = 0; i < inputs.length; i++) {
             if (inputs[i].value == '') {
-                inputs[i].classList.add('input-error');
+                inputs[i].classList.add('input-errvor');
                 aux = false;
             }
         }
         if (aux) {
-            // obtener_control(estado[0].dataset.estado)
+            registrar_control()
         } else {
             render_alert('Error al registrar:', 'Debes llenar los campos correctamente','rojo')
         }
@@ -37,7 +33,14 @@ const btn_form_control = document.getElementById('btn-form-control');
 
 btn_form_control.addEventListener('click', () => {
     const form = document.getElementsByClassName('ingresar');
+    const estado = document.getElementsByClassName('active')
+    const op_control = document.getElementById('op_control')
+    const op = document.getElementById('op')
+    const input = document.getElementById('estado')
+    
     form[0].classList.toggle('open');
+    input.value = estado[0].dataset.id
+    op.value = op_control.value
 });
 
 const btn_form_control_cancel = document.getElementById('btn-form-control-cancel');
@@ -46,4 +49,26 @@ btn_form_control_cancel.addEventListener('click', () => {
     const form = document.getElementsByClassName('ingresar');
     form[0].classList.toggle('open');
 });
+
+const registrar_control = () => {
+    const data = new FormData(form_control)
+    const options = {
+        method: 'POST',
+        body: data
+    }
+    preloader()
+    fetch('http://localhost/scp_fmtor/?controller=controlController&action=insertar', options)
+    .then(res => (res.ok ? res.text() : Promise.reject(res)))
+    .then(res => {
+        ocultarPreloader() 
+        if(res == '1') {
+            console.log(res, ': Correcto');
+        } else {
+            console.log(res, ': Error');
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
 
