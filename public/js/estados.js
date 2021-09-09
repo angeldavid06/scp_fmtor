@@ -31,7 +31,7 @@ const obtener_control = (vista) => {
 
     const control = JSON.stringify(data);
 
-    fetch('http://localhost/scp_fmtor/?controller=controlController&action=obtener_control&control='+control)
+    fetch(url+'/scp_fmtor/?controller=controlController&action=obtener_control&control='+control)
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
         render_control(vista,json)
