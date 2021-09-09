@@ -1,4 +1,4 @@
-<?php require_once 'public/components/sesion.php'; ?>
+<!-- <?php require_once 'public/components/sesion.php'; ?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,12 +86,178 @@
             <main>
                 <div class="control_op_diario">
                     <div class="info_general">
-                        
+                        <div class="info">
+                            <h3>Información de la O.P.</h3>
+                            <p>Código Del Dibujo:</p>
+                            <label for="">0000</label>
+                            <p>Cliente:</p>
+                            <label for="">0000</label>
+                            <p>Fecha:</p>
+                            <label for="">0000 / 00 / 00</label>
+                            <p>Cantidad:</p>
+                            <label for="">0000</label>
+                            <p>Descripción:</p>
+                            <label for="">00 x 2061x06</label>
+                        </div>
                     </div>
                     <div class="info_especifica">
+                        <div class="options">
+                            <select name="sel_estado" id="sel_estado">
+                                <option value="0">Selecciona un departamento</option>
+                                <option value="1">FORJADO</option>
+                                <option value="2">RANURADO</option>
+                                <option value="3">ROLADO</option>
+                                <option value="4">SHANK</option>
+                                <option value="5">CEMENTADO</option>
+                                <option value="6">ACABADO</option>
+                            </select>
+                            <input type="number" name="" id="" placeholder="Orden de Producción">
+                            <button class="btn-icon btn_filtrar_open material-icons">search</button>
+                            <button class="btn-icon material-icons">print</button>
+                        </div>
+                        <div class="estados">
+
+                        </div>
+                        <div class="estado_tabla">
+                            <div class="titulo">
+                                <button class="material-icons btn-icon">add</button>
+                                <h1>FORJADO</h1>
+                            </div>
+                            <div class="info_total">
+                                <p>Factor: 00.00</p>
+                                <p>Pzas. Acumuladas: 0000</p>
+                                <p>Total Kg: 000.00</p>
+                            </div>
+                        </div>
+                        <div class="tabla">
+                            <div class="table table-control">
+                                <div class="cabecera">
+                                    <p></p>
+                                    <p>Orden de Producción</p>
+                                    <p>Cliente</p>
+                                    <p>Kilos</th>
+                                    <p>Pzas. Producidas</p>
+                                    <p>Máquina</p>
+                                    <p>Descripción</p>
+                                    <p>Observaciones</p>
+                                </div>
+                                <div class="body">
+                                    <div class="button">
+                                        <button class="btn-icon material-icons">more_vert</button>
+                                        <div class="options" data-id="">
+                                            <a href="">
+                                                <i class="material-icons">edit</i>
+                                                Editar
+                                            </a>
+                                            <a href="">
+                                                <i class="material-icons">delete</i>
+                                                Eliminar
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tr">
+                                        <p>Dato-1</p>
+                                        <p>Dato-2</p>
+                                        <p>Dato-3</p>
+                                        <p>Dato-4</p>
+                                        <p>Dato-5</p>
+                                        <p>Dato-6</p>
+                                        <p>Dato-7</p>
+                                    </div>
+                                    <div class="button">
+                                        <button class="btn-icon material-icons">more_vert</button>
+                                        <div class="options " data-id="">
+                                            <a href="">
+                                                <i class="material-icons">edit</i>
+                                                Editar
+                                            </a>
+                                            <a href="">
+                                                <i class="material-icons">delete</i>
+                                                Eliminar
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tr">
+                                        <p>Dato-1</p>
+                                        <p>Dato-2</p>
+                                        <p>Dato-3</p>
+                                        <p>Dato-4</p>
+                                        <p>Dato-5</p>
+                                        <p>Dato-6</p>
+                                        <p>Dato-7</p>
+                                    </div>
+                                    <div class="button">
+                                        <button class="btn-icon material-icons">more_vert</button>
+                                        <div class="options" data-id="">
+                                            <a href="">
+                                                <i class="material-icons">edit</i>
+                                                Editar
+                                            </a>
+                                            <a href="">
+                                                <i class="material-icons">delete</i>
+                                                Eliminar
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tr">
+                                        <p>Dato-1</p>
+                                        <p>Dato-2</p>
+                                        <p>Dato-3</p>
+                                        <p>Dato-4</p>
+                                        <p>Dato-5</p>
+                                        <p>Dato-6</p>
+                                        <p>Dato-7</p>
+                                    </div>
+                                    <div class="button">
+                                        <button class="btn-icon material-icons">more_vert</button>
+                                        <div class="options" data-id="">
+                                            <a href="">
+                                                <i class="material-icons">edit</i>
+                                                Editar
+                                            </a>
+                                            <a href="">
+                                                <i class="material-icons">delete</i>
+                                                Eliminar
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tr">
+                                        <p>Dato-1</p>
+                                        <p>Dato-2</p>
+                                        <p>Dato-3</p>
+                                        <p>Dato-4</p>
+                                        <p>Dato-5</p>
+                                        <p>Dato-6</p>
+                                        <p>Dato-7</p>
+                                    </div>
+                                    <div class="button">
+                                        <button class="btn-icon material-icons">more_vert</button>
+                                        <div class="options" data-id="">
+                                            <a href="">
+                                                <i class="material-icons">edit</i>
+                                                Editar
+                                            </a>
+                                            <a href="">
+                                                <i class="material-icons">delete</i>
+                                                Eliminar
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tr">
+                                        <p>Dato-1</p>
+                                        <p>Dato-2</p>
+                                        <p>Dato-3</p>
+                                        <p>Dato-4</p>
+                                        <p>Dato-5</p>
+                                        <p>Dato-6</p>
+                                        <p>Dato-7</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="options">
+                <!-- <div class="options">
                     <input type="number" name="" id="" placeholder="Orden de Producción">
                     <button class="btn-icon btn_filtrar_open material-icons">search</button>
                     <button class="btn-icon material-icons">print</button>
@@ -130,7 +296,7 @@
                         <div class="body">
                             <div class="button">
                                 <button class="btn-icon material-icons">more_vert</button>
-                                <div class="options open" data-id="">
+                                <div class="options" data-id="">
                                     <a href="">
                                         <i class="material-icons">edit</i>
                                         Editar
@@ -240,7 +406,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </main>
         </div>
     </div>

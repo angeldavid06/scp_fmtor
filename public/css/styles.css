@@ -59,12 +59,17 @@
     Estilos del scrollbar.
 */
 
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
 *::-webkit-scrollbar-thumb:active {
-    background-color: var(--color-blue) 
+    background-color: var(--color-blue);
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color-blue) 
+    background-color: var(--color-blue);
 }
 
 *::-webkit-scrollbar-track {
@@ -685,6 +690,10 @@ main .options {
     align-content: center;
 }
 
+main .options select {
+    margin-right: 10px;
+}
+
 main .options button {
     display: inline-block;  
     margin-left: 10px;
@@ -949,31 +958,57 @@ main .ingresar .contenedor_actualizar .btn-cancel {
     text-align: center;
 }
 
-main .estados {
+main .control_op_diario .info_especifica {
     width: 100%;
+    max-width: 100%;
+}
+
+main .control_op_diario .info_especifica .estados {
+    width: 100px;
+    max-width: 100%;
     overflow-x: auto;
+}
+
+main .control_op_diario .info_especifica .estados .botones {
+    min-width: 100%;
     display: flex;
-    justify-content: flex-start;
     flex-wrap: nowrap;
-    padding: 10px 5px;
 }
 
-main .estados::-webkit-scrollbar {
-    display: none;
-}
-
-main .estados button {
+main .control_op_diario .info_especifica .estados .botones button {
     margin: 0px 10px 0px 0px;
 }
 
-main .estados .active {
+main .control_op_diario .info_especifica .estados .botones .active {
     background-color: var(--color-blue-main);
     color: white;
 }
 
 main .control_op_diario {
+    width: 100%;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: 0.35fr 1fr;
+}
+
+main .control_op_diario .info_general {
+    width: 100%;
+    padding: 0px 20px 0px 0px;
+}
+
+main .control_op_diario .info_general .info {
+    padding: 0px 20px 20px 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-content);
+}
+
+main .control_op_diario .info_general .info label {
+    display: inline-block;
+    padding: 15px 15px;
+}
+
+main .control_op_diario .info_general .info p {
+    font-size: 0.8em;
 }
 
 main .estado_tabla {
@@ -1449,18 +1484,50 @@ main .estado_tabla .info_total p {
         left: 0px;
     }
 
+    main .options {
+        width: 100%;
+        padding: 20px 0px 30px 0px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    
+    main .options select,
+    main .options input {
+        width: calc(50% - 5px);
+        margin-bottom: 10px;
+    }
+
     main .control_op_diario {
-        display: grid;
         grid-template-columns: 1fr;
     }
 
-    main .estado_tabla {
+    main .control_op_diario .info_general {
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+
+    main .control_op_diario .info_especifica .estados {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    
+    main .control_op_diario .info_especifica .estados .botones {
+        min-width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    main .control_op_diario .estado_tabla {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
     }
     
-    main .estado_tabla .titulo {
+    main .control_op_diario .estado_tabla .titulo {
         padding: 10px 0px;
     }
     
@@ -1469,7 +1536,7 @@ main .estado_tabla .info_total p {
         flex-wrap: wrap;
     }
     
-    main .estado_tabla .info_total p {
+    main .control_op_diario .estado_tabla .info_total p {
         width: 100%;
         margin: 0px;
         padding: 5px 0px;
