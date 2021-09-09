@@ -35,7 +35,7 @@
         </div>
         <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
-    <script src="public/js/origin.js"></script>
+    <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
     <script src="public/js/bitacora.js"></script>

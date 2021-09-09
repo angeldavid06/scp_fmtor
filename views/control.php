@@ -175,7 +175,7 @@
             </main>
         </div>
     </div>
-    <script src="public/js/origin.js"></script>
+    <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
     <script src="public/js/estados.js?1.3"></script>
     <script src="public/js/control.js?1.2"></script>
