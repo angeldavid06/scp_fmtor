@@ -718,6 +718,10 @@ main .tabla .table-control {
     width: 0px;
 }
 
+main .tabla .table-bitacora {
+    grid-template: 50px 1fr / repeat(5,0.2fr);
+}
+
 main .tabla .table.show {
     width: 300px;
     overflow: visible;
@@ -738,6 +742,20 @@ main .tabla .table-control .body .tr {
 main .tabla .table-control .body {
     display: grid;
     grid-template-columns: 60px 1fr;
+}
+
+main .tabla .table-control .cabecera {
+    grid-row: 1 / 6;
+}
+
+main .tabla .table-bitacora .body {
+    grid-template-columns: 1fr;
+}
+
+main .tabla .table-bitacora .cabecera,
+main .tabla .table-bitacora .body .tr {
+    width: 100%;
+    grid-template-columns: repeat(5, 0.2fr);
 }
 
 main .tabla .table-control .body .tr {
@@ -831,11 +849,6 @@ main .tabla .table .body .tr:hover {
 
 main .tabla .table .body .tr:hover p {
     color: var(--color-blue-main);
-}
-
-.main main .tabla .table-bitacora .cabecera
-.main main .tabla .table-bitacora .body .tr {
-    grid-template: 50px 1fr / repeat(5,0.2fr);
 }
 
 main .filtrar,
