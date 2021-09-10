@@ -103,7 +103,6 @@
         }
         
         public function actualizar () {
-            // $tabla,$valores,$condicion
             if (isset($_POST['id'])) {
                 $id = $_POST['id'];
                 $usuario = $_POST['usuarioU'];
