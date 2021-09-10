@@ -5,7 +5,7 @@ document.addEventListener('click', (evt) => {
         const estado = document.getElementsByClassName('estado_'+evt.target.dataset.estado);
         estado[0].classList.add('active')
         if (document.getElementById('op_control').value != '') {
-            obtener_control(evt.target.dataset.estado)
+            // obtener_control(evt.target.dataset.estado)
         }
     } 
 });

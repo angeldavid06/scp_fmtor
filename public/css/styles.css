@@ -62,7 +62,7 @@
 *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-  }
+}
 
 *::-webkit-scrollbar-thumb:active {
     background-color: var(--color-blue);
@@ -557,6 +557,7 @@ header {
     display: grid;
     grid-template: 1fr / 1fr 200px;
     padding: 30px 0px;
+    transition: all .3s;
 }
 
 .main header {
@@ -701,15 +702,21 @@ main .options button {
 
 main .tabla {
     width: 100%;
-    /* max-height: 700px; */
+    display: flex;
     overflow: auto;
 }
 
 main .tabla .table {
-    width: 300px;
+    width: 0px;
+    overflow: hidden;
     border-collapse: collapse;
     display: grid;
     grid-template: 50px 1fr / 1fr;
+}
+
+main .tabla .table.show {
+    width: 300px;
+    overflow: visible;
 }
 
 main .tabla .table .cabecera,
@@ -964,13 +971,13 @@ main .control_op_diario .info_especifica {
 }
 
 main .control_op_diario .info_especifica .estados {
-    width: 100px;
-    max-width: 100%;
-    overflow-x: auto;
+    width: 100%;
+    /* max-width: 100%; */
+    overflow: auto;
 }
 
 main .control_op_diario .info_especifica .estados .botones {
-    min-width: 100%;
+    width: 300px;
     display: flex;
     flex-wrap: nowrap;
 }
@@ -994,9 +1001,12 @@ main .control_op_diario {
 main .control_op_diario .info_general {
     width: 100%;
     padding: 0px 20px 0px 0px;
+    position: relative;
 }
 
 main .control_op_diario .info_general .info {
+    position: sticky;
+    top: 20px;
     padding: 0px 20px 20px 20px;
     border-radius: var(--border-radius);
     background-color: var(--background-content);
@@ -1173,6 +1183,7 @@ main .estado_tabla .info_total p {
         visibility: visible;
         left: 10px;
         top: 10px;
+        z-index: 999999999;
     }
 
     h1 {
@@ -1311,7 +1322,7 @@ main .estado_tabla .info_total p {
         min-height: 50vh;
         grid-template: 60px 1fr / 1fr;
         padding: 0px 0px 20px 0px;
-        transition: all .3s;
+        transition: all .5s;
     }
 
     .main .header {
@@ -1487,17 +1498,7 @@ main .estado_tabla .info_total p {
     main .options {
         width: 100%;
         padding: 20px 0px 30px 0px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
-    }
-    
-    main .options select,
-    main .options input {
-        width: calc(50% - 5px);
-        margin-bottom: 10px;
+        flex-wrap: nowrap;
     }
 
     main .control_op_diario {
@@ -1507,12 +1508,35 @@ main .estado_tabla .info_total p {
     main .control_op_diario .info_general {
         padding: 0px;
         margin-bottom: 20px;
+        cursor: pointer;
+        transition: all .3s;
+        position: relative;
+        border-radius: var(--border-radius);
+    }
+
+    main .control_op_diario .info_general.hidden {
+        overflow: hidden;
+        height: 65px;
+    }
+
+    main .control_op_diario .info_general.hidden h3 {
+        padding: 20px 0px;
+        transition: all .3s;
+    }
+
+    main .control_op_diario .info_general .info {
+        position: sticky;
     }
 
     main .control_op_diario .info_especifica .estados {
         width: 100%;
         max-width: 100%;
+        padding: 5px;
         overflow-x: auto;
+    }
+
+    main .control_op_diario .info_especifica .estados::-webkit-scrollbar {
+        display: none;
     }
     
     main .control_op_diario .info_especifica .estados .botones {
