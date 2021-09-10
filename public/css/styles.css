@@ -707,11 +707,15 @@ main .tabla {
 }
 
 main .tabla .table {
-    width: 0px;
+    width: 100%;
     overflow: hidden;
     border-collapse: collapse;
     display: grid;
     grid-template: 50px 1fr / 1fr;
+}
+
+main .tabla .table-control {
+    width: 0px;
 }
 
 main .tabla .table.show {
@@ -725,7 +729,8 @@ main .tabla .table .body .tr {
     grid-template-columns: repeat(14,150px);
 }
 
-main .tabla .table-control .cabecera {
+main .tabla .table-control .cabecera,
+main .tabla .table-control .body .tr {
     display: grid;
     grid-template-columns: 60px repeat(7,200px);
 }
@@ -828,6 +833,11 @@ main .tabla .table .body .tr:hover p {
     color: var(--color-blue-main);
 }
 
+.main main .tabla .table-bitacora .cabecera
+.main main .tabla .table-bitacora .body .tr {
+    grid-template: 50px 1fr / repeat(5,0.2fr);
+}
+
 main .filtrar,
 main .ingresar,
 main .actualizar {
@@ -874,7 +884,8 @@ main .ingresar input,
 main .actualizar input,
 main .filtrar select,
 main .ingresar select,
-main .actualizar select {
+main .actualizar select,
+main .ingresar textarea {
     background-color: var(--background-body);
 }
 
@@ -929,7 +940,8 @@ main .filtrar input[type="checkbox"]:checked + .lbl_check::before {
 main .filtrar input,
 main .ingresar input,
 main .filtrar select,
-main .ingresar select {
+main .ingresar select,
+main .ingresar textarea {
     margin: 10px 0px;
 }
 
@@ -974,6 +986,7 @@ main .control_op_diario .info_especifica .estados {
     width: 100%;
     /* max-width: 100%; */
     overflow: auto;
+    padding: 5px;
 }
 
 main .control_op_diario .info_especifica .estados .botones {
@@ -1531,7 +1544,6 @@ main .estado_tabla .info_total p {
     main .control_op_diario .info_especifica .estados {
         width: 100%;
         max-width: 100%;
-        padding: 5px;
         overflow-x: auto;
     }
 

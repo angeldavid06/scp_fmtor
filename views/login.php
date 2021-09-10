@@ -12,7 +12,6 @@
 </head>
 <body>
     <div class="welcome">
-        <img class="source source-1" src="public/img/aux-2.png" alt="" srcset="">
         <div class="row-con">
             <div class="left">
                 <p>Bienvenido</p>
@@ -46,7 +45,6 @@
                 </form>
             </div>
         </div>
-        <img class="source source-2" src="public/img/aux-1.png" alt="" srcset="">
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>

@@ -13,6 +13,6 @@ main[0].addEventListener('scroll', (e) => {
     }
 })
 
-general[0].addEventListener('click', () => {
-    general[0].classList.toggle('hidden')
-})
+// general[0].addEventListener('click', () => {
+//     general[0].classList.toggle('hidden')
+// })

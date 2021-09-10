@@ -21,21 +21,23 @@ const render_ordenes = (json) => {
     const t_body= document.getElementsByClassName('body')
     const fragmento = document.createDocumentFragment()
     json.forEach(el => {
-        const tr = document.createElement('tr')
-        const cal = document.createElement('td')
-        const kg = document.createElement('td')
-        const factor = document.createElement('td')
-        const op = document.createElement('td')
-        const fechaOp = document.createElement('td')
-        const cliente = document.createElement('td')
-        const medida = document.createElement('td')
-        const descripcion = document.createElement('td')
-        const acabado = document.createElement('td')
-        const cantidad = document.createElement('td')
-        const precio = document.createElement('td')
-        const total = document.createElement('td')
-        const acumulado = document.createElement('td')
-        const estado = document.createElement('td')
+        const tr = document.createElement('div')
+        const cal = document.createElement('p')
+        const kg = document.createElement('p')
+        const factor = document.createElement('p')
+        const op = document.createElement('p')
+        const fechaOp = document.createElement('p')
+        const cliente = document.createElement('p')
+        const medida = document.createElement('p')
+        const descripcion = document.createElement('p')
+        const acabado = document.createElement('p')
+        const cantidad = document.createElement('p')
+        const precio = document.createElement('p')
+        const total = document.createElement('p')
+        const acumulado = document.createElement('p')
+        const estado = document.createElement('p')
+
+        tr.classList.add('tr')
 
         cal.innerHTML = el.calibre
         kg.innerHTML = el.kilos
@@ -143,3 +145,4 @@ const obtener_reporte_diario = () => {
 document.addEventListener('DOMContentLoaded', () => {
     obtener_ordenes()
 });
+
