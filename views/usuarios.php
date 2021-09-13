@@ -77,17 +77,34 @@
                     <button class="material-icons btn-tooltip btn-icon btn-form-add">add</button>
                 </div>
                 <div class="tabla">
-                    <table>
-                        <thead>
-                            <th class="th-btn">Editar</th>
-                            <th class="th-btn">Eliminar</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Rol</th>
-                        </thead>
-                        <tbody class="body">
-                        </tbody>
-                    </table>
+                    <div class="table table-usuarios">
+                        <div class="cabecera">
+                            <p></p>
+                            <p>Nombre</p>
+                            <p>Correo</p>
+                            <p>Rol</p>
+                        </div>
+                        <div class="body">
+                            <div class="button">
+                                <button class="btn-icon material-icons">more_vert</button>
+                                <div class="options" data-id="">
+                                    <a href="">
+                                        <i class="material-icons">edit</i>
+                                        Editar
+                                    </a>
+                                    <a href="">
+                                        <i class="material-icons">delete</i>
+                                        Eliminar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <p>Dato-1</p>
+                                <p>Dato-2</p>
+                                <p>Dato-3</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="ingresar">
                     <div class="contenedor_ingresar">
@@ -136,7 +153,7 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/usuario.js?1.6"></script>
+    <script src="public/js/usuario.js?1.7"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
 </body>

@@ -708,7 +708,7 @@ main .tabla {
 
 main .tabla .table {
     width: 100%;
-    overflow: hidden;
+    overflow:auto;
     border-collapse: collapse;
     display: grid;
     grid-template: 50px 1fr / 1fr;
@@ -716,10 +716,6 @@ main .tabla .table {
 
 main .tabla .table-control {
     width: 0px;
-}
-
-main .tabla .table-bitacora {
-    grid-template: 50px 1fr / repeat(5,0.2fr);
 }
 
 main .tabla .table.show {
@@ -739,7 +735,22 @@ main .tabla .table-control .body .tr {
     grid-template-columns: 60px repeat(7,200px);
 }
 
-main .tabla .table-control .body {
+main .tabla .table-usuarios .cabecera,
+main .tabla .table-usuarios .body .tr {
+    display: grid;
+    grid-template-columns: 80px repeat(3,.3fr);
+    text-align: center;
+}
+
+main .tabla .table-bitacora .cabecera,
+main .tabla .table-bitacora .body .tr {
+    display: grid;
+    grid-template-columns: repeat(5,.2fr);
+    text-align: center;
+}
+
+main .tabla .table-control .body,
+main .tabla .table-usuarios .body {
     display: grid;
     grid-template-columns: 60px 1fr;
 }
@@ -748,35 +759,42 @@ main .tabla .table-control .cabecera {
     grid-row: 1 / 6;
 }
 
-main .tabla .table-bitacora .body {
-    grid-template-columns: 1fr;
-}
-
-main .tabla .table-bitacora .cabecera,
-main .tabla .table-bitacora .body .tr {
-    width: 100%;
-    grid-template-columns: repeat(5, 0.2fr);
+main .tabla .table-bitacora .cabecera {
+    padding: 0px 10px;
 }
 
 main .tabla .table-control .body .tr {
     grid-template-columns: repeat(7,200px);
 }
 
-main .tabla .table-control .body .tr.open {
+main .tabla .table-usuarios .body .tr {
+    text-align: left;
+    grid-template-columns: repeat(3, 0.3fr);
+}
+
+main .tabla .table-bitacora .body .tr {
+    text-align: left;
+    grid-template-columns: repeat(5, 0.2fr);
+}
+
+main .tabla .table-control .body .tr.open,
+main .tabla .table-usuarios .body .tr.open {
     background-color: var(--background-blue-main);
 }
 
-main .tabla .table-control .body .tr.open p {
+main .tabla .table-usuarios .body .tr.open p {
     color: var(--color-blue-main);
 }
 
-main .tabla .table-control .body .button {
+main .tabla .table-control .body .button,
+main .tabla .table-usuarios .body .button {
     padding: 0px 0px;
     margin: 15px 5px;
     position: relative;
 }
 
-main .tabla .table-control .body .button .options {
+main .tabla .table-control .body .button .options,
+main .tabla .table-usuarios .body .button .options {
     position: absolute;
     top: -40px;
     left: -10px;
@@ -792,7 +810,8 @@ main .tabla .table-control .body .button .options {
     transition: all .3s;
 }
 
-main .tabla .table-control .body .button .options a {
+main .tabla .table-control .body .button .options a,
+main .tabla .table-usuarios .body .button .options a {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -801,11 +820,13 @@ main .tabla .table-control .body .button .options a {
     width: 100%;
 }
 
-main .tabla .table-control .body .button .options a i {
+main .tabla .table-control .body .button .options a i,
+main .tabla .table-usuarios .body .button .options a i {
     padding: 0px 20px 0px 0px;
 }
 
-main .tabla .table-control .body .button .open {
+main .tabla .table-control .body .button .open,
+main .tabla .table-usuarios .body .button .open {
     width: 200px;
     opacity: 1;
     visibility: visible;
@@ -1521,6 +1542,14 @@ main .estado_tabla .info_total p {
         left: 0px;
     }
 
+    main.bitacora {
+        grid-template-rows: 1fr;
+    }
+
+    main.bitacora .options {
+        display: none;
+    }
+
     main .options {
         width: 100%;
         padding: 20px 0px 30px 0px;
@@ -1589,5 +1618,14 @@ main .estado_tabla .info_total p {
         width: 100%;
         margin: 0px;
         padding: 5px 0px;
+    }
+
+    main .tabla .table-usuarios .body .tr {
+        grid-template-columns: repeat(3, 250px);
+    }
+
+    main .tabla .table-bitacora .body .tr {
+        text-align: left;
+        grid-template-columns: repeat(5, 250px);
     }
 }

@@ -149,44 +149,61 @@ const render_usuarios = (json) => {
     quitar_filas(body[0])
 
     json.forEach(el => {
-        const tr = document.createElement('tr')
-        const td_btn_edit = document.createElement('td')
-        const td_btn_delete = document.createElement('td')
-        const btn_edit = document.createElement('button')
-        const btn_delete = document.createElement('button')
+        const tr = document.createElement('div')
+        const btn_options = document.createElement('div')
         const td_user = document.createElement('td')
         const td_email = document.createElement('td')
         const td_rol = document.createElement('td')
-
-        btn_edit.innerHTML = 'edit'
-        btn_edit.dataset.id = el.id
-        btn_edit.dataset.action = 'actualizar'
-        btn_edit.classList.add('material-icons')
-        btn_edit.classList.add('btn-icon')
-        btn_edit.classList.add('btn-update')
-        btn_edit.classList.add('btn-form-update')
         
-        btn_delete.innerHTML = 'delete'
-        btn_delete.dataset.id = el.id
-        btn_delete.dataset.action = 'eliminar'
-        btn_delete.classList.add('material-icons')
-        btn_delete.classList.add('btn-icon')
-        btn_delete.classList.add('btn-delete')
+        btn_options.innerHTML = '<div class="button">'+
+                                    '<button class="btn-icon material-icons">more_vert</button>'+
+                                    '<div class="options" data-id="">'+
+                                        '<a href="">'+
+                                            '<i class="material-icons">edit</i>'+
+                                            'Editar'+
+                                        '</a>'+
+                                        '<a href="">'+
+                                            '<i class="material-icons">delete</i>'+
+                                            'Eliminar'+
+                                        '</a>'
+                                    '</div>'+
+                                '</div>'
 
-        td_btn_edit.classList.add('td-btn')
-        td_btn_delete.classList.add('td-btn')
+        // btn_edit.innerHTML = 'edit'
+        // btn_edit.dataset.id = el.id
+        // btn_edit.dataset.action = 'actualizar'
+        // btn_edit.classList.add('material-icons')
+        // btn_edit.classList.add('btn-icon')
+        // btn_edit.classList.add('btn-update')
+        // btn_edit.classList.add('btn-form-update')
+        
+        // btn_delete.innerHTML = 'delete'
+        // btn_delete.dataset.id = el.id
+        // btn_delete.dataset.action = 'eliminar'
+        // btn_delete.classList.add('material-icons')
+        // btn_delete.classList.add('btn-icon')
+        // btn_delete.classList.add('btn-delete')
+
+        // td_btn_edit.classList.add('td-btn')
+        // td_btn_delete.classList.add('td-btn')
+
+        // btn_options.classList.add('material-icons')
+        // btn_options.innerHTML = 'more_vert'
 
         td_user.innerHTML = el.usuario
         td_email.innerHTML = el.correo
         td_rol.innerHTML = el.rol
 
-        td_btn_edit.appendChild(btn_edit)
-        td_btn_delete.appendChild(btn_delete)
-        tr.appendChild(td_btn_edit)
-        tr.appendChild(td_btn_delete)
+        // td_btn_edit.appendChild(btn_edit)
+        // td_btn_delete.appendChild(btn_delete)
+        // tr.appendChild(td_btn_edit)
+        // tr.appendChild(td_btn_delete)
+        tr.classList.add('tr')
+
         tr.appendChild(td_user)
         tr.appendChild(td_email)
         tr.appendChild(td_rol)
+        fragmento.appendChild(btn_options)
         fragmento.appendChild(tr)
     });
     body[0].appendChild(fragmento)

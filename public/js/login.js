@@ -36,6 +36,7 @@ const error_incio_sesion = () => {
 }
 
 const iniciar_sesion = (form) => {
+    preloader()
     const data = new FormData(form)
     let options = {
         method: "POST",
@@ -44,6 +45,7 @@ const iniciar_sesion = (form) => {
     fetch(url+'/scp_fmtor/?controller=usuariosController&action=ingresar',options)
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
+        ocultarPreloader() 
         if (json.total > 0) {
             window.location.href = url+'/scp_fmtor/?controller=usuariosController&action=menu';
         } else {

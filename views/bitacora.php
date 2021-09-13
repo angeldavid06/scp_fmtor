@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </header>
-            <main>
+            <main class="bitacora">
                 <div class="options">
                 </div>
                 <div class="tabla">
