@@ -726,7 +726,12 @@ main .tabla .table.show {
 main .tabla .table .cabecera,
 main .tabla .table .body .tr {
     display: grid;
-    grid-template-columns: repeat(14,150px);
+    grid-template-columns: 80px 60px 80px 100px 180px 100px 300px 300px 200px 80px 120px 200px 150px 120px /*repeat(14,150px)*/;
+}
+
+main .tabla .table .body .tr .number {
+    text-align: right;
+    padding: 0px 20px 0px;
 }
 
 main .tabla .table-control .cabecera,
@@ -745,7 +750,7 @@ main .tabla .table-usuarios .body .tr {
 main .tabla .table-bitacora .cabecera,
 main .tabla .table-bitacora .body .tr {
     display: grid;
-    grid-template-columns: repeat(5,.2fr);
+    grid-template-columns: 200px 120px 80px 1fr 200px /*repeat(5,.2fr)*/;
     text-align: center;
 }
 
@@ -774,7 +779,7 @@ main .tabla .table-usuarios .body .tr {
 
 main .tabla .table-bitacora .body .tr {
     text-align: left;
-    grid-template-columns: repeat(5, 0.2fr);
+    grid-template-columns:  200px 120px 80px 1fr 200px;
 }
 
 main .tabla .table-control .body .tr.open,
@@ -844,9 +849,13 @@ main .tabla .table .cabecera p {
     padding: 20px;
 }
 
+main .tabla .table .cabecera p,
 main .tabla .table .body .tr {
     padding: 20px;
     margin: 10px 10px;
+}
+
+main .tabla .table .body .tr {
     border-radius: var(--border-radius);
     background-color: var(--background-content);
 }
@@ -1624,6 +1633,7 @@ main .estado_tabla .info_total p {
         grid-template-columns: repeat(3, 250px);
     }
 
+    main .tabla .table-bitacora .cabecera,
     main .tabla .table-bitacora .body .tr {
         text-align: left;
         grid-template-columns: repeat(5, 250px);

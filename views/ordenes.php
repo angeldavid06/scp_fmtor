@@ -79,26 +79,6 @@
                     <button class="btn-icon material-icons">print</button>
                 </div>
                 <div class="tabla">
-                    <!-- <table>
-                        <thead class="cabecera">
-                            <th>CAL.</th>
-                            <th>Kg.</th>
-                            <th>Factor</th>
-                            <th>N° O.P.</th>
-                            <th>Fecha de O.P.</th>
-                            <th>Cliente</th>
-                            <th>Medida</th>
-                            <th>Descripción</th>
-                            <th>Acabado</th>
-                            <th>Cant</th>
-                            <th>Precio</th>
-                            <th>Total</th>
-                            <th>Acumulado</th>
-                            <th>Estado</th>
-                        </thead>
-                        <tbody class="body">
-                        </tbody>
-                    </table> -->
                     <div class="table">
                         <div class="cabecera">
                             <p>CAL.</p>
@@ -214,7 +194,7 @@
     <script src="public/js/alert.js"></script>
     <script src="public/js/preloader.js"></script>
     <script src="public/js/filtros.js?1.4"></script>
-    <script src="public/js/ordenes.js?1.4"></script>
+    <script src="public/js/ordenes.js?1.5"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/responsive.js?1.5"></script>
 </body>

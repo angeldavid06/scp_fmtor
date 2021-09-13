@@ -39,6 +39,12 @@ const render_ordenes = (json) => {
 
         tr.classList.add('tr')
 
+        if (el.estado == 'TERMINADO') {
+            tr.classList.add('terminado')
+        } else if (el.estado == 'CANCELADO') {
+            tr.classList.add('cancelado')
+        }
+
         cal.innerHTML = el.calibre
         kg.innerHTML = el.kilos
         factor.innerHTML = el.factor
@@ -48,9 +54,17 @@ const render_ordenes = (json) => {
         medida.innerHTML = el.Medida
         descripcion.innerHTML = el.Descripción
         acabado.innerHTML = el.Acabado
+        
+        cantidad.classList.add('number')
         cantidad.innerHTML = el.cantidad
-        precio.innerHTML = el.precio
-        total.innerHTML = el.Total
+
+        precio.classList.add('number')
+        precio.innerHTML = '$ ' + new Intl.NumberFormat('es-MX').format(el.precio)
+        
+        total.classList.add('number')
+        total.innerHTML = '$ ' + new Intl.NumberFormat('es-MX').format(el.Total)
+        
+        acumulado.classList.add('number')
         acumulado.innerHTML = el.Acumulado
         estado.innerHTML = el.estado
 
