@@ -1,7 +1,7 @@
 {
-    "name":"SCP FMTOR",
-    "short_name":"SCP FMTOR",
-    "description":"",
+    "name":"FMTOR SCP",
+    "short_name":"FMTOR SCP",
+    "description":"Sistema Central de Producción de la empresa Forjadora Mexicana de Tornillos S.A. de C.V.",
     "background_color":"#26272D",
     "theme_color":"#26272D",
     "orientation":"portrait",
