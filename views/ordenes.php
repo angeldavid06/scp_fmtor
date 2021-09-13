@@ -136,7 +136,7 @@
                                 <input class="input" type="date" name="f_fecha" id="f_fecha" disabled>
                                 <input type="checkbox" data-check="f_mes" class="checkbox" name="check_fecha_mes" id="check_fecha_mes">
                                 <label class="lbl_check" id="lbl_check_fecha_mes" for="check_fecha_mes">Filtrar por mes: </label>
-                                <select class="input" name="f_mes" id="f_mes">
+                                <select class="input" name="f_mes" id="f_mes" disabled>
                                     <option value="01">Enero</option>
                                     <option value="02">Febrero</option>
                                     <option value="03">Marzo</option>
@@ -196,6 +196,6 @@
     <script src="public/js/filtros.js?1.4"></script>
     <script src="public/js/ordenes.js?1.5"></script>
     <script src="public/js/sesion.js"></script>
-    <script src="public/js/responsive.js?1.6"></script>
+    <script src="public/js/responsive.js?1.7"></script>
 </body>
 </html>
