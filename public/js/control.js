@@ -72,3 +72,8 @@ const registrar_control = () => {
     })
 }
 
+const general = document.getElementsByClassName('info_general')
+
+general[0].addEventListener('click', () => {
+    general[0].classList.toggle('hidden')
+})

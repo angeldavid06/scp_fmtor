@@ -156,5 +156,6 @@
     <script src="public/js/usuario.js?1.7"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
+    <script src="public/js/responsive.js"></script>
 </body>
 </html>

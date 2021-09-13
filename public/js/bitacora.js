@@ -28,9 +28,11 @@ const render_bitacora = (json) => {
 }
 
 const obtener_bitacora = () => {
+    preloader()
     fetch(url+'/scp_fmtor/?controller=usuariosController&action=obtener_bitacora')
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
+        ocultarPreloader() 
         render_bitacora(json);
     })
     .catch(err => {
@@ -41,40 +43,3 @@ const obtener_bitacora = () => {
 document.addEventListener('DOMContentLoaded', () => {
     obtener_bitacora();
 })
-
-{/* <div class="table">
-    <div class="cabecera">
-        <p>CAL.</p>
-        <p>Kg.</p>
-        <p>Factor</th>
-        <p>N° O.P.</p>
-        <p>Fecha de O.P.</p>
-        <p>Cliente</p>
-        <p>Medida</p>
-        <p>Descripción</p>
-        <p>Acabado</p>
-        <p>Cant</p>
-        <p>Precio</p>
-        <p>Total</p>
-        <p>Acumulado</p>
-        <p>Estado</p>
-    </div>
-    <div class="body">
-        <div class="tr cancelado">
-            <p>Dato-1</p>
-            <p>Dato-2</p>
-            <p>Dato-3</p>
-            <p>Dato-4</p>
-            <p>Dato-5</p>
-            <p>Dato-6</p>
-            <p>Dato-7</p>
-            <p>Dato-8</p>
-            <p>Dato-9</p>
-            <p>Dato-10</p>
-            <p>Dato-11</p>
-            <p>Dato-12</p>
-            <p>Dato-13</p>
-            <p>Dato-14</p>
-        </div>
-    </div>
-</div> */}

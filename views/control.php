@@ -73,153 +73,35 @@
                 </div>
             </header>
             <main>
-                <!-- <div class="options">
-                    <input type="number" name="op_control" id="op_control" placeholder="Buscar O.P.">
-                    <button class="material-icons btn-icon">search</button>
-                    <button id="btn-form-control" class="material-icons btn-icon">add</button>
-                </div>
-                <div class="estados">
-                    <button class="boton_estado" data-estado="v_forjado" data-id="1">FORJADO</button>
-                    <button class="boton_estado" data-estado="v_ranurado" data-id="2">RANURADO</button>
-                    <button class="boton_estado" data-estado="v_rolado" data-id="3">ROLADO</button>
-                    <button class="boton_estado" data-estado="v_shank" data-id="4">SHANK</button>
-                    <button class="boton_estado" data-estado="v_cementado" data-id="5">CEMENTADO</button>
-                    <button class="boton_estado" data-estado="v_acabado" data-id="6">ACABADO</button>
-                </div>
-                <div class="contenedor_tablas">
-                    <div class="tabla_estado estado_v_forjado">
-                        <h2>FORJADO</h2>
-                        <div class="tabla">
-                            <table>
-                                <thead>
-                                    <th>Máquina</th>
-                                    <th>Bote</th>
-                                    <th>Fecha Entrega</th>
-                                    <th>Pzas.</th>
-                                    <th>Pzas. Acumuladas</th>
-                                    <th>Kg.</th>
-                                </thead>
-                                <tbody class="body_v_forjado">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tabla_estado estado_v_ranurado">
-                        <h2>RANURADO</h2>
-                        <div class="tabla">
-                            <table>
-                                <thead>
-                                    <th>Máquina</th>
-                                    <th>Bote</th>
-                                    <th>Fecha Entrega</th>
-                                    <th>Pzas.</th>
-                                    <th>Pzas. Acumuladas</th>
-                                    <th>Kg.</th>
-                                </thead>
-                                <tbody class="body_v_ranurado">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tabla_estado estado_v_rolado">
-                        <h2>ROLADO</h2>
-                        <div class="tabla">
-                            <table>
-                                <thead>
-                                    <th>Máquina</th>
-                                    <th>Bote</th>
-                                    <th>Fecha Entrega</th>
-                                    <th>Pzas.</th>
-                                    <th>Pzas. Acumuladas</th>
-                                    <th>Kg.</th>
-                                </thead>
-                                <tbody class="body_v_rolado">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tabla_estado estado_v_shank">
-                        <h2>SHANK</h2>
-                        <div class="tabla">
-                            <table>
-                                <thead>
-                                    <th>Máquina</th>
-                                    <th>Bote</th>
-                                    <th>Fecha Entrega</th>
-                                    <th>Pzas.</th>
-                                    <th>Pzas. Acumuladas</th>
-                                    <th>Kg.</th>
-                                </thead>
-                                <tbody  class="body_v_shank">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tabla_estado estado_v_cementado">
-                        <h2>CEMENTADO</h2>
-                        <div class="tabla">
-                            <table>
-                                <thead>
-                                    <th>Máquina</th>
-                                    <th>Bote</th>
-                                    <th>Fecha Entrega</th>
-                                    <th>Pzas.</th>
-                                    <th>Pzas. Acumuladas</th>
-                                    <th>Kg.</th>
-                                </thead>
-                                <tbody class="body_v_cementado">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tabla_estado estado_v_acabado">
-                        <h2>ACABADO</h2>
-                        <div class="tabla">
-                            <table>
-                                <thead>
-                                    <th>Máquina</th>
-                                    <th>Bote</th>
-                                    <th>Fecha Entrega</th>
-                                    <th>Pzas.</th>
-                                    <th>Pzas. Acumuladas</th>
-                                    <th>Kg.</th>
-                                </thead>
-                                <tbody class="body_v_acabado">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="control_op_diario">
                     <div class="info_general hidden">
                         <div class="info">
                             <h3>Información de la O.P.</h3>
                             <p>Código Del Dibujo:</p>
-                            <label for="">0000</label>
+                            <label class="cod_dibujo"></label>
                             <p>Cliente:</p>
-                            <label for="">0000</label>
+                            <label class="cliente"></label>
                             <p>Fecha:</p>
-                            <label for="">0000 / 00 / 00</label>
+                            <label class="fecha"></label>
                             <p>Cantidad:</p>
-                            <label for="">0000</label>
+                            <label class="cantidad"></label>
                             <p>Descripción:</p>
-                            <label for="">00 x 2061x06</label>
+                            <label class="descripcion"></label>
                         </div>
                     </div>
                     <div class="info_especifica">
                         <div class="options">
                             <input type="number" name="op_control" id="op_control" placeholder="Orden de Producción">
-                            <button class="btn-icon btn_filtrar_open material-icons">search</button>
                             <button class="btn-icon material-icons">print</button>
                         </div>
                         <div class="estados">
                             <div class="botones">
-                                <button class="boton_estado" data-estado="v_forjado" data-id="1">FORJADO</button>
-                                <button class="boton_estado" data-estado="v_ranurado" data-id="2">RANURADO</button>
-                                <button class="boton_estado" data-estado="v_rolado" data-id="3">ROLADO</button>
-                                <button class="boton_estado" data-estado="v_shank" data-id="4">SHANK</button>
-                                <button class="boton_estado" data-estado="v_cementado" data-id="5">CEMENTADO</button>
-                                <button class="boton_estado" data-estado="v_acabado" data-id="6">ACABADO</button>
+                                <button class="boton_estado active" data-estado="v_forjado" data-titulo="FORJADO" data-id="1">FORJADO</button>
+                                <button class="boton_estado" data-estado="v_ranurado" data-titulo="RANURADO" data-id="2">RANURADO</button>
+                                <button class="boton_estado" data-estado="v_rolado" data-titulo="ROLADO" data-id="3">ROLADO</button>
+                                <button class="boton_estado" data-estado="v_shank" data-titulo="SHANK" data-id="4">SHANK</button>
+                                <button class="boton_estado" data-estado="v_cementado" data-titulo="CEMENTADO" data-id="5">CEMENTADO</button>
+                                <button class="boton_estado" data-estado="v_acabado" data-titulo="ACABADO" data-id="6">ACABADO</button>
                             </div>
                         </div>
                         <div class="estado_tabla">
@@ -234,81 +116,38 @@
                             </div>
                         </div>
                         <div class="tabla">
-                            <div class="table table-control estado_v_forjado">
+                            <div class="table table-control estado_v_forjado show">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Orden de Producción</p>
-                                    <p>Cliente</p>
-                                    <p>Kilos</th>
+                                    <p>Bote</p>
+                                    <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
+                                    <p>Kg</th>
                                     <p>Máquina</p>
-                                    <p>Descripción</p>
-                                    <p>Observaciones</p>
                                 </div>
                                 <div class="body body_v_forjado">
-                                    <div class="button">
-                                        <button class="btn-icon material-icons">more_vert</button>
-                                        <div class="options" data-id="">
-                                            <a href="">
-                                                <i class="material-icons">edit</i>
-                                                Editar
-                                            </a>
-                                            <a href="">
-                                                <i class="material-icons">delete</i>
-                                                Eliminar
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tr">
-                                    </div>
                                 </div>
                             </div>
-                            <div class="table table-control estado_v_ranurado show">
+                            <div class="table table-control estado_v_ranurado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Orden de Producción</p>
-                                    <p>Cliente</p>
-                                    <p>Kilos</th>
+                                    <p>Bote</p>
+                                    <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
+                                    <p>Kg</th>
                                     <p>Máquina</p>
-                                    <p>Descripción</p>
-                                    <p>Observaciones</p>
                                 </div>
                                 <div class="body body_v_ranurado">
-                                    <div class="button">
-                                        <button class="btn-icon material-icons">more_vert</button>
-                                        <div class="options" data-id="">
-                                            <a href="">
-                                                <i class="material-icons">edit</i>
-                                                Editar
-                                            </a>
-                                            <a href="">
-                                                <i class="material-icons">delete</i>
-                                                Eliminar
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tr">
-                                        <p>Dato-1</p>
-                                        <p>Dato-2</p>
-                                        <p>Dato-3</p>
-                                        <p>Dato-4</p>
-                                        <p>Dato-5</p>
-                                        <p>Dato-6</p>
-                                        <p>Dato-7</p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="table table-control estado_v_rolado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Orden de Producción</p>
-                                    <p>Cliente</p>
-                                    <p>Kilos</th>
+                                    <p>Bote</p>
+                                    <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
+                                    <p>Kg</th>
                                     <p>Máquina</p>
-                                    <p>Descripción</p>
-                                    <p>Observaciones</p>
                                 </div>
                                 <div class="body_v_rolado">
                                 </div>
@@ -316,13 +155,11 @@
                             <div class="table table-control estado_v_shank">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Orden de Producción</p>
-                                    <p>Cliente</p>
-                                    <p>Kilos</th>
+                                    <p>Bote</p>
+                                    <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
+                                    <p>Kg</th>
                                     <p>Máquina</p>
-                                    <p>Descripción</p>
-                                    <p>Observaciones</p>
                                 </div>
                                 <div class="body_v_shank">
                                 </div>
@@ -330,13 +167,11 @@
                             <div class="table table-control estado_v_cementado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Orden de Producción</p>
-                                    <p>Cliente</p>
-                                    <p>Kilos</th>
+                                    <p>Bote</p>
+                                    <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
+                                    <p>Kg</th>
                                     <p>Máquina</p>
-                                    <p>Descripción</p>
-                                    <p>Observaciones</p>
                                 </div>
                                 <div class="body_v_cementado">
                                 </div>
@@ -344,15 +179,14 @@
                             <div class="table table-control estado_v_acabado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Orden de Producción</p>
-                                    <p>Cliente</p>
-                                    <p>Kilos</th>
+                                    <p>Bote</p>
+                                    <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
+                                    <p>Kg</th>
                                     <p>Máquina</p>
-                                    <p>Descripción</p>
-                                    <p>Observaciones</p>
                                 </div>
                                 <div class="body_v_acabado">
+
                                 </div>
                             </div>
                         </div>
@@ -388,10 +222,10 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/estados.js?1.3"></script>
-    <script src="public/js/control.js?1.2"></script>
+    <script src="public/js/estados.js?1.4"></script>
+    <script src="public/js/control.js?1.3"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
-    <script src="public/js/responsive.js"></script>
+    <script src="public/js/responsive.js?1.1"></script>
 </body>
 </html>

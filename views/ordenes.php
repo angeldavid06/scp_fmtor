@@ -196,6 +196,6 @@
     <script src="public/js/filtros.js?1.4"></script>
     <script src="public/js/ordenes.js?1.5"></script>
     <script src="public/js/sesion.js"></script>
-    <script src="public/js/responsive.js?1.5"></script>
+    <script src="public/js/responsive.js?1.6"></script>
 </body>
 </html>

@@ -682,9 +682,13 @@ main nav a .icon {
     font-size: 60px;
 }
 
+main.bitacora {
+    grid-template-rows: 1fr;
+}
+
 main .options {
     width: 100%;
-    padding: 0px 0px 20px 0px;
+    padding: 0px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -711,7 +715,8 @@ main .tabla .table {
     overflow:auto;
     border-collapse: collapse;
     display: grid;
-    grid-template: 50px 1fr / 1fr;
+    grid-template: 70px 1fr / 1fr;
+    transition: all .3s;
 }
 
 main .tabla .table-control {
@@ -737,7 +742,7 @@ main .tabla .table .body .tr .number {
 main .tabla .table-control .cabecera,
 main .tabla .table-control .body .tr {
     display: grid;
-    grid-template-columns: 60px repeat(7,200px);
+    grid-template-columns: 60px repeat(5,200px);
 }
 
 main .tabla .table-usuarios .cabecera,
@@ -769,7 +774,7 @@ main .tabla .table-bitacora .cabecera {
 }
 
 main .tabla .table-control .body .tr {
-    grid-template-columns: repeat(7,200px);
+    grid-template-columns: repeat(5,200px);
 }
 
 main .tabla .table-usuarios .body .tr {
@@ -1029,7 +1034,7 @@ main .control_op_diario .info_especifica .estados {
     width: 100%;
     /* max-width: 100%; */
     overflow: auto;
-    padding: 5px;
+    padding: 20px 5px 5px 5px;
 }
 
 main .control_op_diario .info_especifica .estados .botones {
@@ -1549,10 +1554,6 @@ main .estado_tabla .info_total p {
 
     main .open {
         left: 0px;
-    }
-
-    main.bitacora {
-        grid-template-rows: 1fr;
     }
 
     main.bitacora .options {
