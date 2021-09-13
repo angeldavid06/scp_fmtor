@@ -1,3 +1,6 @@
+let total_kg = 0.0;
+let total_pzas = 0;
+
 document.addEventListener('click', (evt) => {
     if (evt.target.dataset.estado) {
         quit_class();
@@ -25,6 +28,8 @@ const quit_class = () => {
 
 const obtener_control = (vista) => {
     preloader()
+    total_kg = 0.0
+    total_pzas = 0
     const op_control = document.getElementById('op_control')
 
     const data = {
@@ -94,8 +99,6 @@ const quitar_filas = (tabla) => {
 }
 
 const render_control = (vista,json) => {
-    const tabla = document.getElementsByClassName('estado_'+vista)
-    const fragmento = document.createDocumentFragment()
     const body = document.getElementsByClassName('body_'+vista)
 
     quitar_filas(vista)
@@ -121,5 +124,13 @@ const render_control = (vista,json) => {
                                     '<p>'+el.kilos+'</p>'+
                                     '<p>'+el.no_maquina+'</p>'+
                                 '</div>';
+        total_kg += parseFloat(el.kilos)
+        total_pzas += parseInt(el.pzas)
     });
+
+    const total_kilogramos = document.getElementsByClassName('total_kg')
+    const total_acumuladas = document.getElementsByClassName('total_acumuladas')
+
+    total_kilogramos[0].innerHTML = 'Total k.g.: ' + total_kg
+    total_acumuladas[0].innerHTML = 'Pzas. Acumuladas: ' + total_pzas
 }

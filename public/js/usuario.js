@@ -155,18 +155,17 @@ const render_usuarios = (json) => {
         const td_email = document.createElement('td')
         const td_rol = document.createElement('td')
         
-        btn_options.innerHTML = '<div class="button">'+
-                                    '<button class="btn-icon material-icons">more_vert</button>'+
-                                    '<div class="options" data-id="">'+
-                                        '<a href="">'+
-                                            '<i class="material-icons">edit</i>'+
-                                            'Editar'+
-                                        '</a>'+
-                                        '<a href="">'+
-                                            '<i class="material-icons">delete</i>'+
-                                            'Eliminar'+
-                                        '</a>'
-                                    '</div>'+
+        btn_options.classList.add('button')
+        btn_options.innerHTML = '<button class="btn-icon material-icons">more_vert</button>'+
+                                '<div class="options" data-id="">'+
+                                    '<a href="">'+
+                                        '<i class="material-icons">edit</i>'+
+                                        'Editar'+
+                                    '</a>'+
+                                    '<a href="">'+
+                                        '<i class="material-icons">delete</i>'+
+                                        'Eliminar'+
+                                    '</a>'
                                 '</div>'
 
         // btn_edit.innerHTML = 'edit'

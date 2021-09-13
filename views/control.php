@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div class="tabla">
-                            <div class="table table-control estado_v_forjado show">
+                            <div class="table table-control estado_v_forjado">
                                 <div class="cabecera">
                                     <p></p>
                                     <p>Bote</p>
@@ -186,7 +186,6 @@
                                     <p>Máquina</p>
                                 </div>
                                 <div class="body_v_acabado">
-
                                 </div>
                             </div>
                         </div>

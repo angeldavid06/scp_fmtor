@@ -85,24 +85,6 @@
                             <p>Rol</p>
                         </div>
                         <div class="body">
-                            <div class="button">
-                                <button class="btn-icon material-icons">more_vert</button>
-                                <div class="options" data-id="">
-                                    <a href="">
-                                        <i class="material-icons">edit</i>
-                                        Editar
-                                    </a>
-                                    <a href="">
-                                        <i class="material-icons">delete</i>
-                                        Eliminar
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tr">
-                                <p>Dato-1</p>
-                                <p>Dato-2</p>
-                                <p>Dato-3</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -153,7 +135,7 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/usuario.js?1.7"></script>
+    <script src="public/js/usuario.js?1.8"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js"></script>
     <script src="public/js/responsive.js"></script>
