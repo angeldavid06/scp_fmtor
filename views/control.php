@@ -96,7 +96,7 @@
                         </div>
                         <div class="estados">
                             <div class="botones">
-                                <button class="boton_estado active" data-estado="v_forjado" data-titulo="FORJADO" data-id="1">FORJADO</button>
+                                <button class="boton_estado" data-estado="v_forjado" data-titulo="FORJADO" data-id="1">FORJADO</button>
                                 <button class="boton_estado" data-estado="v_ranurado" data-titulo="RANURADO" data-id="2">RANURADO</button>
                                 <button class="boton_estado" data-estado="v_rolado" data-titulo="ROLADO" data-id="3">ROLADO</button>
                                 <button class="boton_estado" data-estado="v_shank" data-titulo="SHANK" data-id="4">SHANK</button>
