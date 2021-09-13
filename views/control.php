@@ -106,7 +106,9 @@
                         </div>
                         <div class="estado_tabla">
                             <div class="titulo">
-                                <button class="material-icons btn-icon" id="btn-form-control">add</button>
+                                <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') { ?>     
+                                    <button class="material-icons btn-icon" id="btn-form-control">add</button>
+                                <?php } ?>
                                 <h1 class="titulo_estado">No seleccionado</h1>
                             </div>
                             <div class="info_total">

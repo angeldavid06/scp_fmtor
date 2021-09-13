@@ -41,8 +41,8 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --background-body: #EFEFEF;
-        /* --background-body: #DEE1E6; */
+        /* --background-body: #EFEFEF; */
+        --background-body: #DEE1E6;
         --background-content: #FFFFFF;
         --color-text: #383838;
     }
