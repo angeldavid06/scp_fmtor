@@ -25,7 +25,6 @@ const render_bitacora = (json) => {
         fragmento.appendChild(tr)
     });
     body[0].appendChild(fragmento)
-    console.log(body[0]);
 }
 
 const obtener_bitacora = () => {
