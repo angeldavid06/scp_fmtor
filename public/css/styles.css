@@ -1065,6 +1065,11 @@ main .control_op_diario .info_especifica .estados .botones button {
     margin: 0px 10px 0px 0px;
 }
 
+main .control_op_diario .info_especifica .estados .botones .boton_estado {
+    background-color: var(--color-tag-menu-hover);
+    color: var(--color-tag-menu-focus);
+}
+
 main .control_op_diario .info_especifica .estados .botones .active {
     background-color: var(--color-blue-main);
     color: white;
