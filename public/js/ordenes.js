@@ -5,12 +5,6 @@ btn_cancel_filtrar[0].addEventListener('click', () => {
     filtrar[0].classList.toggle('open');
 });
 
-btn_cancel_filtrar[1].addEventListener('click', () => {
-    const filtrar = document.getElementsByClassName('filtrar');
-    filtrar[0].classList.toggle('open');
-});
-
-
 const quitar_filas = (t_body) => {
     while(t_body.firstChild){
         t_body.removefirstChild(t_body.firstChild)
@@ -22,20 +16,6 @@ const render_ordenes = (json) => {
     const fragmento = document.createDocumentFragment()
     json.forEach(el => {
         const tr = document.createElement('div')
-        const cal = document.createElement('p')
-        const kg = document.createElement('p')
-        const factor = document.createElement('p')
-        const op = document.createElement('p')
-        const fechaOp = document.createElement('p')
-        const cliente = document.createElement('p')
-        const medida = document.createElement('p')
-        const descripcion = document.createElement('p')
-        const acabado = document.createElement('p')
-        const cantidad = document.createElement('p')
-        const precio = document.createElement('p')
-        const total = document.createElement('p')
-        const acumulado = document.createElement('p')
-        const estado = document.createElement('p')
 
         tr.classList.add('tr')
 
@@ -45,89 +25,44 @@ const render_ordenes = (json) => {
             tr.classList.add('cancelado')
         }
 
-        cal.innerHTML = el.calibre
-        kg.innerHTML = el.kilos
-        factor.innerHTML = el.factor
-        op.innerHTML = el.op
-        fechaOp.innerHTML = el.fecha
-        cliente.innerHTML = el.Cliente
-        medida.innerHTML = el.Medida
-        descripcion.innerHTML = el.Descripción
-        acabado.innerHTML = el.Acabado
-        
-        cantidad.classList.add('number')
-        cantidad.innerHTML = el.cantidad
+        tr.innerHTML += '<p>'+el.calibre+'</p>'+
+                        '<p>'+el.kilos+'</p>'+
+                        '<p>'+el.factor+'</p>'+
+                        '<p>'+el.op+'</p>'+
+                        '<p>'+el.fecha+'</p>'+
+                        '<p>'+el.Cliente+'</p>'+
+                        '<p>'+el.Medida+'</p>'+
+                        '<p>'+el.Descripción+'</p>'+
+                        '<p>'+el.Acabado+'</p>'+
+                        '<p class="number">'+el.cantidad+'</p>'+
+                        '<p class="number">$ ' + new Intl.NumberFormat('es-MX').format(el.precio)+'</p>'+
+                        '<p class="number">$ ' + new Intl.NumberFormat('es-MX').format(el.Total)+'</p>'+
+                        '<p class="number">'+el.Acumulado+'</p>'+
+                        '<p>'+el.estado+'</p>'
 
-        precio.classList.add('number')
-        precio.innerHTML = '$ ' + new Intl.NumberFormat('es-MX').format(el.precio)
-        
-        total.classList.add('number')
-        total.innerHTML = '$ ' + new Intl.NumberFormat('es-MX').format(el.Total)
-        
-        acumulado.classList.add('number')
-        acumulado.innerHTML = el.Acumulado
-        estado.innerHTML = el.estado
-
-        tr.appendChild(cal)
-        tr.appendChild(kg)
-        tr.appendChild(factor)
-        tr.appendChild(op)
-        tr.appendChild(fechaOp)
-        tr.appendChild(cliente)
-        tr.appendChild(medida)
-        tr.appendChild(descripcion)
-        tr.appendChild(acabado)
-        tr.appendChild(cantidad)
-        tr.appendChild(precio)
-        tr.appendChild(total)
-        tr.appendChild(acumulado)
-        tr.appendChild(estado)
-
-        fragmento.appendChild(tr)
+        t_body[0].appendChild(tr)
     })
-    t_body[0].appendChild(fragmento)
 }
 
 const render_reporte_diario = (json) => {
     const t_body= document.getElementsByClassName('body')
-    const fragmento = document.createDocumentFragment()
     json.forEach(el => {
-        const tr = document.createElement('tr')
-        const fecha = document.createElement('td')
-        const turno = document.createElement('td')
-        const estado = document.createElement('td')
-        const op = document.createElement('td')
-        const cliente = document.createElement('td')
-        const kg = document.createElement('td')
-        const pzas = document.createElement('td')
-        const maquina = document.createElement('td')
-        const descripcion = document.createElement('td')
-        const observaciones = document.createElement('td')
+        const tr = document.createElement('div')
+        tr.classList.add('tr')
 
-        fecha.innerHTML = el.Fecha
-        turno.innerHTML = el.turno
-        estado.innerHTML = el.estado
-        op.innerHTML = el.Orden_de_producción
-        cliente.innerHTML = el.Cliente
-        kg.innerHTML = el.kilos
-        pzas.innerHTML = el.pzas
-        maquina.innerHTML = el.Maquina
-        descripcion.innerHTML = el.Descripcion
-        observaciones.innerHTML = el.observaciones
-
-        tr.appendChild(fecha)
-        tr.appendChild(turno)
-        tr.appendChild(estado)
-        tr.appendChild(op)
-        tr.appendChild(cliente)
-        tr.appendChild(kg)
-        tr.appendChild(pzas)
-        tr.appendChild(maquina)
-        tr.appendChild(descripcion)
-        tr.appendChild(observaciones)
-        fragmento.appendChild(tr)
+        tr.innerHTML += '<p>'+el.Fecha+'</p>'+
+                        '<p>'+el.turno+'</p>'+
+                        '<p>'+el.estado+'</p>'+
+                        '<p>'+el.Orden_de_producción+'</p>'+
+                        '<p>'+el.Cliente+'</p>'+
+                        '<p>'+el.kilos+'</p>'+
+                        '<p>'+el.pzas+'</p>'+
+                        '<p>'+el.Maquina+'</p>'
+                        '<p>'+el.Descripcion+'</p>'+
+                        '<p>'+el.observaciones+'</p>'
+                        
+        t_body[0].appendChild(tr)
     });
-    t_body[0].appendChild(fragmento)
 }
 
 const obtener_ordenes = () => {

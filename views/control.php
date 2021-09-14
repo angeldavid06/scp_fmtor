@@ -121,7 +121,7 @@
                             <div class="table table-control estado_v_forjado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Bote</p>
+                                    <p>Botes</p>
                                     <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
                                     <p>Kg</th>
@@ -133,7 +133,7 @@
                             <div class="table table-control estado_v_ranurado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Bote</p>
+                                    <p>Botes</p>
                                     <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
                                     <p>Kg</th>
@@ -145,49 +145,49 @@
                             <div class="table table-control estado_v_rolado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Bote</p>
+                                    <p>Botes</p>
                                     <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
                                     <p>Kg</th>
                                     <p>Máquina</p>
                                 </div>
-                                <div class="body_v_rolado">
+                                <div class="body body_v_rolado">
                                 </div>
                             </div>
                             <div class="table table-control estado_v_shank">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Bote</p>
+                                    <p>Botes</p>
                                     <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
                                     <p>Kg</th>
                                     <p>Máquina</p>
                                 </div>
-                                <div class="body_v_shank">
+                                <div class="body body_v_shank">
                                 </div>
                             </div>
                             <div class="table table-control estado_v_cementado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Bote</p>
+                                    <p>Botes</p>
                                     <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
                                     <p>Kg</th>
                                     <p>Máquina</p>
                                 </div>
-                                <div class="body_v_cementado">
+                                <div class="body body_v_cementado">
                                 </div>
                             </div>
                             <div class="table table-control estado_v_acabado">
                                 <div class="cabecera">
                                     <p></p>
-                                    <p>Bote</p>
+                                    <p>Botes</p>
                                     <p>Fecha</p>
                                     <p>Pzas. Producidas</p>
                                     <p>Kg</th>
                                     <p>Máquina</p>
                                 </div>
-                                <div class="body_v_acabado">
+                                <div class="body body_v_acabado">
                                 </div>
                             </div>
                         </div>
@@ -199,20 +199,20 @@
                             <h2>Nuevo Registro</h2>
                             <input type="text" name="estado" id="estado" hidden>
                             <input type="text" name="op" id="op" hidden>
-                            <p>Ingresa el número de máquina:</p>
-                            <input class="input" type="number" name="no_maquina" id="no_maquina">
-                            <p>Ingresa el número de botes:</p>
-                            <input class="input" type="number" name="no_botes" id="no_botes">
-                            <p>Ingresa la fecha de entrega:</p>
-                            <input class="input" type="date" name="fecha" id="fecha">
-                            <p>Ingresa las pzas. entregadas:</p>
-                            <input class="input" type="number" name="pzas" id="pzas">
-                            <p>Ingresa los kg. entregados:</p>
-                            <input class="input" type="number" name="kg" id="kg">
-                            <p>Ingresa el turno:</p>
-                            <input type="text" name="turno" id="turno">
-                            <p>Ingresa las observaciones:</p>
-                            <textarea name="observaciones" id="observaciones" cols="30" rows="10"></textarea>
+                            <p>Número de máquina:</p>
+                            <input class="input" type="number" name="no_maquina" id="no_maquina" placeholder="Ingresa el número de máquina">
+                            <p>Número de botes:</p>
+                            <input class="input" type="number" name="no_botes" id="no_botes" placeholder="Ingresa el número de botes entregados">
+                            <p>Fecha:</p>
+                            <input class="input" type="date" name="fecha" id="fecha" placeholder="Ingresa la fecha de entrega">
+                            <p>Pzas. entregadas:</p>
+                            <input class="input" type="number" name="pzas" id="pzas" placeholder="Ingresa la cantidad de pzas. entregadas">
+                            <p>Kg. entregados:</p>
+                            <input class="input" type="text" name="kg" id="kg" placeholder="Ingresa los kg. entregados">
+                            <p>Turno:</p>
+                            <input type="text" name="turno" id="turno" placeholder="Ingresa el turno">
+                            <p>Observaciones:</p>
+                            <textarea name="observaciones" id="observaciones" cols="30" rows="10" placeholder="Ingresa las observaciones"></textarea>
                             <button data-btn="insertar" id="btn-form-control-registrar">Registrar</button>
                             <label class="btn-cancel" id="btn-form-control-cancel">Cancelar</label>
                         </form>
@@ -223,10 +223,10 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/estados.js?1.4"></script>
-    <script src="public/js/control.js?1.3"></script>
+    <script src="public/js/estados.js?1.5"></script>
+    <script src="public/js/control.js?1.5"></script>
     <script src="public/js/sesion.js"></script>
-    <script src="public/js/preloader.js"></script>
+    <script src="public/js/preloader.js?2.1"></script>
     <script src="public/js/responsive.js?1.1"></script>
 </body>
 </html>

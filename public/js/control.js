@@ -60,12 +60,10 @@ const registrar_control = () => {
     fetch('http://localhost/scp_fmtor/?controller=controlController&action=insertar', options)
     .then(res => (res.ok ? res.text() : Promise.reject(res)))
     .then(res => {
-        ocultarPreloader() 
-        if(res == '1') {
-            console.log(res, ': Correcto');
-        } else {
-            console.log(res, ': Error');
-        }
+        ocultarPreloader()
+        render_alert('Registro exitoso:','El usuario se añadio correctamente', 'azul')
+        const estado = document.getElementsByClassName('active')
+        obtener_control(estado[0].dataset.estado)
     })
     .catch(err => {
         console.log(err);

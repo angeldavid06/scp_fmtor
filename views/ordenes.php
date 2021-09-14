@@ -108,8 +108,6 @@
                                 <option value="1">Reporte Diario</option>
                                 <option value="2">Reporte Diario por Máquina</option>
                             </select>
-                            <button>Consultar</button>
-                            <label class="btn-cancel">Cancelar</label>
                         </div>
                     </form>
                     <form id="form-filtros">
@@ -192,9 +190,9 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/preloader.js"></script>
-    <script src="public/js/filtros.js?1.4"></script>
-    <script src="public/js/ordenes.js?1.5"></script>
+    <script src="public/js/preloader.js?2.0"></script>
+    <script src="public/js/filtros.js?1.5"></script>
+    <script src="public/js/ordenes.js?1.7"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/responsive.js?1.7"></script>
 </body>

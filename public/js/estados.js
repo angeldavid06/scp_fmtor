@@ -104,7 +104,7 @@ const render_control = (vista,json) => {
     quitar_filas(vista)
 
     json.forEach(el => {
-        body[0].innerHTML = '<div class="button">'+
+        body[0].innerHTML += '<div class="button">'+
                                     '<button class="btn-icon material-icons">more_vert</button>'+
                                     '<div class="options" data-id="">'+
                                         '<a href="">'+
@@ -120,8 +120,8 @@ const render_control = (vista,json) => {
                                 '<div class="tr">'+
                                     '<p>'+el.bote+'</p>'+
                                     '<p>'+el.fecha_entrega+'</p>'+
-                                    '<p>'+el.pzas+'</p>'+
-                                    '<p>'+el.kilos+'</p>'+
+                                    '<p>'+new Intl.NumberFormat('es-MX').format(el.pzas)+'</p>'+
+                                    '<p>'+new Intl.NumberFormat('es-MX').format(el.kilos)+'</p>'+
                                     '<p>'+el.no_maquina+'</p>'+
                                 '</div>';
         total_kg += parseFloat(el.kilos)
@@ -131,6 +131,6 @@ const render_control = (vista,json) => {
     const total_kilogramos = document.getElementsByClassName('total_kg')
     const total_acumuladas = document.getElementsByClassName('total_acumuladas')
 
-    total_kilogramos[0].innerHTML = 'Total k.g.: ' + total_kg
-    total_acumuladas[0].innerHTML = 'Pzas. Acumuladas: ' + total_pzas
+    total_kilogramos[0].innerHTML = 'Total k.g.: ' + new Intl.NumberFormat('es-MX').format(total_kg)
+    total_acumuladas[0].innerHTML = 'Pzas. Acumuladas: ' + new Intl.NumberFormat('es-MX').format(total_pzas)
 }

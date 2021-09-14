@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="form-login">
-                <h2>Inicar Sesión</h2>
+                <h2>Iniciar Sesión</h2>
                 <form id="form-login">
                     <div class="inputs">
                         <label for="nombre_usuario">Nombre de usuario:</label>
@@ -49,6 +49,6 @@
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
     <script src="public/js/login.js?1.8"></script>
-    <script src="public/js/preloader.js"></script>
+    <script src="public/js/preloader.js?2.0"></script>
 </body>
 </html>

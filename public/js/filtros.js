@@ -21,7 +21,7 @@ const cabecera_op = (titulos) => {
     const thead = document.getElementsByClassName('cabecera');
     
     for (let i = 0; i < titulos.length; i++) {
-        const th = document.createElement('th');
+        const th = document.createElement('p');
         th.innerHTML = titulos[i];
         fragmento.appendChild(th);
     }
@@ -111,6 +111,20 @@ form_formatos.addEventListener('submit', (evt) => {
         obtener_reporte_diario()
     }
 });
+
+const select_formatos = document.getElementById('seleccion_formato')
+select_formatos.addEventListener('change', () => {
+    cabecera_op(cabeceras[select_formatos.value]);
+    const input_tabla = document.getElementById('tabla')
+    limpiar_tabla();
+    if (select_formatos.value == 0) {
+        input_tabla.value = 'ordenes'
+        obtener_ordenes()
+    } else if (select_formatos.value == 1) {
+        input_tabla.value = 'reporte_diario'
+        obtener_reporte_diario()
+    }
+})
 
 const filtros_personalizados = (check, filtro) => {
     if (check && (filtro == 'f_op' || filtro == 'f_fecha')) {

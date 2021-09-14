@@ -60,7 +60,7 @@
                     echo 1;
                 }
             } else {
-                echo 2;
+                echo 0;
             }
         }
 

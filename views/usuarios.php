@@ -92,15 +92,15 @@
                     <div class="contenedor_ingresar">
                         <form id="form-usuarios">
                             <h2>Nuevo Usuario</h2>
-                            <p>Ingresa el nombre de usuario:</p>
+                            <p>Nombre de usuario:</p>
                             <input class="inputI" type="text" name="usuario" id="usuario" placeholder="Nombre de usuario">
-                            <p>Ingresa la contraseña:</p>
+                            <p>Contraseña del usuario:</p>
                             <input class="inputI" type="password" name="password" id="password" placeholder="Contraseña del usuario">
-                            <p>Ingresa el correo del usuario:</p>
+                            <p>Correo electrónico del usuario:</p>
                             <input class="inputI" type="email" name="email" id="email" placeholder="Correo electrónico del usuario">
-                            <p>Selecciona el rol:</p>
+                            <p>Rol:</p>
                             <select class="inputI" name="rol" id="rol">
-                                <option value="0">Rol del usuario</option>
+                            <option value="0">Selecciona el rol del usuario</option>
                                 <option value="1">Administrador</option>
                                 <option value="2">General</option>
                             </select>
@@ -114,14 +114,14 @@
                     <div class="contenedor_actualizar">
                         <form id="form-usuarios-actualizar">
                             <h2>Actualizar usuario</h2>
-                            <p>Ingresa el nombre de usuario:</p>
+                            <p>Nombre de usuario:</p>
                             <input class="input inputU" type="text" hidden="" name="id" id="id">
-                            <input class="input inputU" type="text" name="usuarioU" id="usuarioU" placeholder="Nombre de usuario">
-                            <p>Ingresa el correo del usuario:</p>
+                            <input class="input inputU" type="text" name="usuarioU" id="usuarioU" placeholder="Ingresa el nombre de usuario">
+                            <p>Correo electrónico del usuario:</p>
                             <input class="input inputU" type="email" name="emailU" id="emailU" placeholder="Correo electrónico del usuario">
-                            <p>Selecciona el rol:</p>
+                            <p>Rol:</p>
                             <select class="input inputU" name="rolU" id="rolU">
-                                <option value="0">Rol del usuario</option>
+                                <option value="0">Selecciona el rol del usuario</option>
                                 <option value="1">Administrador</option>
                                 <option value="2">General</option>
                             </select>
@@ -137,7 +137,7 @@
     <script src="public/js/alert.js"></script>
     <script src="public/js/usuario.js?1.8"></script>
     <script src="public/js/sesion.js"></script>
-    <script src="public/js/preloader.js"></script>
+    <script src="public/js/preloader.js?2.0"></script>
     <script src="public/js/responsive.js"></script>
 </body>
 </html>

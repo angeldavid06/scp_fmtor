@@ -93,7 +93,7 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/sesion.js"></script>
-    <script src="public/js/preloader.js"></script>
+    <script src="public/js/preloader.js?2.0"></script>
     <script src="public/js/bitacora.js?1.4"></script>
     <script src="public/js/responsive.js?1.1"></script>
 </body>
