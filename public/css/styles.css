@@ -723,12 +723,14 @@ main .options button {
 main .tabla {
     width: 100%;
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: visible;
 }
 
 main .tabla .table {
     width: 100%;
-    overflow:auto;
+    overflow-x:auto;
+    overflow-y: visible;
     border-collapse: collapse;
     display: grid;
     grid-template: 70px 1fr / 1fr;
@@ -1066,8 +1068,8 @@ main .control_op_diario .info_especifica .estados .botones button {
 }
 
 main .control_op_diario .info_especifica .estados .botones .boton_estado {
-    background-color: var(--color-tag-menu-hover);
-    color: var(--color-tag-menu-focus);
+    background-color: var(--background-content);
+    color: var(--color-text);
 }
 
 main .control_op_diario .info_especifica .estados .botones .active {
@@ -1256,8 +1258,6 @@ main .estado_tabla .info_total p {
 
     main .tabla {
         width: 100%;
-        /* max-height: 500px; */
-        overflow: auto;
         margin: 0px 0px 30px 0px;
     }
 }
