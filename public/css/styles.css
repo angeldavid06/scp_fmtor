@@ -557,9 +557,13 @@ button:focus {
 
 .form-login .options {
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: 30px repeat(2,1fr);
     grid-gap: 10px;
     padding: 10px 0px 0px 0px;
+}
+
+.form-login .options input[type="checkbox"] {
+    display: none;
 }
 
 .form-login .options a {

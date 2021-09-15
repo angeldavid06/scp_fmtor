@@ -39,8 +39,10 @@
                         <input id="password" name="password" class="" type="password" placeholder="Ingresa el nombre de usuario">
                     </div>
                     <div class="options">
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">Recordar contraseña</label>
                         <button>Ingresar</button>
-                        
+                        <a href="">¿Olvidaste tu contraseña?</a>
                     </div>
                 </form>
             </div>
