@@ -31,14 +31,14 @@ const obtener_control = (vista) => {
     total_kg = 0.0
     total_pzas = 0
     const op_control = document.getElementById('op_control')
-
+    
     const data = {
         vista: vista,
         op: op_control.value
     }
-
+    
     const control = JSON.stringify(data);
-
+    
     fetch(url+'/scp_fmtor/?controller=controlController&action=obtener_control&control='+control)
     .then(res => (res.ok ? res.json() : Promise.reject(res)))
     .then(json => {
@@ -81,13 +81,13 @@ const render_info = (json) => {
                             '<p>Código Del Dibujo:</p>'+
                             '<label class="cod_dibujo">'+el.dibujo+'</label>'+
                             '<p>Cliente:</p>'+
-                            '<label class="cliente">'+el.Cliente+'</label>'+
+                            '<label class="cliente">'+el.cliente+'</label>'+
                             '<p>Fecha:</p>'+
                             '<label class="fecha">'+el.fecha+'</label>'+
                             '<p>Cantidad:</p>'+
                             '<label class="cantidad">'+el.cantidad+'</label>'+
                             '<p>Descripción:</p>'+
-                            '<label class="descripcion">'+el.Descripción+'</label>';
+                            '<label class="descripcion">'+el.descripcion+'</label>';
     })
 }
 
@@ -100,6 +100,7 @@ const quitar_filas = (tabla) => {
 
 const render_control = (vista,json) => {
     const body = document.getElementsByClassName('body_'+vista)
+    const op_control = document.getElementById('op_control')
 
     quitar_filas(vista)
 
@@ -118,14 +119,15 @@ const render_control = (vista,json) => {
                                     '</div>'+
                                 '</div>'+
                                 '<div class="tr">'+
-                                    '<p>'+el.bote+'</p>'+
-                                    '<p>'+el.fecha_entrega+'</p>'+
+                                    '<p>'+el.botes+'</p>'+
+                                    '<p>'+el.fecha+'</p>'+
                                     '<p>'+new Intl.NumberFormat('es-MX').format(el.pzas)+'</p>'+
                                     '<p>'+new Intl.NumberFormat('es-MX').format(el.kilos)+'</p>'+
                                     '<p>'+el.no_maquina+'</p>'+
                                 '</div>';
         total_kg += parseFloat(el.kilos)
         total_pzas += parseInt(el.pzas)
+        op_control.dataset.control = el.control
     });
 
     const total_kilogramos = document.getElementsByClassName('total_kg')

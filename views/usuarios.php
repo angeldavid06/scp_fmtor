@@ -135,7 +135,7 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/usuario.js?1.8"></script>
+    <script src="public/js/usuario.js?2.0"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js?2.0"></script>
     <script src="public/js/responsive.js"></script>

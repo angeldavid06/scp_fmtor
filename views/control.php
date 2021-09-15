@@ -91,7 +91,7 @@
                     </div>
                     <div class="info_especifica">
                         <div class="options">
-                            <input type="number" name="op_control" id="op_control" placeholder="Orden de Producción">
+                            <input type="number" name="op_control" id="op_control" data-control="" placeholder="Orden de Producción">
                             <button class="btn-icon material-icons">print</button>
                         </div>
                         <div class="estados">
@@ -223,8 +223,8 @@
     </div>
     <script src="public/js/origin.js?1.2"></script>
     <script src="public/js/alert.js"></script>
-    <script src="public/js/estados.js?1.5"></script>
-    <script src="public/js/control.js?1.5"></script>
+    <script src="public/js/estados.js?1.6"></script>
+    <script src="public/js/control.js?1.6"></script>
     <script src="public/js/sesion.js"></script>
     <script src="public/js/preloader.js?2.1"></script>
     <script src="public/js/responsive.js?1.1"></script>

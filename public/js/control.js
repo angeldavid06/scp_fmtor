@@ -40,7 +40,7 @@ btn_form_control.addEventListener('click', () => {
     
     form[0].classList.toggle('open');
     input.value = estado[0].dataset.id
-    op.value = op_control.value
+    op.value = op_control.dataset.control
 });
 
 const btn_form_control_cancel = document.getElementById('btn-form-control-cancel');

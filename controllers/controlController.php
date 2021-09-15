@@ -44,18 +44,18 @@
         public function insertar() {
             if (isset($_POST['estado']) && isset($_POST['op'])) {
                 $estado = $_POST['estado'];
-                $op = $_POST['op'];
+                $control = $_POST['op'];
                 $no_maquina = $_POST['no_maquina'];
-                $no_botes = $_POST['no_botes'];
                 $fecha = $_POST['fecha'];
+                $no_botes = $_POST['no_botes'];
                 $pzas = $_POST['pzas'];
                 $kg = $_POST['kg'];
                 $turno = $_POST['turno'];
                 $observaciones = $_POST['observaciones'];
 
-                $campos = 'no_maquina,bote,fecha_entrega,pzas,kilos,turno,observaciones,op,id_estado';
-                $values = "'$no_maquina','$no_botes','$fecha','$pzas','$kg','$turno','$observaciones','$op','$estado'";
-                $result = $this->model->insert('t_control_op',$campos,$values);
+                $campos = 'no_maquina,fecha,botes,pzas,kilos,turno,observaciones,id_control,id_estado';
+                $values = "'$no_maquina','$no_botes','$fecha','$pzas','$kg','$turno','$observaciones','$control','$estado'";
+                $result = $this->model->insert('t_registro_diario',$campos,$values);
                 if ($result) {
                     echo 1;
                 }
