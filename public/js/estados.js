@@ -4,6 +4,8 @@ let total_pzas = 0;
 document.addEventListener('click', (evt) => {
     if (evt.target.dataset.estado) {
         quit_class();
+        const form = document.getElementsByClassName('ingresar');
+        form[0].classList.remove('open');
         evt.target.classList.add('active')
         const estado = document.getElementsByClassName('estado_'+evt.target.dataset.estado);
         const titulo_estado = document.getElementsByClassName('titulo_estado');

@@ -37,7 +37,7 @@ const render_ordenes = (json) => {
                         '<p class="number">'+el.cantidad+'</p>'+
                         '<p class="number">$ ' + new Intl.NumberFormat('es-MX').format(el.precio)+'</p>'+
                         '<p class="number">$ ' + new Intl.NumberFormat('es-MX').format(el.Total)+'</p>'+
-                        '<p class="number">'+el.Acumulado+'</p>'+
+                        '<p class="number">' + new Intl.NumberFormat('es-MX').format(el.Acumulado)+'</p>'+
                         '<p>'+el.estado+'</p>'
 
         t_body[0].appendChild(tr)

@@ -1,5 +1,6 @@
-CREATE OR REPLACE VIEW ordenes AS SELECT t_material.calibre,
-        t_registro_diario.kilos,
+CREATE OR REPLACE VIEW ordenes AS 
+SELECT t_material.calibre,
+        t_control_op.kilos_acumulados AS kilos,
         t_medida_tornillo.factor,
         t_op.op,t_op.fecha,t_clientes.nombre AS Cliente,
         concat_ws('*',t_medida_tornillo.espesor,t_medida_tornillo.longitud) AS Medida,
@@ -20,8 +21,7 @@ CREATE OR REPLACE VIEW ordenes AS SELECT t_material.calibre,
         t_descripcion_tornillo,
         t_acabados,
         precios,
-        t_estado,
-        t_registro_diario
+        t_estado
         WHERE
         t_tornillo.id_material=t_material.id
         AND t_control_op.op=t_op.op
@@ -31,8 +31,7 @@ CREATE OR REPLACE VIEW ordenes AS SELECT t_material.calibre,
         AND t_tornillo.id_descripcion=t_descripcion_tornillo.id
         AND t_tornillo.id_acabado=t_acabados.id
         AND t_tornillo.id_precio=precios.id
-        AND t_control_op.id_estado=t_estado.id
-        AND t_registro_diario.id_control = t_control_op.id;
+        AND t_control_op.id_estado=t_estado.id;
 
 CREATE OR REPLACE VIEW control AS SELECT t_op.op, t_op.codigo_dibujo AS dibujo,
                                          t_clientes.nombre AS cliente,

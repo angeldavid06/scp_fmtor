@@ -61,9 +61,13 @@ const registrar_control = () => {
     .then(res => (res.ok ? res.text() : Promise.reject(res)))
     .then(res => {
         ocultarPreloader()
-        render_alert('Registro exitoso:','El usuario se añadio correctamente', 'azul')
-        const estado = document.getElementsByClassName('active')
-        obtener_control(estado[0].dataset.estado)
+        if (res == 1) {
+            render_alert('Registro exitoso:','El usuario se añadio correctamente', 'azul')
+            const estado = document.getElementsByClassName('active')
+            obtener_control(estado[0].dataset.estado)
+        } else {
+            render_alert('Registro no exitoso:','Algo ocurrio', 'rojo')
+        }
     })
     .catch(err => {
         console.log(err);
