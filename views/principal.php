@@ -82,8 +82,10 @@
                         <i class="material-icons icon">supervisor_account</i>
                         CONTROL DE PRODUCCIÓN
                     </a>
-                    <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') { ?>
-                        <a href="http://localhost/scp_fmtor/?controller=usuariosController&action=mostrar"
+                    <?php 
+                        // if ($_SESSION['rol'] == 'ADMINISTRADOR') { 
+                    ?>
+                        <!-- <a href="http://localhost/scp_fmtor/?controller=usuariosController&action=mostrar"
                         class="tag tag-3">
                             <i class="material-icons icon">manage_accounts</i>
                             GESTIÓN DE USUARIOS
@@ -92,8 +94,10 @@
                         class="tag tag-4">
                             <i class="material-icons icon">app_registration</i>
                             BITÁCORA
-                        </a>
-                    <?php } ?>
+                        </a> -->
+                    <?php 
+                        // } 
+                    ?>
                 </nav>
             </main>
         </div>

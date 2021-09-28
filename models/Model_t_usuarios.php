@@ -55,7 +55,7 @@
         }
 
         public function ingresar () {
-            $result = Model::ingresarU($this->nombre, $this->password);
+            $result = Model::validar_usuario($this->nombre, $this->password);
             return $result;
         }
 

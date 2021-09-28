@@ -17,7 +17,6 @@
              parent::__construct();
          }
 
-
          public function getOp(){
              return $this->op;
          }

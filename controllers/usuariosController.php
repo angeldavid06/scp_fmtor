@@ -1,5 +1,5 @@
 <?php
-    require_once "models/t_usuarios.php";
+    require_once "models/Model_t_usuarios.php";
     require_once "routes/web.php";
 
     class usuariosController {
@@ -90,11 +90,11 @@
                 $rol =$_POST['rol'];
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 10]);
                 $values = "'$usuario','$password','$email','$rol'";
-                $result = $this->model->insert('t_usuarios','nombre,password,correo,id_rol',$values);
+                $result = $this->model->insertar('t_usuarios','nombre,password,correo,id_rol',$values);
                 
                 $user = $_SESSION['usuario'];
                 $bit = "'$user','t_usuarios','insertar','Se inserto un nuevo usuario',SYSDATE()";
-                $bitacora=$this->model->insert('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
+                $bitacora=$this->model->insertar('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
                 
                 echo $result;
             } else {
@@ -114,7 +114,7 @@
                 
                 $user = $_SESSION['usuario'];
                 $bit="'$user','t_usuarios','actualizar','Se actualizo información de un usuario',SYSDATE()";
-                $bitacora=$this->model->insert('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
+                $bitacora=$this->model->insertar('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
                 
                 echo $result;
             } else {
@@ -128,7 +128,7 @@
             
             $user = $_SESSION['usuario'];
             $bit="'$user','t_usuarios','eliminar','Se elimino un usuario',SYSDATE()";
-            $bitacora=$this->model->insert('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
+            $bitacora=$this->model->insertar('bitacora','usuario,tabla,accion,descripcion,fecha',$bit);
             
             return $result;
         }

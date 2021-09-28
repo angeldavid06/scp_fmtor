@@ -1,5 +1,5 @@
 <?php
-    require_once "models/t_control_op.php";
+    require_once "models/Model_t_control_op.php";
     require_once "routes/web.php";
 
     class controlController{
@@ -55,7 +55,7 @@
 
                 $campos = 'no_maquina,fecha,botes,pzas,kilos,turno,observaciones,id_control,id_estado';
                 $values = "'$no_maquina','$fecha','$no_botes','$pzas','$kg','$turno','$observaciones','$control','$estado'";
-                $result = $this->model->insert('t_registro_diario',$campos,$values);
+                $result = $this->model->insertar('t_registro_diario',$campos,$values);
                 if ($result) {
                     echo 1;
                 }
