@@ -140,3 +140,32 @@ CREATE OR REPLACE VIEW v_acabado AS SELECT t_control_op.id AS control,
                                         t_registro_diario.id_estado = t_estado.id
                                         AND t_control_op.id = t_registro_diario.id_control
                                         AND t_estado.estado='ACABADO';
+
+
+CREATE OR REPLACE VIEW reporte_diario AS SELECT t_registro_diario.fecha,
+                                                t_registro_diario.turno,
+                                                t_estado.estado AS Departamento,
+                                                t_op.op AS Orden_de_produccion,
+                                                t_clientes.id AS Cliente,
+                                                t_registro_diario.kilos,
+                                                t_registro_diario.pzas,
+                                                t_registro_diario.no_maquina AS Maquina,
+                                                concat(t_medida_tornillo.espesor,'*',t_medida_tornillo.longitud,' ',t_descripcion_tornillo.descripcion) AS Descripcion,
+                                                t_registro_diario.observaciones
+                                                FROM
+                                                t_op,
+                                                t_clientes,
+                                                t_control_op,
+                                                t_registro_diario,
+                                                t_medida_tornillo,
+                                                t_descripcion_tornillo,
+                                                t_tornillo,
+                                                t_estado
+                                                WHERE
+                                                t_op.op=t_control_op.op
+                                                AND t_control_op.id_estado=t_estado.id
+                                                AND t_op.id_cliente=t_clientes.id
+                                                AND t_op.id_tornillo=t_tornillo.id
+                                                AND t_tornillo.id_medida=t_medida_tornillo.id
+                                                AND t_tornillo.id_descripcion=t_descripcion_tornillo.id
+                                                AND t_control_op.id=t_registro_diario.id_control;
