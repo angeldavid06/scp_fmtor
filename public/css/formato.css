@@ -7,7 +7,7 @@
     -webkit-print-color-adjust: exact;
 }
 
-@media print {
+/* @media print { */
 
     .reporte {
         width: 100%;
@@ -47,7 +47,10 @@
     .reporte_diario .encabezado table tbody td,
     .reporte_diario .seguimiento table thead th,
     .reporte_diario .seguimiento table tbody td,
-    .reporte_diario .seguimiento table tfoot td {
+    .reporte_diario .seguimiento table tfoot td,
+    .reporte_maquina .seguimiento table thead th,
+    .reporte_maquina .seguimiento table tbody td,
+    .reporte_maquina .seguimiento table tfoot td {
         padding: 5px;
         font-size: 0.7em;
     }
@@ -64,6 +67,14 @@
         width: 100%;
         padding-top: 20px;
     }
+
+    .reporte_maquina .seguimiento {
+        width: 100%;
+        padding-top: 20px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
     
     .reporte_diario .seguimiento table {
         width: 100%;
@@ -72,19 +83,30 @@
     .reporte_diario .encabezado table tbody td,
     .reporte_diario .seguimiento table thead th,
     .reporte_diario .seguimiento table tbody td,
-    .reporte_diario .seguimiento table tfoot td {
+    .reporte_diario .seguimiento table tfoot td,
+    .reporte_maquina .encabezado table tbody td,
+    .reporte_maquina .seguimiento table thead th,
+    .reporte_maquina .seguimiento table tbody td,
+    .reporte_maquina .seguimiento table tfoot td {
         font-size: 1em;
+    }
+
+    .reporte_maquina .seguimiento table thead th {
+        height: 50px;
     }
     
     .reporte_producción .seguimiento table,
-    .reporte_diario .seguimiento table {
+    .reporte_diario .seguimiento table,
+    .reporte_maquina .seguimiento table {
         border-collapse: collapse;
     }
     
     .reporte_producción .seguimiento table th,
     .reporte_producción .seguimiento table td,
     .reporte_diario .seguimiento table th,
-    .reporte_diario .seguimiento table td {
+    .reporte_diario .seguimiento table td,
+    .reporte_maquina .seguimiento table th,
+    .reporte_maquina .seguimiento table td {
         border: 1px solid black;
     }
-}
+/* } */
